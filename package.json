@@ -12,7 +12,7 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "check:unused": "knip",
+    "check:unused": "knip --config knip.config.ts",
     "type-check": "tsc --noEmit",
     "lint": "eslint src --ext .ts,.tsx && npm run type-check && npm run check:unused",
     "format": "prettier --write .",

@@ -12,14 +12,12 @@ jobs:
           node-version: 22
           cache: npm
 
-      # Deterministic install; if Rollup’s optional-deps bug appears, clean & reinstall
-      - name: Install deps (ci with fallback)
+      - name: Install deps
         shell: bash
         run: |
           set -e
           rm -rf node_modules package-lock.json ~/.npm/_cacache
           npm install --no-audit --no-fund
-          
 
       - name: Run linter
         run: npm run lint
