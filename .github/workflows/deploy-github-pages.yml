@@ -13,12 +13,14 @@ jobs:
     environment: 'github-pages'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: 22
+
+      - name: Install deps (npm ci)
+        shell: bash
+        run: npm ci
+
       - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
         with:
           install_command: npm install
