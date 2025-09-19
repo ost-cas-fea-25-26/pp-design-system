@@ -17,11 +17,9 @@ jobs:
         shell: bash
         run: |
           set -e
-          npm ci || (
-            echo "npm ci failed; applying workaround..."
-            rm -rf node_modules package-lock.json ~/.npm/_cacache
-            npm install --no-audit --no-fund
-          )
+          rm -rf node_modules package-lock.json ~/.npm/_cacache
+          npm install --no-audit --no-fund
+          
 
       - name: Run linter
         run: npm run lint
