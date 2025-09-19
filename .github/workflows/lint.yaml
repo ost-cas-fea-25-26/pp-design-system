@@ -16,9 +16,11 @@ jobs:
           node-version: 22
           cache: npm
 
-      - name: Clean install (remove node_modules + lockfile cache)
+      - name: Install dependencies if cache missed
         run: |
-          rm -rf node_modules package-lock.json
-          npm install
+          if [ ! -d node_modules ]; then
+            npm install
+          fi
 
-      - run: npm run lint
+      - name: Run linter
+        run: npm run lint

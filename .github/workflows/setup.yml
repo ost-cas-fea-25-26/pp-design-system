@@ -1,0 +1,26 @@
+name: Setup Dependencies
+
+on:
+  workflow_dispatch: # run manually, or you can add push/pull_request triggers
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Cache node_modules
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: deps-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+
+      - name: Install dependencies
+        run: |
+          rm -rf node_modules package-lock.json
+          npm install
