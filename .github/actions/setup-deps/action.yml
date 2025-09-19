@@ -1,5 +1,5 @@
 name: Setup deps (npm + cache)
-description: Restore npm cache and install dependencies
+description: Restore npm cache and install dependencies (with Rollup optional-deps workaround)
 runs:
   using: composite
   steps:
@@ -11,6 +11,19 @@ runs:
           package-lock.json
           **/package-lock.json
 
-    - name: Install deps (npm ci)
+    # Ensure optional deps are not ignored (paranoid safeguard)
+    - name: Ensure optional deps enabled
       shell: bash
-      run: npm ci
+      run: npm config set optional true
+
+    # Try deterministic install first; if the Rollup optional-deps bug hits,
+    # nuke lock + node_modules and do a fresh install.
+    - name: Install deps (ci with fallback)
+      shell: bash
+      run: |
+        set -e
+        npm ci || (
+          echo "npm ci failed; applying Rollup optional-deps workaround..."
+          rm -rf node_modules package-lock.json
+          npm install --no-audit --no-fund
+        )

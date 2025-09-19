@@ -7,7 +7,6 @@ permissions:
   contents: read
   pages: write
   id-token: write
-  contents: read
 
 jobs:
   deploy:
