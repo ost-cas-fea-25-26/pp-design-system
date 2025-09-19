@@ -1,6 +1,6 @@
 {
   "name": "@ost-cas-fea-25-26/pp-design-system",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
