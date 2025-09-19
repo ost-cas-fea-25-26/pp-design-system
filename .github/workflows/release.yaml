@@ -7,13 +7,14 @@ on:
 
 jobs:
   release:
+    # ✅ only run when the Setup Dependencies workflow succeeded and branch is main
     if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main' }}
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 0   # semantic-release needs full git history
 
       - uses: actions/setup-node@v4
         with:
@@ -33,9 +34,23 @@ jobs:
             npm install
           fi
 
-      - name: Run build
+      # 🔐 Check npm auth works before semantic-release
+      - name: Verify npm token
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+          npm whoami
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # 🏗️ Build the library so lib/ is present
+      - name: Build library
         run: npm run build
 
+      # 🔍 Show exactly what will be published to npm
+      - name: Pack dry-run
+        run: npm pack --dry-run
+
+      # 🚀 Let semantic-release version and publish to npm
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v5
         env:
