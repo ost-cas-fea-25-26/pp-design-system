@@ -14,9 +14,6 @@
     "lint": "eslint src --ext .ts,.tsx && npm run type-check && npm run check:unused",
     "format": "prettier --write ."
   },
-  "engines": {
-    "node": "^22.0.0"
-  },
   "dependencies": {
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
