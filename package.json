@@ -17,7 +17,7 @@
     "coverage": "vitest run --coverage"
   },
   "release": {
-    "branches": ["master", "next"]
+    "branches": ["main"]
   },
   "dependencies": {
     "react": "^19.1.1",
