@@ -20,6 +20,12 @@ jobs:
           node-version: 20
           cache: 'npm'
 
+      - name: Restore node_modules cache
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: deps-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+
       - name: Install dependencies if cache missed
         run: |
           if [ ! -d node_modules ]; then
