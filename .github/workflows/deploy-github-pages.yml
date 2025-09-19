@@ -1,15 +1,13 @@
-name: Build and Publish Storybook to GitHub Pages
-
+name: Deploy Storybook
 on:
-  workflow_run:
-    workflows: ["Setup Dependencies"]
-    types:
-      - completed
+  push:
+    branches: [main]
 
 permissions:
   contents: read
   pages: write
   id-token: write
+  contents: read
 
 jobs:
   deploy:
