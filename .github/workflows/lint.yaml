@@ -12,18 +12,13 @@ jobs:
           node-version: 22
           cache: npm
 
-      # Make sure optional deps are not skipped
-      - name: Ensure optional deps enabled
-        shell: bash
-        run: npm config set optional true
-
-      # Prefer deterministic install; if the Rollup bug hits, nuke & reinstall
+      # Deterministic install; if Rollup’s optional-deps bug appears, clean & reinstall
       - name: Install deps (ci with fallback)
         shell: bash
         run: |
           set -e
           npm ci || (
-            echo "npm ci failed; applying Rollup optional-deps workaround..."
+            echo "npm ci failed; applying workaround..."
             rm -rf node_modules package-lock.json ~/.npm/_cacache
             npm install --no-audit --no-fund
           )
