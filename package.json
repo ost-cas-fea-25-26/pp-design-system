@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "vite",
     "clean": "rm -rf ./lib",
+    "prepack": "npm run build",
     "build": "npm run clean && npm run build:esm && npm run build:cjs",
     "build:esm": "tsc -p ./tsconfig.esm.json",
     "build:cjs": "tsc -p ./tsconfig.cjs.json && mv lib/cjs/index.js lib/cjs/index.cjs",
