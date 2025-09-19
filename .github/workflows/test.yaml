@@ -10,11 +10,10 @@ jobs:
         with:
           node-version: 22
 
-      - name: Install deps (ci with fallback)
+      - name: Install deps (install with fallback)
         shell: bash
         run: |
           set -e
-          npm config set optional true
           npm i || (
             echo "npm ci failed; applying Rollup optional-deps workaround..."
             rm -rf node_modules package-lock.json ~/.npm/_cacache
