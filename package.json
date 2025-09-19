@@ -1,11 +1,13 @@
 {
   "name": "pp-design-system",
-  "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "clean": "rm -rf ./lib",
+    "build": "npm run clean && npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc -p ./tsconfig.esm.json",
+    "build:cjs": "tsc -p ./tsconfig.cjs.json && mv lib/cjs/index.js lib/cjs/index.cjs",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
@@ -18,6 +20,28 @@
   },
   "release": {
     "branches": ["main"]
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com",
+    "tag": "latest"
+  },
+  "files": [
+    "dist/**/*",
+    "tailwind.config.js"
+  ],
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/cjs/types/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/types/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
+    },
+    "./tailwind-config": "./tailwind.config.js"
   },
   "dependencies": {
     "react": "^19.1.1",

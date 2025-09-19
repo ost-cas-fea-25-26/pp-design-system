@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "target": "ES2019",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "jsx": "react-jsx",
+    "types": ["react", "react-dom"],
+    "outDir": "./lib/cjs",
+    "declaration": true,
+    "declarationDir": "./lib/cjs/types",
+    "noEmit": false
+  },
+  "include": ["src/components/**/*"]
+
+}
