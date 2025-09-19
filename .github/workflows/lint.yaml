@@ -4,19 +4,25 @@ on: [push, pull_request]
 jobs:
   lint:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: npm
 
-      - name: Install deps (install with fallback)
+      # Make sure optional deps are not skipped
+      - name: Ensure optional deps enabled
+        shell: bash
+        run: npm config set optional true
+
+      # Prefer deterministic install; if the Rollup bug hits, nuke & reinstall
+      - name: Install deps (ci with fallback)
         shell: bash
         run: |
           set -e
-          npm i || (
+          npm ci || (
             echo "npm ci failed; applying Rollup optional-deps workaround..."
             rm -rf node_modules package-lock.json ~/.npm/_cacache
             npm install --no-audit --no-fund
