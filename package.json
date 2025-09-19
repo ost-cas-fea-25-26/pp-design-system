@@ -47,9 +47,12 @@
     "./tailwind-config": "./tailwind.config.js"
   },
   "dependencies": {
+    "@radix-ui/react-slot": "^1.2.3",
     "@tailwindcss/vite": "^4.1.13",
+    "class-variance-authority": "^0.7.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
