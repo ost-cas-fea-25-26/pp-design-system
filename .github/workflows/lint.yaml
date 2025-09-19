@@ -9,8 +9,8 @@ jobs:
         with:
           node-version: 22
 
-      - name: Install deps (npm ci)
+      - name: Install deps
         shell: bash
-        run: npm ci
+        run: npm install
 
       - run: npm run lint
