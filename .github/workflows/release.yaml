@@ -3,15 +3,38 @@ name: Release
 on:
   workflow_run:
     workflows: ["Setup Dependencies"]
-    types:
-      - completed
+    types: [completed]
+
 jobs:
-  publish:
+  release:
+    if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main' }}
     runs-on: ubuntu-latest
+
     steps:
-      - run: npm ci                 # installs devDependencies (incl. @types/*)
-      - run: npm run build          # creates lib/esm and lib/cjs
-      - run: npm pack --dry-run     # optional: verify tarball includes lib/**
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          registry-url: https://registry.npmjs.org/
+
+      - name: Restore node_modules cache
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: deps-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+
+      - name: Install dependencies if cache missed
+        run: |
+          if [ ! -d node_modules ]; then
+            npm install
+          fi
+
+      - name: Run build
+        run: npm run build
 
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v5
