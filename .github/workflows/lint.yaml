@@ -1,8 +1,10 @@
 name: Lint
 
 on:
-  pull_request:
-  push:
+  workflow_run:
+    workflows: ["Setup Dependencies"]
+    types:
+      - completed
 
 jobs:
   lint:

@@ -1,7 +1,10 @@
 name: Setup Dependencies
 
 on:
-  workflow_dispatch: # run manually, or you can add push/pull_request triggers
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
   install:
