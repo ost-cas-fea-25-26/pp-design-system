@@ -9,15 +9,23 @@ jobs:
       - uses: ./.github/actions/setup-deps
       - run: npm run build
 
+      - name: Pack dry-run
+        run: npm pack --dry-run
+
+      - name: Assert NPM_TOKEN is present
+        run: |
+          if [ -z "${NPM_TOKEN}" ]; then
+            echo "NPM_TOKEN is empty or undefined"; exit 1;
+          fi
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
       - name: Verify npm token
         run: |
           echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
           npm whoami
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Pack dry-run
-        run: npm pack --dry-run
 
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v5
