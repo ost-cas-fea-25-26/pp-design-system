@@ -33,12 +33,12 @@
   "exports": {
     ".": {
       "import": {
-        "types": "./dist/cjs/types/index.d.ts",
-        "default": "./dist/cjs/index.js"
+        "types": "./lib/cjs/types/index.d.ts",
+        "default": "./lib/cjs/index.js"
       },
       "require": {
-        "types": "./dist/cjs/types/index.d.ts",
-        "default": "./dist/cjs/index.js"
+        "types": "./lib/cjs/types/index.d.ts",
+        "default": "./lib/cjs/index.js"
       }
     },
     "./tailwind-config": "./tailwind.config.js"
