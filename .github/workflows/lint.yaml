@@ -16,6 +16,9 @@ jobs:
           node-version: 22
           cache: npm
 
-      - run: npm ci
+      - name: Clean install (remove node_modules + lockfile cache)
+        run: |
+          rm -rf node_modules package-lock.json
+          npm install
 
       - run: npm run lint
