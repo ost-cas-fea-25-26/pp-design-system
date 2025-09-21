@@ -1,0 +1,27 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "target": "ES2019",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "jsx": "react-jsx",
+    "types": ["react", "react-dom"],
+    "rootDir": "./src",
+    "outDir": "./dist/cjs",
+    "declaration": true,
+    "declarationDir": "./dist/cjs/types",
+    "noEmit": false,
+    "stripInternal": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*"],
+  "exclude": [
+    "**/*.stories.*",
+    "**/*.test.*",
+    "**/__tests__/**",
+    "**/__mocks__/**",
+    ".storybook",
+    "storybook-static",
+    "node_modules"
+  ]
+}

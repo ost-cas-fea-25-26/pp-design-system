@@ -1,0 +1,27 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "types": ["react", "react-dom"],
+    "rootDir": "./src",
+    "outDir": "./dist/esm",
+    "declaration": true,
+    "declarationDir": "./dist/esm/types",
+    "noEmit": false,
+    "stripInternal": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*"],
+  "exclude": [
+    "**/*.stories.*",
+    "**/*.test.*",
+    "**/__tests__/**",
+    "**/__mocks__/**",
+    ".storybook",
+    "storybook-static",
+    "node_modules"
+  ]
+}

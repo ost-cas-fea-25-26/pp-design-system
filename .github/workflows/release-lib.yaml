@@ -1,0 +1,31 @@
+name: "🚀 Release — Library"
+
+on:
+  workflow_run:
+    workflows: ["🛡️ Quality Check"]
+    types: [completed]
+
+jobs:
+  release:
+    name: "📦 Publish NPM"
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main' }}
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+      - name: "Setup Node.js"
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: "Install dependencies"
+        run: npm ci --no-audit --no-fund
+      - name: "Build library"
+        run: npm run build:lib
+      - name: "Semantic Release"
+        uses: cycjimmy/semantic-release-action@v5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
