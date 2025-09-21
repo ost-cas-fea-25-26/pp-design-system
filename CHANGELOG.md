@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v1.0.0...v2.0.0) (2025-09-21)
+
+
+### Features
+
+* trigger major release ([29db429](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/29db4296a42ce4fdd487615c354484e56c6e908c))
+
+
+### BREAKING CHANGES
+
+* force major
+
 # 1.0.0 (2025-09-21)
 
 
