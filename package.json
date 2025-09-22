@@ -41,9 +41,9 @@
       }
     },
     "./styles": {
-      "default": "./dist/styles/tailwind.css",
       "import": "./dist/styles/tailwind.css",
-      "require": "./dist/styles/tailwind.css"
+      "require": "./dist/styles/tailwind.css",
+      "default": "./dist/styles/tailwind.css"
     }
   },
   "dependencies": {
@@ -89,6 +89,7 @@
     "storybook": "^9.1.7",
     "typescript": "~5.8.3",
     "vite": "^7.1.6",
+    "vite-plugin-svgr": "^4.5.0",
     "vitest": "^3.2.4"
   }
 }
