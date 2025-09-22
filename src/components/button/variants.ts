@@ -5,7 +5,7 @@ export const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default:
+        primary:
           "bg-primary text-primary-foreground active:bg-violet-700 hover:outline-2 hover:outline-violet-900 hover:bg-violet-700",
         secondary:
           "bg-secondary text-secondary-foreground active:bg-slate-700 hover:bg-slate-700",
@@ -18,7 +18,7 @@ export const buttonVariants = cva(
       },
     },
     defaultVariants: {
-      variant: "default",
+      variant: "primary",
       size: "default",
     },
   },

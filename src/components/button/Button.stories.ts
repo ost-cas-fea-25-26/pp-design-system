@@ -12,7 +12,7 @@ const meta: Meta<typeof Button> = {
   argTypes: {
     variant: {
       control: "select",
-      options: ["default", "secondary", "gradient"],
+      options: ["primary", "secondary", "gradient"],
     },
     size: {
       control: "select",
@@ -23,8 +23,8 @@ const meta: Meta<typeof Button> = {
   },
   args: {
     onClick: fn(),
-    children: "Button",
-    variant: "default",
+    children: "Primary Button",
+    variant: "primary",
     size: "default",
   },
 };
@@ -32,11 +32,18 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+export const Primary: Story = {};
 
 export const Secondary: Story = {
   args: {
     variant: "secondary",
-    children: "Secondary",
+    children: "Secondary Button",
+  },
+};
+
+export const Gradient: Story = {
+  args: {
+    variant: "gradient",
+    children: "Gradient Button",
   },
 };

@@ -17,6 +17,7 @@ export const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const Comp = asChild ? Slot : "button";
+  console.info(props);
 
   return (
     <Comp
