@@ -10,7 +10,7 @@ export const buttonVariants = cva(
         secondary:
           "bg-secondary text-secondary-foreground active:bg-slate-700 hover:bg-slate-700",
         gradient:
-          "bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
+          "bg-gradient-to-r from-pink-500 to-violet-500 text-primary-foreground hover:outline hover:outline-3 hover:outline-violet-100 active:outline active:outline-4 active:outline-violet-200 transition-all duration-200",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
