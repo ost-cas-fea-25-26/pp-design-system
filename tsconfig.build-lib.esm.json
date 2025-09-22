@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.build-lib.base.json",
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "outDir": "./dist/esm",
+    "declarationDir": "./dist/esm/types"
+  }
+}
