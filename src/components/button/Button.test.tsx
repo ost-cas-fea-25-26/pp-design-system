@@ -8,7 +8,7 @@ describe("Button", () => {
     const { container } = render(<Button size="default" variant="primary" />);
 
     const root = container.firstChild as HTMLElement;
-    expect(root).toHaveClass("bg-primary", "h-9");
+    expect(root).toHaveClass("bg-primary", "p-3");
   });
 
   it("renders secondary variant", () => {
@@ -30,7 +30,7 @@ describe("Button", () => {
   it("renders large size", () => {
     const { container } = render(<Button size="lg" />);
     const root = container.firstChild as HTMLElement;
-    expect(root).toHaveClass("h-10", "px-6");
+    expect(root).toHaveClass("px-6", "py-4");
   });
 
   it("renders with children text", () => {

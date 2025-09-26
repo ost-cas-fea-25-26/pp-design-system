@@ -85,6 +85,7 @@ export const WithLabelAndCustomSVG: Story = {
 
 export const OnlyWithCustomSVG: Story = {
   args: {
+    className: "rounded-full p-4",
     children: (
       <>
         {/* Inline Custom SVG */}
