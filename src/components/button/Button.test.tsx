@@ -1,26 +1,59 @@
-import { render, screen, fireEvent } from "@testing-library/react";
-import { describe, it, expect, vi } from "vitest";
+import { render } from "@testing-library/react";
+import { describe, expect, it } from "vitest";
 import "@testing-library/jest-dom";
-import { Button } from "./button";
+import { Button } from "./index";
 
 describe("Button", () => {
-  it("renders with text and calls onClick", () => {
-    const handleClick = vi.fn();
+  it("renders button with default size and variant", () => {
+    const { container } = render(<Button size="default" variant="primary" />);
 
-    render(
-      <Button variant="default" size="default" onClick={handleClick}>
-        Click me
+    const root = container.firstChild as HTMLElement;
+    expect(root).toHaveClass("bg-primary", "h-9");
+  });
+
+  it("renders secondary variant", () => {
+    const { container } = render(<Button variant="secondary" />);
+    const root = container.firstChild as HTMLElement;
+    expect(root).toHaveClass("bg-secondary");
+  });
+
+  it("renders gradient variant", () => {
+    const { container } = render(<Button variant="gradient" />);
+    const root = container.firstChild as HTMLElement;
+    expect(root).toHaveClass(
+      "bg-gradient-to-r",
+      "from-pink-500",
+      "to-violet-500",
+    );
+  });
+
+  it("renders large size", () => {
+    const { container } = render(<Button size="lg" />);
+    const root = container.firstChild as HTMLElement;
+    expect(root).toHaveClass("h-10", "px-6");
+  });
+
+  it("renders with children text", () => {
+    const { getByText } = render(<Button>Test</Button>);
+    expect(getByText("Test")).toBeInTheDocument();
+  });
+
+  it("renders only with custom SVG child", () => {
+    const { container } = render(
+      <Button>
+        <svg data-testid="custom-svg" />
       </Button>,
     );
+    expect(container.querySelector("svg")).toBeInTheDocument();
+  });
 
-    const btn = screen.getByRole("button", { name: /click me/i });
-
-    // verifies it’s in the document and has base classes
-    expect(btn).toBeInTheDocument();
-    expect(btn.className).toContain("inline-flex");
-
-    // simulate a click and ensure handler fires
-    fireEvent.click(btn);
-    expect(handleClick).toHaveBeenCalledTimes(1);
+  it("renders with text and custom SVG child", () => {
+    const { getByText, container } = render(
+      <Button>
+        Hello <svg data-testid="custom-svg" />
+      </Button>,
+    );
+    expect(getByText("Hello")).toBeInTheDocument();
+    expect(container.querySelector("svg")).toBeInTheDocument();
   });
 });

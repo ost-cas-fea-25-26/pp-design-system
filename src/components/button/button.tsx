@@ -11,8 +11,8 @@ type ButtonProps = React.ComponentProps<"button"> &
 
 export const Button: React.FC<ButtonProps> = ({
   className,
-  variant,
-  size,
+  variant = "primary",
+  size = "default",
   asChild = false,
   ...props
 }) => {
