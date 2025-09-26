@@ -41,9 +41,9 @@
       }
     },
     "./styles": {
-      "default": "./dist/styles/tailwind.css",
       "import": "./dist/styles/tailwind.css",
-      "require": "./dist/styles/tailwind.css"
+      "require": "./dist/styles/tailwind.css",
+      "default": "./dist/styles/tailwind.css"
     }
   },
   "dependencies": {
