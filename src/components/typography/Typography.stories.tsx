@@ -83,6 +83,6 @@ export const LabelS: Story = {
 export const Placeholder: Story = {
   args: {
     variant: "placeholder",
-    children: "Placholder",
+    children: "Placeholder",
   },
 };

@@ -23,27 +23,22 @@ export const Typography: React.FC<TypographyProps> = ({
   children,
 }) => {
   const styles: Record<TypographyVariant, string> = {
-    // Headings
-    h1: "text-4xl font-bold leading-[40px]",
-    h2: "text-3xl font-semibold leading-[36px]",
-    h3: "text-2xl font-semibold leading-[32px]",
-    h4: "text-xl font-medium leading-[28px]",
+    h1: "poppins-bold text-[48px] leading-[1.25] tracking-normal text-slate-700",
+    h2: "poppins-bold text-[40px] leading-[1.25] tracking-normal",
+    h3: "poppins-semibold text-[32px] leading-[1.25] tracking-normal",
+    h4: "poppins-semibold text-[24px] leading-[1.25] tracking-normal",
 
-    // Paragraphs
-    paragraphL: "text-lg font-normal leading-[28px]",
-    paragraphM: "text-base font-normal leading-[24px]",
+    paragraphL: "poppins-medium text-[24px] leading-[1.45] tracking-normal",
+    paragraphM: "poppins-medium text-[18px] leading-[1.4] tracking-normal",
 
-    // Labels
-    labelXL: "text-base font-bold leading-[24px]",
-    labelL: "text-sm font-semibold leading-[20px]",
-    labelM: "text-xs font-medium leading-[18px]",
-    labelS: "text-[10px] font-medium leading-[16px]",
-
-    // Placeholder
-    placeholder: "text-base font-normal leading-[24px] text-gray-400 italic",
+    labelXL: "poppins-semibold text-[24px] leading-normal tracking-normal",
+    labelL: "poppins-semibold text-[20px] leading-normal tracking-normal",
+    labelM: "poppins-semibold text-[16px] leading-normal tracking-normal",
+    placeholder:
+      "poppins-medium text-[16px] leading-normal tracking-normal text-slate-300",
+    labelS: "poppins-semibold text-[14px] leading-normal tracking-normal",
   };
 
-  // Map variant to a valid HTML element
   const TagMap: Record<TypographyVariant, string> = {
     h1: "h1",
     h2: "h2",
@@ -55,20 +50,10 @@ export const Typography: React.FC<TypographyProps> = ({
     labelL: "span",
     labelM: "span",
     labelS: "span",
-    placeholder: "input",
+    placeholder: "span",
   };
 
   const Tag = TagMap[variant] as keyof JSX.IntrinsicElements;
-
-  if (variant === "placeholder") {
-    return (
-      <input
-        className={styles[variant]}
-        placeholder={typeof children === "string" ? children : ""}
-        readOnly
-      />
-    );
-  }
 
   return <Tag className={styles[variant]}>{children}</Tag>;
 };
