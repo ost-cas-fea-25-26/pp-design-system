@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Avatar } from "./index";
 
 const meta = {
-  title: "Example/Avatar",
+  title: "Avatar",
   component: Avatar,
   tags: ["autodocs"],
   parameters: { layout: "centered" },
