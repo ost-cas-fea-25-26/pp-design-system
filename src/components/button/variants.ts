@@ -6,9 +6,9 @@ export const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "bg-primary text-primary-foreground active:bg-violet-700 hover:bg-violet-700 hover:outline-violet-100 active:outline-slate-200",
+          "bg-primary text-primary-foreground active:bg-primary-active hover:bg-primary-hover hover:outline-violet-100 active:outline-slate-200",
         secondary:
-          "bg-secondary text-secondary-foreground active:bg-slate-700 hover:bg-slate-700 hover:outline-slate-100 active:outline-slate-200",
+          "bg-secondary text-secondary-foreground active:bg-secondary-active hover:bg-secondary-hover hover:outline-slate-100 active:outline-slate-200",
         gradient:
           "bg-gradient-to-r from-pink-500 to-violet-500 text-primary-foreground hover:outline-violet-100 active:outline-violet-200",
       },
