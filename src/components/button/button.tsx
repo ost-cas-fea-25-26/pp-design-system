@@ -4,9 +4,7 @@ import { type VariantProps } from "class-variance-authority";
 import { buttonVariants } from "./variants";
 
 type ButtonProps = React.ComponentProps<"button"> &
-  VariantProps<typeof buttonVariants> & {
-    asChild?: boolean;
-  };
+  VariantProps<typeof buttonVariants>;
 
 export const Button: React.FC<ButtonProps> = ({
   className,
