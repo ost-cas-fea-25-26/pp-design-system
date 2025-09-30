@@ -17,9 +17,5 @@ export const buttonVariants = cva(
         lg: "px-6 py-4 gap-3 has-[>svg]:gap-3",
       },
     },
-    defaultVariants: {
-      variant: "primary",
-      size: "default",
-    },
   },
 );
