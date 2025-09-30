@@ -41,7 +41,7 @@ describe("Button", () => {
   it("renders only with custom SVG child", () => {
     const { container } = render(
       <Button>
-        <svg data-testid="custom-svg" />
+        <svg />
       </Button>,
     );
     expect(container.querySelector("svg")).toBeInTheDocument();
@@ -50,7 +50,7 @@ describe("Button", () => {
   it("renders with text and custom SVG child", () => {
     const { getByText, container } = render(
       <Button>
-        Hello <svg data-testid="custom-svg" />
+        Hello <svg />
       </Button>,
     );
     expect(getByText("Hello")).toBeInTheDocument();
