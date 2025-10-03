@@ -9,7 +9,14 @@ const meta: Meta<typeof CustomIcon> = {
   argTypes: {
     name: {
       control: "select",
-      options: ["settings", "upload"],
+      options: [
+        "settings",
+        "upload",
+        "heart",
+        "heartFilled",
+        "reply",
+        "replyFilled",
+      ],
     },
   },
   args: {
