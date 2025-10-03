@@ -16,7 +16,8 @@ type IconName =
   | "heartFilled"
   | "reply"
   | "replyFilled";
-type IconColor = "primary" | "secondary" | "accent";
+
+type IconColor = "primary" | "secondary" | "accent" | "white";
 
 type CustomIconProps = {
   name: IconName;
@@ -28,6 +29,7 @@ const iconClassMap: Record<IconColor, string> = {
   primary: "text-primary",
   secondary: "text-secondary",
   accent: "text-pink-500", // TODO: text-accent
+  white: "text-white",
 };
 
 const iconMap: Record<
