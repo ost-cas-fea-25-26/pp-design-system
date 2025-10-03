@@ -19,25 +19,25 @@ const iconClassMap: Record<IconColor, string> = {
   accent: "text-pink-500", // TODO: text-accent
 };
 
-export const CustomIcon: FC<CustomIconProps> = ({ ...props }) => {
-  switch (props.name) {
-    case "settings":
-      return (
-        <SettingsIcon
-          className={iconClassMap[props.color]}
-          height={iconSize}
-          width={iconSize}
-        />
-      );
-    case "upload":
-      return (
-        <UploadIcon
-          className={iconClassMap[props.color]}
-          height={iconSize}
-          width={iconSize}
-        />
-      );
-    default:
-      return null;
+const iconMap: Record<
+  IconName,
+  FC<{ className: string; height: number; width: number }>
+> = {
+  settings: SettingsIcon,
+  upload: UploadIcon,
+};
+
+export const CustomIcon: FC<CustomIconProps> = ({ name, color }) => {
+  const IconComponent = iconMap[name];
+  if (!IconComponent) {
+    return null;
   }
+
+  return (
+    <IconComponent
+      className={iconClassMap[color]}
+      height={iconSize}
+      width={iconSize}
+    />
+  );
 };
