@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { fn } from "storybook/test";
 import { Button } from "./button";
-import { CustomIcon } from "../icon";
+import { HeartFilledIcon, SettingsIcon } from "../icons";
 
 const meta: Meta<typeof Button> = {
   title: "Button",
@@ -54,7 +54,7 @@ export const WithLabelAndCustomSVG: Story = {
     children: (
       <>
         With Label and Custom SVG
-        <CustomIcon name={"settings"} color="white" />
+        <SettingsIcon color="white" />
       </>
     ),
   },
@@ -63,6 +63,6 @@ export const WithLabelAndCustomSVG: Story = {
 export const OnlyWithCustomSVG: Story = {
   args: {
     className: "rounded-full p-4",
-    children: <CustomIcon name={"heartFilled"} color="white" />,
+    children: <HeartFilledIcon color="white" />,
   },
 };
