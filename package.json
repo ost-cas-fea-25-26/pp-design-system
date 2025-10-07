@@ -41,14 +41,13 @@
       }
     },
     "./styles": {
-      "default": "./dist/styles/tailwind.css",
       "import": "./dist/styles/tailwind.css",
-      "require": "./dist/styles/tailwind.css"
+      "require": "./dist/styles/tailwind.css",
+      "default": "./dist/styles/tailwind.css"
     }
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.10",
-    "@radix-ui/react-slot": "^1.2.3",
     "@tailwindcss/vite": "^4.1.13",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -89,6 +88,7 @@
     "storybook": "^9.1.7",
     "typescript": "~5.8.3",
     "vite": "^7.1.6",
+    "vite-plugin-svgr": "^4.5.0",
     "vitest": "^3.2.4"
   }
 }
