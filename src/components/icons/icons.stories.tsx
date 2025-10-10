@@ -60,7 +60,7 @@ const meta = {
   argTypes: {
     color: {
       control: "select",
-      options: ["primary", "accent", "neutral", "white"],
+      options: ["primary", "accent", "neutral", "white", "error"],
       description: "Color variant of the icon",
     },
   },
