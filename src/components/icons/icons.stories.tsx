@@ -12,6 +12,18 @@ import {
   ArrowRightIcon,
   MumbleIcon,
   ProfileIcon,
+  CalendarIcon,
+  CancelIcon,
+  CheckmarkIcon,
+  EditIcon,
+  EyeIcon,
+  FullscreenIcon,
+  LocationIcon,
+  LogoutIcon,
+  RepostIcon,
+  SendIcon,
+  ShareIcon,
+  TimeIcon,
 } from "./icons";
 
 const ICONS = [
@@ -27,6 +39,18 @@ const ICONS = [
   ArrowRightIcon,
   MumbleIcon,
   ProfileIcon,
+  CalendarIcon,
+  CancelIcon,
+  CheckmarkIcon,
+  EditIcon,
+  EyeIcon,
+  FullscreenIcon,
+  LocationIcon,
+  LogoutIcon,
+  RepostIcon,
+  SendIcon,
+  ShareIcon,
+  TimeIcon,
 ];
 
 const meta = {
