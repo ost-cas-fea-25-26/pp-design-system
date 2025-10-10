@@ -20,7 +20,6 @@ const config: KnipConfig = {
     "@semantic-release/npm",
     "@semantic-release/github",
   ],
-  ignoreUnresolved: [".svg*"],
 };
 
 export default config;
