@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { useState } from "react";
 import { Modal } from "./modal";
 import { Button } from "../button";
-import { HeartFilledIcon, SettingsIcon } from "../icons";
+import { CancelIcon, CheckmarkIcon } from "../icons";
 import { ButtonBar } from "../button-bar";
 
 const meta: Meta<typeof Modal> = {
@@ -38,7 +38,7 @@ export const Default: Story = {
                   onClick={() => setOpen(false)}
                 >
                   Cancel
-                  <HeartFilledIcon color="white" />
+                  <CancelIcon color="white" />
                 </Button>
               }
               rightButton={
@@ -50,7 +50,7 @@ export const Default: Story = {
                   }}
                 >
                   Save Changes
-                  <SettingsIcon color="white" />
+                  <CheckmarkIcon color="white" />
                 </Button>
               }
             />

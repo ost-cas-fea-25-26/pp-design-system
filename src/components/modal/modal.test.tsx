@@ -4,7 +4,7 @@ import "@testing-library/jest-dom";
 import { Modal } from "./modal";
 
 vi.mock("../icons", () => ({
-  HeartIcon: () => <span data-testid="mock-heart-icon" />,
+  CancelIcon: () => <span data-testid="mock-cancel-icon" />,
 }));
 
 describe("Modal", () => {
@@ -23,7 +23,7 @@ describe("Modal", () => {
     expect(screen.getByText("Test Modal")).toBeInTheDocument();
     expect(screen.getByText("Modal content")).toBeInTheDocument();
     expect(screen.getByText("Footer content")).toBeInTheDocument();
-    expect(screen.getByTestId("mock-heart-icon")).toBeInTheDocument();
+    expect(screen.getByTestId("mock-cancel-icon")).toBeInTheDocument();
   });
 
   it("does not render content when closed", () => {

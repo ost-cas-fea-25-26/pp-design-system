@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { ButtonBar } from "./button-bar";
 import { Button } from "../button";
-import { HeartFilledIcon, SettingsIcon } from "../icons";
+import { CancelIcon, CheckmarkIcon } from "../icons";
 
 const meta: Meta<typeof ButtonBar> = {
   title: "Button Bar",
@@ -16,13 +16,13 @@ const meta: Meta<typeof ButtonBar> = {
     leftButton: (
       <Button variant="secondary" fullWidth>
         Cancel
-        <HeartFilledIcon color="white" />
+        <CancelIcon color="white" />
       </Button>
     ),
     rightButton: (
       <Button variant="primary" fullWidth>
         Save
-        <SettingsIcon color="white" />
+        <CheckmarkIcon color="white" />
       </Button>
     ),
   },
