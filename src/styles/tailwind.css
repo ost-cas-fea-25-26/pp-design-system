@@ -22,7 +22,6 @@
     /* Typography  */
     --default-font-family: 'Poppins', sans-serif;
 
-    --text-*: initial;
     --text-9xl: 3rem;
     --text-9xl--line-height: calc(3.75 / 3);
 
