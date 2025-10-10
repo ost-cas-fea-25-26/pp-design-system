@@ -11,20 +11,16 @@ describe("Button", () => {
     expect(root).toHaveClass("bg-primary", "p-3");
   });
 
-  it("renders secondary variant", () => {
-    const { container } = render(<Button variant="secondary" />);
+  it("renders neutral variant", () => {
+    const { container } = render(<Button variant="neutral" />);
     const root = container.firstChild as HTMLElement;
-    expect(root).toHaveClass("bg-secondary");
+    expect(root).toHaveClass("bg-neutral");
   });
 
   it("renders gradient variant", () => {
     const { container } = render(<Button variant="gradient" />);
     const root = container.firstChild as HTMLElement;
-    expect(root).toHaveClass(
-      "bg-gradient-to-r",
-      "from-pink-500",
-      "to-violet-500",
-    );
+    expect(root).toHaveClass("bg-gradient-to-r", "from-accent", "to-primary");
   });
 
   it("renders large size", () => {
@@ -55,5 +51,17 @@ describe("Button", () => {
     );
     expect(getByText("Hello")).toBeInTheDocument();
     expect(container.querySelector("svg")).toBeInTheDocument();
+  });
+
+  it("applies full width when fullWidth is true", () => {
+    const { container } = render(<Button fullWidth>Full Width</Button>);
+    const root = container.firstChild as HTMLElement;
+    expect(root).toHaveClass("w-full");
+  });
+
+  it("does not apply full width when fullWidth is not passed", () => {
+    const { container } = render(<Button>Normal</Button>);
+    const root = container.firstChild as HTMLElement;
+    expect(root).not.toHaveClass("w-full");
   });
 });

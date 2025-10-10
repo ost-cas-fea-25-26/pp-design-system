@@ -13,7 +13,7 @@ const meta: Meta<typeof Button> = {
   argTypes: {
     variant: {
       control: "select",
-      options: ["primary", "secondary", "gradient"],
+      options: ["primary", "neutral", "gradient"],
     },
     size: {
       control: "select",
@@ -35,10 +35,10 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {};
 
-export const Secondary: Story = {
+export const Neutral: Story = {
   args: {
-    variant: "secondary",
-    children: "Secondary Button",
+    variant: "neutral",
+    children: "Neutral Button",
   },
 };
 
@@ -65,4 +65,16 @@ export const OnlyWithCustomSVG: Story = {
     className: "rounded-full p-4",
     children: <HeartFilledIcon color="white" />,
   },
+};
+
+export const FullWidth: Story = {
+  args: {
+    fullWidth: true,
+    children: "Full Width Button",
+  },
+  render: (args) => (
+    <div className="w-sm border border-primary border-dashed rounded-md p-4">
+      <Button {...args} />
+    </div>
+  ),
 };
