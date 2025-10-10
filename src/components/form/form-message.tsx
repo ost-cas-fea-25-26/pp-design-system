@@ -15,7 +15,7 @@ export const FormMessage: FC<React.ComponentProps<"p">> = ({
   return (
     <p
       id={formMessageId}
-      className={twMerge("text-sm text-destructive", className)}
+      className={twMerge("text-sm text-error", className)}
       {...props}
     >
       {body}

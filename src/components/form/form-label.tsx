@@ -12,7 +12,7 @@ export const FormLabel: FC<
   return (
     <Label
       htmlFor={formItemId}
-      className={twMerge(error ? "text-destructive" : "", className)}
+      className={twMerge(error ? "text-error" : "", className)}
       {...props}
     />
   );

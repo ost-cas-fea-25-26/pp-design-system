@@ -9,19 +9,16 @@ export const Input: FC<React.ComponentProps<"input">> = ({
     type={type}
     className={twMerge(
       // Base
-      "text-slate-700 file:text-slate-300 placeholder:text-slate-300 selection:bg-primary selection:text-white",
-      "border border-slate-300 h-12 w-full min-w-0 rounded-md bg-slate-50 p-4 text-base shadow-xs transition-all outline-none",
-      "file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
+      "text-neutral bg-neutral-50 border border-neutral-200 h-12 w-full min-w-0 rounded-md p-4 text-base transition-all outline-none",
+      "placeholder:text-neutral-400 selection:bg-primary selection:text-primary-foreground",
+      "disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 text-m",
 
       // Hover & Focus
-      "hover:border-primary hover:border",
-      "focus-visible:border-primary focus-visible:ring-primary focus-visible:ring-[1px]",
+      "hover:border-primary focus-visible:border-primary focus-visible:ring-primary focus-visible:ring",
 
-      // Active
-      "active:border-primary active:border-[2px]",
-
-      // Validation
-      "aria-invalid:ring-pink-500/20 aria-invalid:border-pink-500",
+      // Invalid
+      "aria-invalid:border-error aria-invalid:hover:border-error-hover aria-invalid:active:border-error-active",
+      "aria-invalid:focus-visible:border-error aria-invalid:focus-visible:ring-error aria-invalid:focus-visible:ring",
     )}
     {...props}
   />
