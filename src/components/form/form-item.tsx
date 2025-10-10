@@ -15,7 +15,7 @@ export const FormItem: FC<React.ComponentProps<"div">> = ({
 
   return (
     <FormItemContext.Provider value={{ id }}>
-      <div className={twMerge("grid gap-2", className)} {...props} />
+      <div className={twMerge("grid gap-0", className)} {...props} />
     </FormItemContext.Provider>
   );
 };

@@ -2,17 +2,26 @@ import React, { FC } from "react";
 import { twMerge } from "tailwind-merge";
 
 export const Input: FC<React.ComponentProps<"input">> = ({
-  className,
   type,
   ...props
 }) => (
   <input
     type={type}
     className={twMerge(
-      "file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
-      "focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]",
-      "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
-      className,
+      // Base
+      "text-slate-700 file:text-slate-300 placeholder:text-slate-300 selection:bg-primary selection:text-white",
+      "border border-slate-300 h-12 w-full min-w-0 rounded-md bg-slate-50 p-4 text-base shadow-xs transition-all outline-none",
+      "file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
+
+      // Hover & Focus
+      "hover:border-primary hover:border",
+      "focus-visible:border-primary focus-visible:ring-primary focus-visible:ring-[1px]",
+
+      // Active
+      "active:border-primary active:border-[2px]",
+
+      // Validation
+      "aria-invalid:ring-pink-500/20 aria-invalid:border-pink-500",
     )}
     {...props}
   />
