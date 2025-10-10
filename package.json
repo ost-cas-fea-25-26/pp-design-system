@@ -48,7 +48,6 @@
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.10",
-    "@radix-ui/react-slot": "^1.2.3",
     "@tailwindcss/vite": "^4.1.13",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -68,7 +67,7 @@
     "@smartive/eslint-config": "^6.4.0",
     "@smartive/prettier-config": "^3.1.2",
     "@storybook/addon-a11y": "^9.1.7",
-    "@storybook/addon-docs": "^9.1.7",
+    "@storybook/addon-docs": "^9.1.10",
     "@storybook/addon-onboarding": "^9.1.7",
     "@storybook/addon-vitest": "^9.1.7",
     "@storybook/react-vite": "^9.1.7",
