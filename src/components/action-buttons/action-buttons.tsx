@@ -1,6 +1,6 @@
 import React, { FC, ReactNode } from "react";
 
-export type ActionButtonsProps = {
+type ActionButtonsProps = {
   leftButton: ReactNode;
   rightButton: ReactNode;
 };

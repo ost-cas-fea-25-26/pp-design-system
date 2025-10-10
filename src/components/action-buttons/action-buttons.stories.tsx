@@ -33,7 +33,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: (args) => (
-    <div className="w-sm border border-primary border-dotted rounded-md p-4">
+    <div className="w-sm border border-primary border-dashed rounded-md p-4">
       <ActionButtons {...args} />
     </div>
   ),

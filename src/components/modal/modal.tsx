@@ -2,7 +2,7 @@ import React, { FC, ReactNode } from "react";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { HeartIcon } from "../icons";
 
-export type ModalProps = {
+type ModalProps = {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   title: string;

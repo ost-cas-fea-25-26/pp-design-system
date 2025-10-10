@@ -73,7 +73,7 @@ export const FullWidth: Story = {
     children: "Full Width Button",
   },
   render: (args) => (
-    <div className="w-sm border border-primary border-dotted rounded-md p-4">
+    <div className="w-sm border border-primary border-dashed rounded-md p-4">
       <Button {...args} />
     </div>
   ),
