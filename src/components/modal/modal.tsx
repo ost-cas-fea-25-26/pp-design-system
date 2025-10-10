@@ -19,20 +19,35 @@ export const Modal: FC<ModalProps> = ({
 }) => (
   <DialogPrimitive.Root open={open} onOpenChange={onOpenChange}>
     <DialogPrimitive.Portal>
-      <DialogPrimitive.Overlay className="fixed inset-0 z-50 bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
-      <DialogPrimitive.Content className="fixed top-1/2 left-1/2 z-50 w-full max-w-lg -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-lg bg-background shadow-lg outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95">
+      <DialogPrimitive.Overlay
+        className="fixed inset-0 z-50 bg-neutral-900/20
+          data-[state=open]:animate-in data-[state=closed]:animate-out
+          data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"
+      />
+      <DialogPrimitive.Content
+        className="fixed top-1/2 left-1/2 z-50 w-full max-w-lg -translate-x-1/2 -translate-y-1/2
+          overflow-hidden rounded-xl bg-neutral-50 shadow-xl outline-none
+          data-[state=open]:animate-in data-[state=closed]:animate-out
+          data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0
+          data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95"
+      >
         <div className="relative bg-primary px-8 py-6">
-          <DialogPrimitive.Title className="heading3 text-primary-foreground">
+          <DialogPrimitive.Title className="heading-3 text-primary-foreground">
             {title}
           </DialogPrimitive.Title>
+
           <DialogPrimitive.Close
-            className="absolute right-6 top-1/2 -translate-y-1/2 cursor-pointer rounded-sm text-white transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
+            className="absolute right-6 top-1/2 -translate-y-1/2 cursor-pointer rounded-full
+              text-primary-foreground hover:opacity-90 transition
+              focus-visible:outline-none focus-visible:ring-2
+              focus-visible:ring-accent focus-visible:ring-offset-2
+              focus-visible:ring-offset-primary"
             aria-label="Close"
           >
             <CancelIcon color="white" />
           </DialogPrimitive.Close>
         </div>
-        <div className="px-8 pt-8 pb-16">{children}</div>
+        <div className="px-8 pt-8 pb-16 paragraph">{children}</div>
         <div className="px-8 pb-8">{footer}</div>
       </DialogPrimitive.Content>
     </DialogPrimitive.Portal>

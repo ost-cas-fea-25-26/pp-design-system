@@ -6,11 +6,11 @@ export const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "bg-primary text-primary-foreground active:bg-primary-active hover:bg-primary-hover hover:outline-violet-100 active:outline-slate-200",
-        secondary:
-          "bg-secondary text-secondary-foreground active:bg-secondary-active hover:bg-secondary-hover hover:outline-slate-100 active:outline-slate-200",
+          "bg-primary text-primary-foreground active:bg-primary-active hover:bg-primary-hover hover:outline-primary-100 active:outline-neutral-200",
+        neutral:
+          "bg-neutral text-neutral-foreground active:bg-neutral-active hover:bg-neutral-hover hover:outline-neutral-100 active:outline-neutral-200",
         gradient:
-          "bg-gradient-to-r from-pink-500 to-violet-500 text-primary-foreground hover:outline-violet-100 active:outline-violet-200",
+          "bg-gradient-to-r from-accent to-primary text-primary-foreground hover:outline-primary-100 active:outline-primary-200",
       },
       size: {
         default: "p-3 gap-2 has-[>svg]:gap-2",
