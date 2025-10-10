@@ -37,11 +37,8 @@ export const Modal: FC<ModalProps> = ({
           </DialogPrimitive.Title>
 
           <DialogPrimitive.Close
-            className="absolute right-6 top-1/2 -translate-y-1/2 cursor-pointer rounded-full
-              text-primary-foreground hover:opacity-90 transition
-              focus-visible:outline-none focus-visible:ring-2
-              focus-visible:ring-accent focus-visible:ring-offset-2
-              focus-visible:ring-offset-primary"
+            className="absolute right-6 top-1/2 -translate-y-1/2 cursor-pointer rounded
+              text-primary-foreground hover:opacity-90 transition focus-ring-primary-inverted"
             aria-label="Close"
           >
             <CancelIcon color="white" />

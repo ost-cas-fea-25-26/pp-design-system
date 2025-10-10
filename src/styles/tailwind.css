@@ -179,4 +179,16 @@
         font-size: var(--text-m);
         line-height: var(--text-m--line-height);
     }
+
+    .focus-ring-primary {
+        @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-200 focus-visible:ring-offset-2;
+    }
+
+    .focus-ring-primary-inverted {
+        @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-800 focus-visible:ring-offset-4 focus-visible:ring-offset-primary;
+    }
+
+    .focus-ring-neutral {
+        @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-200 focus-visible:ring-offset-2;
+    }
 }
