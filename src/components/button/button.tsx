@@ -4,18 +4,23 @@ import { type VariantProps } from "class-variance-authority";
 import { buttonVariants } from "./variants";
 
 type ButtonProps = React.ComponentProps<"button"> &
-  VariantProps<typeof buttonVariants>;
+  VariantProps<typeof buttonVariants> & {
+    fullWidth?: boolean;
+  };
 
 export const Button: React.FC<ButtonProps> = ({
   className,
   variant = "primary",
   size = "default",
+  fullWidth = false,
   ...props
-}) => {
-  return (
-    <button
-      className={twMerge(buttonVariants({ variant, size, className }))}
-      {...props}
-    />
-  );
-};
+}) => (
+  <button
+    className={twMerge(
+      buttonVariants({ variant, size }),
+      fullWidth && "w-full",
+      className,
+    )}
+    {...props}
+  />
+);
