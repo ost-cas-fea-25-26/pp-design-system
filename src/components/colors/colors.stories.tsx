@@ -115,20 +115,6 @@ export const Default: Story = {
       { name: "foreground", colorClass: "bg-error-foreground" },
     ];
 
-    const successSpecials = [
-      { name: "default", colorClass: "bg-success" },
-      { name: "hover", colorClass: "bg-success-hover" },
-      { name: "active", colorClass: "bg-success-active" },
-      { name: "foreground", colorClass: "bg-success-foreground" },
-    ];
-
-    const warningSpecials = [
-      { name: "default", colorClass: "bg-warning" },
-      { name: "hover", colorClass: "bg-warning-hover" },
-      { name: "active", colorClass: "bg-warning-active" },
-      { name: "foreground", colorClass: "bg-warning-foreground" },
-    ];
-
     return (
       <div className="p-8 space-y-8 w-full max-w-none">
         <ColorRow
@@ -147,8 +133,6 @@ export const Default: Story = {
           scales={neutralScales}
         />
         <ColorRow title="Error" specials={errorSpecials} scales={[]} />
-        <ColorRow title="Success" specials={successSpecials} scales={[]} />
-        <ColorRow title="Warning" specials={warningSpecials} scales={[]} />
       </div>
     );
   },

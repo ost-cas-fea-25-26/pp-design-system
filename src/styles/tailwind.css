@@ -57,16 +57,6 @@
     --color-error-active: var(--color-red-800);
     --color-error-foreground: white;
 
-    --color-success: var(--color-green-600);
-    --color-success-hover: var(--color-green-700);
-    --color-success-active: var(--color-green-800);
-    --color-success-foreground: white;
-
-    --color-warning: var(--color-amber-500);
-    --color-warning-hover: var(--color-amber-600);
-    --color-warning-active: var(--color-amber-700);
-    --color-warning-foreground: black;
-
     /* Typography  */
     --default-font-family: "Poppins", sans-serif;
 
