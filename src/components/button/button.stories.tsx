@@ -66,3 +66,15 @@ export const OnlyWithCustomSVG: Story = {
     children: <HeartFilledIcon color="white" />,
   },
 };
+
+export const FullWidth: Story = {
+  args: {
+    fullWidth: true,
+    children: "Full Width Button",
+  },
+  render: (args) => (
+    <div className="w-sm border border-primary border-dotted rounded-md p-4">
+      <Button {...args} />
+    </div>
+  ),
+};
