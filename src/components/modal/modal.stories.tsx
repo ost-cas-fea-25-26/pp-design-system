@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Modal } from "./modal";
 import { Button } from "../button";
 import { HeartFilledIcon, SettingsIcon } from "../icons";
-import { ActionButtons } from "../action-buttons";
+import { ButtonBar } from "../button-bar";
 
 const meta: Meta<typeof Modal> = {
   title: "Modal",
@@ -30,7 +30,7 @@ export const Default: Story = {
           onOpenChange={setOpen}
           title="Settings"
           footer={
-            <ActionButtons
+            <ButtonBar
               leftButton={
                 <Button
                   fullWidth
@@ -46,7 +46,6 @@ export const Default: Story = {
                   fullWidth
                   variant="primary"
                   onClick={() => {
-                    alert("Settings saved! ⚙️");
                     setOpen(false);
                   }}
                 >

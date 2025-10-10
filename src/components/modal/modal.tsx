@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from "react";
+import { FC, ReactNode } from "react";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { HeartIcon } from "../icons";
 
@@ -26,7 +26,7 @@ export const Modal: FC<ModalProps> = ({
             {title}
           </DialogPrimitive.Title>
           <DialogPrimitive.Close
-            className="absolute right-6 top-1/2 -translate-y-1/2 cursor-pointer text-white focus:outline-none"
+            className="absolute right-6 top-1/2 -translate-y-1/2 cursor-pointer rounded-sm text-white transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
             aria-label="Close"
           >
             <HeartIcon color="white" />

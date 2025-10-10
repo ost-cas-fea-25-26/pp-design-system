@@ -56,4 +56,16 @@ describe("Button", () => {
     expect(getByText("Hello")).toBeInTheDocument();
     expect(container.querySelector("svg")).toBeInTheDocument();
   });
+
+  it("applies full width when fullWidth is true", () => {
+    const { container } = render(<Button fullWidth>Full Width</Button>);
+    const root = container.firstChild as HTMLElement;
+    expect(root).toHaveClass("w-full");
+  });
+
+  it("does not apply full width when fullWidth is not passed", () => {
+    const { container } = render(<Button>Normal</Button>);
+    const root = container.firstChild as HTMLElement;
+    expect(root).not.toHaveClass("w-full");
+  });
 });

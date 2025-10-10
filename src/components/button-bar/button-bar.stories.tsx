@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { ActionButtons } from "./action-buttons";
+import { ButtonBar } from "./button-bar";
 import { Button } from "../button";
 import { HeartFilledIcon, SettingsIcon } from "../icons";
 
-const meta: Meta<typeof ActionButtons> = {
-  title: "Action Buttons",
-  component: ActionButtons,
-  tags: ["autodocs"],
+const meta: Meta<typeof ButtonBar> = {
+  title: "Button Bar",
+  component: ButtonBar,
   parameters: { layout: "centered" },
+  tags: ["autodocs"],
   argTypes: {
     leftButton: { control: false },
     rightButton: { control: false },
@@ -33,8 +33,8 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: (args) => (
-    <div className="w-sm border border-primary border-dashed rounded-md p-4">
-      <ActionButtons {...args} />
+    <div className="w-sm border border-primary/40 border-dashed rounded-md p-4">
+      <ButtonBar {...args} />
     </div>
   ),
 };
