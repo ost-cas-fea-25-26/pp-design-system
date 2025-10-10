@@ -6,6 +6,7 @@ import {
   HeartFilledIcon,
   ReplyIcon,
   ReplyFilledIcon,
+  ArrowDownIcon,
 } from "./icons";
 
 const ICONS = [
@@ -15,6 +16,7 @@ const ICONS = [
   HeartFilledIcon,
   ReplyIcon,
   ReplyFilledIcon,
+  ArrowDownIcon,
 ];
 
 const meta = {

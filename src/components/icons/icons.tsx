@@ -1,11 +1,12 @@
 /// <reference types="vite-plugin-svgr/client" />
 import { FC } from "react";
-import Settings from "/public/icons/settings.svg?react";
-import Upload from "/public/icons/upload.svg?react";
-import Heart from "/public/icons/heart.svg?react";
-import HeartFilled from "/public/icons/heart-filled.svg?react";
-import Reply from "/public/icons/reply.svg?react";
-import ReplyFilled from "/public/icons/reply-filled.svg?react";
+import Settings from "./svg/settings.svg?react";
+import Upload from "./svg/upload.svg?react";
+import Heart from "./svg/heart.svg?react";
+import HeartFilled from "./svg/heart-filled.svg?react";
+import Reply from "./svg/reply.svg?react";
+import ReplyFilled from "./svg/reply-filled.svg?react";
+import ArrowDown from "./svg/arrow-down.svg?react";
 
 const ICON_SIZE = 16;
 
@@ -42,3 +43,4 @@ export const HeartIcon = makeIcon(Heart, "HeartIcon");
 export const HeartFilledIcon = makeIcon(HeartFilled, "HeartFilledIcon");
 export const ReplyIcon = makeIcon(Reply, "ReplyIcon");
 export const ReplyFilledIcon = makeIcon(ReplyFilled, "ReplyFilledIcon");
+export const ArrowDownIcon = makeIcon(ArrowDown, "ArrowDownIcon");
