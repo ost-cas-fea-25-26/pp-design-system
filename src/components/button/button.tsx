@@ -13,9 +13,13 @@ export const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   return (
-    <button
-      className={twMerge(buttonVariants({ variant, size, className }))}
-      {...props}
-    />
+    <>
+      <button
+        className={twMerge(buttonVariants({ variant, size, className }))}
+        {...props}
+      />
+      <p className="paragraph">Paragraph</p>
+      <p className="paragraph-lg">Pragraph Large</p>
+    </>
   );
 };
