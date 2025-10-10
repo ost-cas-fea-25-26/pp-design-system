@@ -27,14 +27,14 @@ import Time from "./svg/time.svg?react";
 
 const ICON_SIZE = 16;
 
-type IconColor = "primary" | "secondary" | "accent" | "white";
+type IconColor = "primary" | "accent" | "neutral" | "white";
 
 type IconProps = { color?: IconColor };
 
 const iconClassMap: Record<IconColor, string> = {
   primary: "text-primary",
-  secondary: "text-secondary",
-  accent: "text-pink-500", // TODO: text-accent
+  accent: "text-accent",
+  neutral: "text-neutral",
   white: "text-white",
 };
 

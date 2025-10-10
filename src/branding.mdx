@@ -1,5 +1,6 @@
 import {Canvas, Meta} from "@storybook/addon-docs/blocks";
 import * as TypographyStories from './components/typography/typography.stories';
+import * as ColorStories from './components/colors/colors.stories';
 
 <Meta title="Branding" />
 
@@ -13,7 +14,7 @@ Welcome to the Mumble Design System. Below you find some general branding guidel
 - [Icons](#icons)
 
 ### Colors
-TODO
+<Canvas of={ColorStories.Default} />
 
 ### Typography
 <Canvas of={TypographyStories.Default} />
