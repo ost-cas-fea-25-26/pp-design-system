@@ -3,7 +3,6 @@ import { twMerge } from "tailwind-merge";
 import { useFormField } from "./form-field";
 
 export const FormMessage: FC<React.ComponentProps<"p">> = ({
-  className,
   children,
   ...props
 }) => {
@@ -13,11 +12,7 @@ export const FormMessage: FC<React.ComponentProps<"p">> = ({
   if (!body) return null;
 
   return (
-    <p
-      id={formMessageId}
-      className={twMerge("text-sm text-error", className)}
-      {...props}
-    >
+    <p id={formMessageId} className="text-sm text-right text-error" {...props}>
       {body}
     </p>
   );

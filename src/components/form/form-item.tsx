@@ -1,21 +1,17 @@
-import React, { FC, createContext, useId } from "react";
-import { twMerge } from "tailwind-merge";
+import React, { FC, createContext, useId, ComponentProps } from "react";
 
 export type FormItemContextValue = { id: string };
 
-export const FormItemContext = React.createContext<FormItemContextValue>(
+export const FormItemContext = createContext<FormItemContextValue>(
   {} as FormItemContextValue,
 );
 
-export const FormItem: FC<React.ComponentProps<"div">> = ({
-  className,
-  ...props
-}) => {
+export const FormItem: FC<ComponentProps<"div">> = ({ ...props }) => {
   const id = useId();
 
   return (
     <FormItemContext.Provider value={{ id }}>
-      <div className={twMerge("grid gap-2", className)} {...props} />
+      <div className="grid gap-2" {...props} />
     </FormItemContext.Provider>
   );
 };

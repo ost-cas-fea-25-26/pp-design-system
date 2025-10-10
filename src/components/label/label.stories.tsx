@@ -17,9 +17,18 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
 
-export const Password: Story = {
+export const Disabled: Story = {
   args: {
-    children: "Password",
-    htmlFor: "password",
+    children: "Disabled label",
+    htmlFor: "disabled-input",
+    disabled: true,
+  },
+};
+
+export const Error: Story = {
+  args: {
+    children: "Email (error)",
+    htmlFor: "error-input",
+    error: true,
   },
 };

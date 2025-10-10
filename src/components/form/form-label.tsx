@@ -1,18 +1,23 @@
 import React, { FC } from "react";
 import * as LabelPrimitive from "@radix-ui/react-label";
-import { twMerge } from "tailwind-merge";
 import { useFormField } from "./form-field";
 import { Label } from "../label";
 
-export const FormLabel: FC<
-  React.ComponentProps<typeof LabelPrimitive.Root>
-> = ({ className, ...props }) => {
+type FormLabelProps = React.ComponentProps<typeof LabelPrimitive.Root> & {
+  disabled?: boolean;
+};
+
+export const FormLabel: FC<FormLabelProps> = ({
+  disabled = false,
+  ...props
+}) => {
   const { error, formItemId } = useFormField();
 
   return (
     <Label
       htmlFor={formItemId}
-      className={twMerge(error ? "text-error" : "", className)}
+      error={!!error}
+      disabled={disabled}
       {...props}
     />
   );

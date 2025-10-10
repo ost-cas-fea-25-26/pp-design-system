@@ -14,11 +14,11 @@ export const Input: FC<React.ComponentProps<"input">> = ({
       "disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 text-m",
 
       // Hover & Focus
-      "hover:border-primary focus-visible:border-primary focus-visible:ring-primary focus-visible:ring",
+      "enabled:hover:border-primary enabled:focus-visible:border-primary enabled:focus-visible:ring-primary enabled:focus-visible:ring",
 
       // Invalid
-      "aria-invalid:border-error aria-invalid:hover:border-error-hover aria-invalid:active:border-error-active",
-      "aria-invalid:focus-visible:border-error aria-invalid:focus-visible:ring-error aria-invalid:focus-visible:ring",
+      "enabled:aria-invalid:border-error enabled:aria-invalid:hover:border-error-hover enabled:aria-invalid:active:border-error-active",
+      "enabled:aria-invalid:focus-visible:border-error enabled:aria-invalid:focus-visible:ring-error enabled:aria-invalid:focus-visible:ring",
     )}
     {...props}
   />

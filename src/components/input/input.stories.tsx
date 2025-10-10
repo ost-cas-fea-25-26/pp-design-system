@@ -30,3 +30,17 @@ export const Password: Story = {
     placeholder: "••••••••",
   },
 };
+
+export const Disabled: Story = {
+  args: {
+    placeholder: "Disabled input",
+    disabled: true,
+  },
+};
+
+export const Error: Story = {
+  args: {
+    placeholder: "Invalid input",
+    "aria-invalid": true,
+  },
+};

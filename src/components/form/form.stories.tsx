@@ -76,6 +76,13 @@ export const Default: Story = {
             )}
           />
 
+          <FormItem>
+            <FormLabel disabled>Disabled Field</FormLabel>
+            <FormControl>
+              <Input placeholder="Disabled" disabled />
+            </FormControl>
+          </FormItem>
+
           <Button type="submit">Submit</Button>
         </form>
       </Form>

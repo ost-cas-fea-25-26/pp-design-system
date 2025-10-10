@@ -1,8 +1,8 @@
-import React, { FC } from "react";
+import React, { ComponentProps, FC } from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { useFormField } from "./form-field";
 
-export const FormControl: FC<React.ComponentProps<typeof Slot>> = (props) => {
+export const FormControl: FC<ComponentProps<typeof Slot>> = (props) => {
   const { error, formItemId, formDescriptionId, formMessageId } =
     useFormField();
 
