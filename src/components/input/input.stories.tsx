@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Input } from "./input";
+import { MumbleIcon } from "../icons";
 
 const meta: Meta<typeof Input> = {
   title: "Input",
@@ -42,5 +43,19 @@ export const Error: Story = {
   args: {
     placeholder: "Invalid input",
     "aria-invalid": true,
+  },
+};
+
+export const WithIcon: Story = {
+  args: {
+    placeholder: "Type something...",
+    icon: <MumbleIcon color="neutral" />,
+  },
+};
+
+export const WithDefaultValue: Story = {
+  args: {
+    defaultValue: "John Doe",
+    placeholder: "Enter your name...",
   },
 };

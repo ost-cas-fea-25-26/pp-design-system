@@ -36,6 +36,7 @@ export const Default: Story = {
     });
 
     const onSubmit = (data: z.infer<typeof schema>) =>
+      //eslint-disable-next-line no-alert
       alert(`Submitted:\n${JSON.stringify(data, null, 2)}`);
 
     return (

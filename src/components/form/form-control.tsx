@@ -1,4 +1,4 @@
-import React, { ComponentProps, FC } from "react";
+import { ComponentProps, FC } from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { useFormField } from "./form-field";
 

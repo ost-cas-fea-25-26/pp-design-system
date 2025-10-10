@@ -1,6 +1,6 @@
-import React, { FC, createContext, useId, ComponentProps } from "react";
+import { FC, createContext, useId, ComponentProps } from "react";
 
-export type FormItemContextValue = { id: string };
+type FormItemContextValue = { id: string };
 
 export const FormItemContext = createContext<FormItemContextValue>(
   {} as FormItemContextValue,
