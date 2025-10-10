@@ -7,6 +7,11 @@ import HeartFilled from "./svg/heart-filled.svg?react";
 import Reply from "./svg/reply.svg?react";
 import ReplyFilled from "./svg/reply-filled.svg?react";
 import ArrowDown from "./svg/arrow-down.svg?react";
+import ArrowUp from "./svg/arrow-up.svg?react";
+import ArrowLeft from "./svg/arrow-left.svg?react";
+import ArrowRight from "./svg/arrow-right.svg?react";
+import Mumble from "./svg/mumble.svg?react";
+import Profile from "./svg/profile.svg?react";
 
 const ICON_SIZE = 16;
 
@@ -44,3 +49,8 @@ export const HeartFilledIcon = makeIcon(HeartFilled, "HeartFilledIcon");
 export const ReplyIcon = makeIcon(Reply, "ReplyIcon");
 export const ReplyFilledIcon = makeIcon(ReplyFilled, "ReplyFilledIcon");
 export const ArrowDownIcon = makeIcon(ArrowDown, "ArrowDownIcon");
+export const ArrowUpIcon = makeIcon(ArrowUp, "ArrowUpIcon");
+export const ArrowLeftIcon = makeIcon(ArrowLeft, "ArrowLeftIcon");
+export const ArrowRightIcon = makeIcon(ArrowRight, "ArrowRightIcon");
+export const MumbleIcon = makeIcon(Mumble, "MumbleIcon");
+export const ProfileIcon = makeIcon(Profile, "ProfileIcon");

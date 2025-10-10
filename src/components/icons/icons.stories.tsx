@@ -7,6 +7,11 @@ import {
   ReplyIcon,
   ReplyFilledIcon,
   ArrowDownIcon,
+  ArrowUpIcon,
+  ArrowLeftIcon,
+  ArrowRightIcon,
+  MumbleIcon,
+  ProfileIcon,
 } from "./icons";
 
 const ICONS = [
@@ -17,6 +22,11 @@ const ICONS = [
   ReplyIcon,
   ReplyFilledIcon,
   ArrowDownIcon,
+  ArrowUpIcon,
+  ArrowLeftIcon,
+  ArrowRightIcon,
+  MumbleIcon,
+  ProfileIcon,
 ];
 
 const meta = {
