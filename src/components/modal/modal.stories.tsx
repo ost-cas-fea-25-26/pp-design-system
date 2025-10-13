@@ -21,7 +21,7 @@ export const Default: Story = {
 
     return (
       <>
-        <Button variant="secondary" onClick={() => setOpen(true)}>
+        <Button variant="neutral" onClick={() => setOpen(true)}>
           Open Modal
         </Button>
 
@@ -34,7 +34,7 @@ export const Default: Story = {
               leftButton={
                 <Button
                   fullWidth
-                  variant="secondary"
+                  variant="neutral"
                   onClick={() => setOpen(false)}
                 >
                   Cancel

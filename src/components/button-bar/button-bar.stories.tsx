@@ -14,7 +14,7 @@ const meta: Meta<typeof ButtonBar> = {
   },
   args: {
     leftButton: (
-      <Button variant="secondary" fullWidth>
+      <Button variant="neutral" fullWidth>
         Cancel
         <CancelIcon color="white" />
       </Button>
