@@ -1,15 +1,28 @@
-import { FC, useState } from "react";
+import { FC, ReactNode, useEffect, useState } from "react";
 import * as React from "react";
+import { twMerge } from "tailwind-merge";
 
 type TimedButtonProps = {
-  initialContent: React.ReactNode;
-  completedContent: React.ReactNode;
+  label: string;
+  activeLabel?: string;
+  icon?: ReactNode;
   onClick?: () => Promise<void>;
+  duration?: number; // in milliseconds
 };
 
 export const TimedButton: FC<TimedButtonProps> = (props) => {
+  const defaultDuration = 2000;
+
   const [isProcessing, setIsProcessing] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
+  const [buttonText, setButtonText] = useState(props.label);
+
+  const resetActiveState = () => {
+    setTimeout(() => {
+      setIsCompleted(false);
+      setButtonText(props.label);
+    }, props.duration ?? defaultDuration);
+  };
 
   const handleClick = async () => {
     if (isProcessing) {
@@ -26,13 +39,28 @@ export const TimedButton: FC<TimedButtonProps> = (props) => {
         setIsProcessing(false);
       }
     }
-
+    setButtonText(props.activeLabel ?? props.label);
     setIsCompleted(true);
   };
 
+  useEffect(() => {
+    if (!isCompleted) {
+      return;
+    }
+    resetActiveState();
+  }, [isCompleted]);
+
   return (
-    <button onClick={handleClick}>
-      {isCompleted ? props.completedContent : props.initialContent}
+    <button
+      onClick={handleClick}
+      className={twMerge(
+        'inline-flex items-center px-4 py-2 cursor-pointer rounded-2xl hover:bg-slate-100 active:bg-slate-100"',
+        isProcessing && "cursor-wait",
+        isCompleted && "cursor-default bg-slate-100",
+      )}
+    >
+      {props.icon && <span className="mr-2">{props.icon}</span>}
+      {buttonText}
     </button>
   );
 };

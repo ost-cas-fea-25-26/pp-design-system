@@ -33,8 +33,8 @@ type IconProps = { color?: IconColor };
 
 const iconClassMap: Record<IconColor, string> = {
   primary: "text-primary",
-  secondary: "text-secondary",
-  accent: "text-pink-500", // TODO: text-accent
+  secondary: "slate-600", // TODO: proper use of color
+  accent: "text-pink-500", // TODO: proper use of color
   white: "text-white",
 };
 
