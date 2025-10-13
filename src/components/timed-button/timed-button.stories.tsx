@@ -28,7 +28,7 @@ export const Default: Story = {
       return new Promise<void>((resolve) => {
         setTimeout(() => {
           // eslint-disable-next-line no-alert
-          alert("API call finished");
+          alert("API call finished.");
           resolve();
         }, 1000);
       });
