@@ -1,5 +1,4 @@
 import { FC, ReactNode, useEffect, useState } from "react";
-import * as React from "react";
 import { twMerge } from "tailwind-merge";
 
 type TimedButtonProps = {
@@ -54,9 +53,9 @@ export const TimedButton: FC<TimedButtonProps> = (props) => {
     <button
       onClick={handleClick}
       className={twMerge(
-        'inline-flex items-center px-4 py-2 cursor-pointer rounded-2xl hover:bg-slate-100 active:bg-slate-100"',
-        isProcessing && "cursor-wait",
-        isCompleted && "cursor-default bg-slate-100",
+        'focus-ring-neutral inline-flex items-center px-4 py-2 cursor-pointer rounded-2xl hover:bg-neutral-100 active:bg-neutral-100"',
+        isProcessing && "cursor-wait bg-neutral-100",
+        isCompleted && "cursor-default bg-neutral-100",
       )}
     >
       {props.icon && <span className="mr-2">{props.icon}</span>}

@@ -28,7 +28,7 @@ export const Default: Story = {
       return new Promise<void>((resolve) => {
         setTimeout(() => {
           // eslint-disable-next-line no-alert
-          alert("Action performed");
+          alert("API call finished");
           resolve();
         }, 1000);
       });
@@ -39,7 +39,7 @@ export const Default: Story = {
         label={args.label}
         activeLabel={args.activeLabel}
         duration={args.duration}
-        icon={<HeartIcon color="secondary" />}
+        icon={<HeartIcon color="neutral" />}
         onClick={clickHandler}
       />
     );
