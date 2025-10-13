@@ -7,7 +7,7 @@ const meta = {
   tags: ["autodocs"],
   parameters: { layout: "centered" },
   argTypes: {
-    label: {
+    title: {
       control: "text",
       description: "Link label",
     },
@@ -28,7 +28,19 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    label: "Click me",
+    asChild: false,
+    children: "Click me",
+    title: "Example Link",
+    target: "_blank",
     href: "https://example.com",
+  },
+};
+
+export const AsChild: Story = {
+  args: {
+    asChild: true,
+    children: <span>Click me!</span>,
+    href: "https://example.com",
+    title: "Button Link",
   },
 };
