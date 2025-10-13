@@ -30,7 +30,7 @@ export const Avatar: FC<AvatarProps> = ({
     className={twMerge(
       "relative flex shrink-0 overflow-hidden rounded-full",
       sizeClassMap[size],
-      border && "border-[6px] border-current",
+      border && "border-[6px] border-neutral-100",
     )}
   >
     <AvatarPrimitive.Image
@@ -38,7 +38,7 @@ export const Avatar: FC<AvatarProps> = ({
       alt={alt}
       className="aspect-square size-full"
     />
-    <AvatarPrimitive.Fallback className="bg-muted flex size-full items-center justify-center rounded-full">
+    <AvatarPrimitive.Fallback className="bg-primary-100 text-primary flex size-full items-center justify-center rounded-full">
       {fallbackText}
     </AvatarPrimitive.Fallback>
   </AvatarPrimitive.Root>
