@@ -29,7 +29,7 @@ describe("Link", () => {
     const link = container.firstChild as HTMLElement;
     expect(link.className).toContain("label-sm");
     expect(link.className).toContain("text-primary");
-    expect(link.className).toContain("hover:decoration-violet-200");
+    expect(link.className).toContain("hover:decoration-primary-200");
   });
 
   it("renders children when asChild is true", () => {
