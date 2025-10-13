@@ -26,7 +26,7 @@ export const Link: FC<LinkProps> = ({
       href={href}
       title={title}
       target={target}
-      className="label-sm text-primary hover:decoration-violet-200 hover:underline-offset-4 underline decoration-solid decoration-1 underline-offset-2"
+      className="label-sm text-primary hover:decoration-primary-200 hover:cursor-pointer hover:underline-offset-4 underline decoration-solid decoration-1 underline-offset-2"
     >
       {children}
     </Component>
