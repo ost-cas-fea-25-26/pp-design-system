@@ -2,7 +2,9 @@ name: "🛡️ Quality Check"
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened]
+    types: [ opened, synchronize, reopened ]
+  push:
+    branches: [ main ]
 
 jobs:
   lint:
@@ -26,7 +28,7 @@ jobs:
     name: "🧪 Test"
     runs-on: ubuntu-latest
     if: github.event.pull_request.draft == false
-    needs: [lint]
+    needs: [ lint ]
     steps:
       - name: "Checkout"
         uses: actions/checkout@v4
