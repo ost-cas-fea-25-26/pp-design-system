@@ -6,7 +6,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import {
-  Form,
+  FormProvider,
   FormField,
   FormItem,
   FormLabel,
@@ -14,6 +14,7 @@ import {
   FormMessage,
 } from "./index";
 import { Input } from "../input";
+import { Textarea } from "../textarea";
 import { Button } from "../button";
 
 vi.mock("../icons", () => ({
@@ -23,17 +24,18 @@ vi.mock("../icons", () => ({
 const schema = z.object({
   firstName: z.string().min(2, "First name is required."),
   email: z.string().email("Please enter a valid email address."),
+  message: z.string().min(5, "Message must be at least 5 characters."),
 });
 
 describe("Form integration", () => {
   const TestForm = ({ onSubmit = vi.fn() }) => {
     const form = useForm<z.infer<typeof schema>>({
       resolver: zodResolver(schema),
-      defaultValues: { firstName: "", email: "" },
+      defaultValues: { firstName: "", email: "", message: "" },
     });
 
     return (
-      <Form {...form}>
+      <FormProvider {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
           <FormField
             control={form.control}
@@ -63,28 +65,45 @@ describe("Form integration", () => {
             )}
           />
 
+          <FormField
+            control={form.control}
+            name="message"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Message</FormLabel>
+                <FormControl>
+                  <Textarea placeholder="Write your message..." {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
           <Button type="submit">Submit</Button>
         </form>
-      </Form>
+      </FormProvider>
     );
   };
 
-  it("renders the form structure", () => {
+  it("renders all form fields", () => {
     render(<TestForm />);
     expect(screen.getByText("First Name")).toBeInTheDocument();
     expect(screen.getByText("Email")).toBeInTheDocument();
+    expect(screen.getByText("Message")).toBeInTheDocument();
   });
 
   it("shows validation errors on empty submit", async () => {
     render(<TestForm />);
     fireEvent.click(screen.getByText("Submit"));
 
-    // ✅ wait for validation messages
     expect(
       await screen.findByText("First name is required."),
     ).toBeInTheDocument();
     expect(
       await screen.findByText("Please enter a valid email address."),
+    ).toBeInTheDocument();
+    expect(
+      await screen.findByText("Message must be at least 5 characters."),
     ).toBeInTheDocument();
   });
 
@@ -92,63 +111,39 @@ describe("Form integration", () => {
     render(<TestForm />);
     fireEvent.click(screen.getByText("Submit"));
 
-    const input = await screen.findByPlaceholderText("John");
-    await waitFor(() => expect(input).toHaveAttribute("aria-invalid", "true"));
-    expect(input).toHaveAttribute("aria-describedby");
+    const textarea = await screen.findByPlaceholderText(
+      "Write your message...",
+    );
+    await waitFor(() =>
+      expect(textarea).toHaveAttribute("aria-invalid", "true"),
+    );
+    expect(textarea).toHaveAttribute("aria-describedby");
   });
 
   it("submits valid data successfully", async () => {
     const handleSubmit = vi.fn();
-    const ValidForm = () => {
-      const form = useForm<z.infer<typeof schema>>({
-        resolver: zodResolver(schema),
-        defaultValues: { firstName: "", email: "" },
-      });
+    render(<TestForm onSubmit={handleSubmit} />);
 
-      return (
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(handleSubmit)}>
-            <FormField
-              control={form.control}
-              name="firstName"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>First Name</FormLabel>
-                  <FormControl>
-                    <Input {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Email</FormLabel>
-                  <FormControl>
-                    <Input {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <Button type="submit">Submit</Button>
-          </form>
-        </Form>
-      );
-    };
-
-    render(<ValidForm />);
-    fireEvent.change(screen.getByLabelText("First Name"), {
+    fireEvent.change(screen.getByPlaceholderText("John"), {
       target: { value: "John" },
     });
-    fireEvent.change(screen.getByLabelText("Email"), {
+    fireEvent.change(screen.getByPlaceholderText("you@example.com"), {
       target: { value: "john@example.com" },
     });
+    fireEvent.change(screen.getByPlaceholderText("Write your message..."), {
+      target: { value: "Hello there!" },
+    });
+
     fireEvent.click(screen.getByText("Submit"));
 
     await waitFor(() => expect(handleSubmit).toHaveBeenCalledTimes(1));
+    expect(handleSubmit).toHaveBeenCalledWith(
+      {
+        firstName: "John",
+        email: "john@example.com",
+        message: "Hello there!",
+      },
+      expect.anything(),
+    );
   });
 });

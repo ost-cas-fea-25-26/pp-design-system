@@ -1,4 +1,4 @@
-export { Form } from "./form";
+export { FormProvider } from "./form-provider";
 export { FormField } from "./form-field";
 export { FormItem } from "./form-item";
 export { FormLabel } from "./form-label";

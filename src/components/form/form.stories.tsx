@@ -5,8 +5,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 import { Button } from "../button";
 import { Input } from "../input";
+import { Textarea } from "../textarea";
 import {
-  Form,
+  FormProvider,
   FormField,
   FormItem,
   FormLabel,
@@ -17,6 +18,7 @@ import {
 const schema = z.object({
   firstName: z.string().min(2, "First name is required."),
   email: z.string().email("Please enter a valid email address."),
+  message: z.string().min(5, "Message must be at least 5 characters."),
 });
 
 const meta: Meta = {
@@ -32,15 +34,15 @@ export const Default: Story = {
   render: () => {
     const form = useForm<z.infer<typeof schema>>({
       resolver: zodResolver(schema),
-      defaultValues: { firstName: "", email: "" },
+      defaultValues: { firstName: "", email: "", message: "" },
     });
 
     const onSubmit = (data: z.infer<typeof schema>) =>
-      //eslint-disable-next-line no-alert
+      // eslint-disable-next-line no-alert
       alert(`Submitted:\n${JSON.stringify(data, null, 2)}`);
 
     return (
-      <Form {...form}>
+      <FormProvider {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
           className="space-y-5 w-[20rem]"
@@ -77,6 +79,20 @@ export const Default: Story = {
             )}
           />
 
+          <FormField
+            control={form.control}
+            name="message"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Message</FormLabel>
+                <FormControl>
+                  <Textarea placeholder="Write your message..." {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
           <FormItem>
             <FormLabel disabled>Disabled Field</FormLabel>
             <FormControl>
@@ -86,7 +102,7 @@ export const Default: Story = {
 
           <Button type="submit">Submit</Button>
         </form>
-      </Form>
+      </FormProvider>
     );
   },
 };
