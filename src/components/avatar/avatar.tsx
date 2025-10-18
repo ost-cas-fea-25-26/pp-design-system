@@ -1,6 +1,8 @@
 import { FC } from "react";
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
 import { twMerge } from "tailwind-merge";
+import { Button } from "../button";
+import { EditIcon } from "../icons";
 
 type AvatarSize = "s" | "m" | "l" | "xl";
 
@@ -10,6 +12,8 @@ type AvatarProps = {
   src?: string;
   alt: string;
   fallbackText: string;
+  editable?: boolean;
+  onEditClick?: () => void;
 };
 
 const sizeClassMap: Record<AvatarSize, string> = {
@@ -25,21 +29,39 @@ export const Avatar: FC<AvatarProps> = ({
   src,
   alt,
   fallbackText,
+  editable = false,
+  onEditClick,
 }) => (
-  <AvatarPrimitive.Root
-    className={twMerge(
-      "relative flex shrink-0 overflow-hidden rounded-full",
-      sizeClassMap[size],
-      border && "border-[6px] border-neutral-100",
+  <div className="relative inline-block">
+    <AvatarPrimitive.Root
+      data-testid="avatar-root"
+      className={twMerge(
+        "relative flex shrink-0 overflow-hidden rounded-full",
+        sizeClassMap[size],
+        border && "border-[6px] border-neutral-100",
+      )}
+    >
+      <AvatarPrimitive.Image
+        src={src}
+        alt={alt}
+        className="aspect-square size-full object-cover"
+      />
+      <AvatarPrimitive.Fallback className="bg-primary-100 text-primary flex size-full items-center justify-center rounded-full font-medium">
+        {fallbackText}
+      </AvatarPrimitive.Fallback>
+    </AvatarPrimitive.Root>
+
+    {editable && (
+      <div className="absolute bottom-0 right-0">
+        <Button
+          variant="neutral"
+          size="default"
+          isCircular
+          onClick={onEditClick}
+        >
+          <EditIcon color="white" />
+        </Button>
+      </div>
     )}
-  >
-    <AvatarPrimitive.Image
-      src={src}
-      alt={alt}
-      className="aspect-square size-full"
-    />
-    <AvatarPrimitive.Fallback className="bg-primary-100 text-primary flex size-full items-center justify-center rounded-full">
-      {fallbackText}
-    </AvatarPrimitive.Fallback>
-  </AvatarPrimitive.Root>
+  </div>
 );

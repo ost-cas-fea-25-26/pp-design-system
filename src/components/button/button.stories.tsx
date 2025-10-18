@@ -19,6 +19,12 @@ const meta: Meta<typeof Button> = {
       control: "select",
       options: ["default", "lg"],
     },
+    fullWidth: {
+      control: "boolean",
+    },
+    isCircular: {
+      control: "boolean",
+    },
     onClick: { action: "clicked" },
     children: { control: "text" },
   },
@@ -60,9 +66,9 @@ export const WithLabelAndCustomSVG: Story = {
   },
 };
 
-export const OnlyWithCustomSVG: Story = {
+export const Circular: Story = {
   args: {
-    className: "rounded-full p-4",
+    isCircular: true,
     children: <HeartFilledIcon color="white" />,
   },
 };
