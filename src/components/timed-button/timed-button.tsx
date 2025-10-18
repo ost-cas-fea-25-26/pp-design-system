@@ -1,4 +1,4 @@
-import { FC, ReactNode, useEffect, useState } from "react";
+import { FC, ReactNode, useState } from "react";
 import { twMerge } from "tailwind-merge";
 
 type TimedButtonProps = {
@@ -12,50 +12,42 @@ type TimedButtonProps = {
 export const TimedButton: FC<TimedButtonProps> = (props) => {
   const defaultDuration = 2000;
 
-  const [isProcessing, setIsProcessing] = useState(false);
-  const [isCompleted, setIsCompleted] = useState(false);
-  const [buttonText, setButtonText] = useState(props.label);
-
-  const resetActiveState = () => {
-    setTimeout(() => {
-      setIsCompleted(false);
-      setButtonText(props.label);
-    }, props.duration ?? defaultDuration);
-  };
+  const [status, setStatus] = useState<"idle" | "processing" | "active">(
+    "idle",
+  );
 
   const handleClick = async () => {
-    if (isProcessing) {
+    if (status !== "idle") {
       return;
     }
 
-    if (props.onClick) {
-      setIsProcessing(true);
-      try {
-        await props.onClick();
-      } catch (error) {
-        console.error(error);
-      } finally {
-        setIsProcessing(false);
-      }
+    if (!props.onClick) {
+      return;
     }
-    setButtonText(props.activeLabel ?? props.label);
-    setIsCompleted(true);
+    setStatus("processing");
+
+    try {
+      await props.onClick();
+      setStatus("active");
+
+      setTimeout(() => {
+        setStatus("idle");
+      }, props.duration ?? defaultDuration);
+    } catch (error) {
+      console.error(error);
+      setStatus("idle");
+    }
   };
 
-  useEffect(() => {
-    if (!isCompleted) {
-      return;
-    }
-    resetActiveState();
-  }, [isCompleted]);
+  const buttonText = status === "active" ? props.activeLabel : props.label;
 
   return (
     <button
       onClick={handleClick}
       className={twMerge(
         'focus-ring-neutral inline-flex items-center px-4 py-2 cursor-pointer rounded-2xl hover:bg-neutral-100 active:bg-neutral-100"',
-        isProcessing && "cursor-wait bg-neutral-100",
-        isCompleted && "cursor-default bg-neutral-100",
+        status === "processing" && "cursor-wait bg-neutral-100",
+        status === "active" && "cursor-default bg-neutral-100",
       )}
     >
       {props.icon && <span className="mr-2">{props.icon}</span>}
