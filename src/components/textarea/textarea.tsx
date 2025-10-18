@@ -17,9 +17,9 @@ export const Textarea: FC<TextareaProps> = ({ icon, id, ...props }) => {
       <textarea
         id={id}
         className={twMerge(
-          "flex-1 text-neutral bg-neutral-50 border border-neutral-200 min-h-[120px] w-full rounded-md p-4 text-base transition-all outline-none resize-y",
+          "flex-1 text-neutral-700 bg-neutral-50 border border-neutral-200 min-h-[120px] w-full rounded-md p-4 transition-all outline-none resize-y",
           "placeholder:text-neutral-400 selection:bg-primary selection:text-primary-foreground",
-          "disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 text-m",
+          "disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 text-m leading-[27px]",
 
           // Hover & Focus
           "enabled:hover:border-primary enabled:focus-visible:border-primary enabled:focus-visible:ring-primary enabled:focus-visible:ring",

@@ -18,7 +18,7 @@ export const Input: FC<InputProps> = ({ type, icon, id, ...props }) => {
         id={id}
         type={type}
         className={twMerge(
-          "flex-1 text-neutral bg-neutral-50 border border-neutral-200 h-12 min-w-0 rounded-md p-4 text-base transition-all outline-none",
+          "flex-1 text-neutral-700 bg-neutral-50 border border-neutral-200 h-12 min-w-0 rounded-md p-4 transition-all outline-none",
           "placeholder:text-neutral-400 selection:bg-primary selection:text-primary-foreground",
           "disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 text-m",
 
