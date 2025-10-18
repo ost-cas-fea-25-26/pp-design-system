@@ -11,6 +11,13 @@ describe("Timed Button", () => {
     expect(getByText("Click me")).toBeInTheDocument();
   });
 
+  it("renders with icon", () => {
+    const { getByTestId } = render(
+      <TimedButton icon={<svg data-testid="icon" />} label="Icon Button" />,
+    );
+    expect(getByTestId("icon")).toBeInTheDocument();
+  });
+
   it("shows active label after click", async () => {
     const { getByText } = render(
       <TimedButton
