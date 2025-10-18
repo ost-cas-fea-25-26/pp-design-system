@@ -1,10 +1,12 @@
 import { FC, ReactNode, useState } from "react";
+import * as TogglePrimitive from "@radix-ui/react-toggle";
+import { twMerge } from "tailwind-merge";
 
 type ToggleProps = {
   isOn: boolean;
   onIcon?: ReactNode;
   onLabel: string;
-  onColor?: "primary" | "accent";
+  color?: "primary" | "accent";
   offLabel: string;
   offIcon?: ReactNode;
   toggleHandler?: (nextState: boolean) => Promise<void>;
@@ -31,8 +33,16 @@ export const Toggle: FC<ToggleProps> = (props) => {
   };
 
   return (
-    <span onClick={clickHandler}>
+    <TogglePrimitive.Toggle
+      data-state={isOn ? "on" : "off"}
+      className={twMerge(
+        "inline-flex",
+        "data-[state=on]:text-accent",
+        "data-[state=off]:text-primary",
+      )}
+      onClick={clickHandler}
+    >
       {icon} {label}
-    </span>
+    </TogglePrimitive.Toggle>
   );
 };
