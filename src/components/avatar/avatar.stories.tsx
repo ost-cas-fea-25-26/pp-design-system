@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { fn } from "storybook/test";
 import { Avatar } from "./index";
 
 const meta = {
@@ -27,6 +28,14 @@ const meta = {
     fallbackText: {
       control: "text",
       description: "Text (e.g. initials) shown when no image is loaded",
+    },
+    editable: {
+      control: "boolean",
+      description: "Shows an edit button at the bottom-right corner",
+    },
+    onEditClick: {
+      action: "edit clicked",
+      description: "Triggered when the edit button is clicked",
     },
   },
   args: {
@@ -58,6 +67,14 @@ export const WithBorder: Story = {
 
 export const XL: Story = {
   args: {
+    size: "xl",
+  },
+};
+
+export const Editable: Story = {
+  args: {
+    editable: true,
+    onEditClick: fn(),
     size: "xl",
   },
 };
