@@ -17,6 +17,10 @@ const meta = {
     onLabel: {
       control: "text",
     },
+    onColor: {
+      control: "select",
+      options: ["primary", "accent"],
+    },
     offLabel: {
       control: "text",
     },
@@ -31,6 +35,7 @@ export const Default: Story = {
     isOn: false,
     onLabel: "Toggle is on",
     onIcon: <HeartFilledIcon />,
+    onColor: "primary",
     offLabel: "Toggle is off",
     offIcon: <HeartIcon />,
     toggleHandler: (nextState: boolean) => {

@@ -4,6 +4,7 @@ type ToggleProps = {
   isOn: boolean;
   onIcon?: ReactNode;
   onLabel: string;
+  onColor?: "primary" | "accent";
   offLabel: string;
   offIcon?: ReactNode;
   toggleHandler?: (nextState: boolean) => Promise<void>;
