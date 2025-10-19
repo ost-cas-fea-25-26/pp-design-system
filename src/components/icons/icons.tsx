@@ -27,7 +27,7 @@ import Time from "./svg/time.svg?react";
 
 const ICON_SIZE = 16;
 
-type IconColor = "primary" | "accent" | "neutral" | "white";
+type IconColor = "primary" | "accent" | "neutral" | "white" | "error";
 
 type IconProps = { color?: IconColor };
 
@@ -36,6 +36,7 @@ const iconClassMap: Record<IconColor, string> = {
   accent: "text-accent",
   neutral: "text-neutral",
   white: "text-white",
+  error: "text-error",
 };
 
 const makeIcon = (

@@ -2,8 +2,12 @@ name: "🚀 Release — Library"
 
 on:
   workflow_run:
-    workflows: ["🛡️ Quality Check"]
-    types: [completed]
+    workflows: [ "🌐 Deploy — Storybook" ]
+    types: [ completed ]
+
+concurrency:
+  group: release
+  cancel-in-progress: false
 
 jobs:
   release:
