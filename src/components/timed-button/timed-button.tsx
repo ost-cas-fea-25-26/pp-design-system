@@ -9,9 +9,10 @@ type TimedButtonProps = {
   duration?: number; // in milliseconds
 };
 
-export const TimedButton: FC<TimedButtonProps> = (props) => {
-  const defaultDuration = 2000;
-
+export const TimedButton: FC<TimedButtonProps> = ({
+  duration = 2000,
+  ...props
+}) => {
   const [status, setStatus] = useState<"idle" | "processing" | "active">(
     "idle",
   );
@@ -29,10 +30,9 @@ export const TimedButton: FC<TimedButtonProps> = (props) => {
     try {
       await props.onClick();
       setStatus("active");
-
       setTimeout(() => {
         setStatus("idle");
-      }, props.duration ?? defaultDuration);
+      }, duration);
     } catch (error) {
       console.error(error);
       setStatus("idle");
