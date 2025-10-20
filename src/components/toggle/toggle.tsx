@@ -4,32 +4,36 @@ import { VariantProps } from "class-variance-authority";
 import { toggleVariants } from "./variants";
 
 type ToggleProps = VariantProps<typeof toggleVariants> & {
-  isActive: boolean;
   activeChildren: ReactNode;
   defaultChildren: ReactNode;
   onToggle?: (nextState: boolean) => Promise<void>;
+  isActive?: boolean;
 };
 
-export const Toggle: FC<ToggleProps> = ({ variant = "primary", ...props }) => {
-  const [isActive, setIsActive] = useState<boolean>(props.isActive);
-  const children = isActive ? props.activeChildren : props.defaultChildren;
+export const Toggle: FC<ToggleProps> = ({
+  isActive = false,
+  variant = "primary",
+  ...props
+}) => {
+  const [isOn, setIsOn] = useState<boolean>(isActive);
+  const children = isOn ? props.activeChildren : props.defaultChildren;
 
   const clickHandler = useCallback(() => {
-    const nextState = !isActive;
+    const nextState = !isOn;
     if (props.onToggle) {
       Promise.resolve(props.onToggle(nextState))
         .then(() => {
-          setIsActive(nextState);
+          setIsOn(nextState);
         })
         .catch(console.error);
     } else {
-      setIsActive(nextState);
+      setIsOn(nextState);
     }
-  }, [isActive]);
+  }, [isOn]);
 
   return (
     <TogglePrimitive.Toggle
-      data-state={isActive ? "on" : "off"}
+      data-state={isOn ? "on" : "off"}
       className={toggleVariants({ variant: variant })}
       onClick={clickHandler}
     >

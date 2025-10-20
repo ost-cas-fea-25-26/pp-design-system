@@ -1,7 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react-vite";
 import { Toggle } from "./index";
 import { HeartFilledIcon, HeartIcon } from "../icons";
-import { is } from "storybook/internal/babel";
 
 const meta = {
   title: "Toggle",
