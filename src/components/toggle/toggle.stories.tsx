@@ -25,6 +25,7 @@ const meta = {
     activeChildren: <span className="label-m">12 Comments</span>,
     onToggle: (nextState: boolean) => {
       return new Promise<void>((resolve) => {
+        // eslint-disable-next-line no-console
         console.log("Toggled to: " + nextState);
         resolve();
       });
