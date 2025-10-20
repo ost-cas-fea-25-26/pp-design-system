@@ -22,8 +22,8 @@ const meta = {
   args: {
     isActive: false,
     variant: "primary",
-    activeChildren: <HeartFilledIcon color="primary" />,
-    defaultChildren: <HeartIcon color="primary" />,
+    defaultChildren: <span className="label-m">Comment</span>,
+    activeChildren: <span className="label-m">12 Comments</span>,
     onToggle: (nextState: boolean) => {
       return new Promise<void>((resolve) => {
         console.log("Toggled to: " + nextState);
@@ -37,15 +37,19 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
+
 export const Accent: Story = {
   args: {
     variant: "accent",
-    activeChildren: <HeartFilledIcon color="accent" />,
-    defaultChildren: <HeartIcon color="accent" />,
+    defaultChildren: <span className="label-m">Like</span>,
+    activeChildren: <span className="label-m">Liked</span>,
   },
 };
-export const Active: Story = {
+
+export const Metric: Story = {
   args: {
-    isActive: true,
+    variant: "metric",
+    defaultChildren: <span className="label-m">5 Likes</span>,
+    activeChildren: <span className="label-m">6 Likes</span>,
   },
 };
