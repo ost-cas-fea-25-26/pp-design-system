@@ -177,6 +177,10 @@
         @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-800 focus-visible:ring-offset-4 focus-visible:ring-offset-primary;
     }
 
+    .focus-ring-accent {
+        @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-200 focus-visible:ring-offset-2;
+    }
+
     .focus-ring-neutral {
         @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-200 focus-visible:ring-offset-2;
     }

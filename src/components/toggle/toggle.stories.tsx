@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react-vite";
 import { Toggle } from "./index";
 import { HeartFilledIcon, HeartIcon } from "../icons";
+import { is } from "storybook/internal/babel";
 
 const meta = {
   title: "Toggle",
@@ -10,19 +11,25 @@ const meta = {
   },
   tags: ["autodocs"],
   argTypes: {
-    isOn: {
+    isActive: {
       control: "select",
       options: [true, false],
     },
-    onLabel: {
-      control: "text",
-    },
-    color: {
+    variant: {
       control: "select",
       options: ["primary", "accent"],
     },
-    offLabel: {
-      control: "text",
+  },
+  args: {
+    isActive: false,
+    variant: "primary",
+    activeChildren: <HeartFilledIcon color="primary" />,
+    defaultChildren: <HeartIcon color="primary" />,
+    onToggle: (nextState: boolean) => {
+      return new Promise<void>((resolve) => {
+        console.log("Toggled to: " + nextState);
+        resolve();
+      });
     },
   },
 } satisfies Meta<typeof Toggle>;
@@ -30,20 +37,16 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const Default: Story = {};
+export const Accent: Story = {
   args: {
-    isOn: false,
-    onLabel: "Toggle is on",
-    onIcon: <HeartFilledIcon />,
-    color: "primary",
-    offLabel: "Toggle is off",
-    offIcon: <HeartIcon />,
-    toggleHandler: (nextState: boolean) => {
-      return new Promise<void>((resolve) => {
-        // eslint-disable-next-line no-alert
-        alert("Toggled to:" + nextState);
-        resolve();
-      });
-    },
+    variant: "accent",
+    activeChildren: <HeartFilledIcon color="accent" />,
+    defaultChildren: <HeartIcon color="accent" />,
+  },
+};
+export const Active: Story = {
+  args: {
+    isActive: true,
   },
 };
