@@ -3,7 +3,8 @@ import storybook from "eslint-plugin-storybook";
 
 import { config as smartiveConfig } from "@smartive/eslint-config";
 
-const config = [...smartiveConfig("react"), {
+const config = [
+  ...smartiveConfig("react"), {
   settings: {
     react: { version: "detect" },
   },
