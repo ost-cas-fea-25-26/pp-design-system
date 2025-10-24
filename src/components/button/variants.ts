@@ -9,6 +9,8 @@ export const buttonVariants = cva(
           "bg-primary text-primary-foreground hover:bg-primary-hover hover:outline-primary-100 focus-ring-primary",
         neutral:
           "bg-neutral text-neutral-foreground hover:bg-neutral-hover hover:outline-neutral-100 focus-ring-neutral",
+        light:
+          "bg-neutral-300 text-neutral hover:bg-neutral-400 hover:outline-none focus-ring-neutral",
         gradient:
           "bg-gradient-to-r from-accent to-primary text-primary-foreground hover:outline-primary-100 focus-ring-primary",
       },

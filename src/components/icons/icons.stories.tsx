@@ -60,12 +60,17 @@ const meta = {
   argTypes: {
     color: {
       control: "select",
-      options: ["primary", "accent", "neutral", "white", "error"],
+      options: ["primary", "accent", "neutral", "white", "error", "inherit"],
       description: "Color variant of the icon",
+    },
+    size: {
+      control: "select",
+      options: ["s", "m", "l"],
     },
   },
   args: {
     color: "primary",
+    size: "m",
   },
 } satisfies Meta<typeof SettingsIcon>;
 

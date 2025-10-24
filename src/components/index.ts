@@ -1,6 +1,7 @@
 export * from "./avatar";
 export * from "./button";
 export * from "./button-bar";
+export * from "./file-upload";
 export * from "./form";
 export * from "./icons";
 export * from "./input";
