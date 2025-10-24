@@ -30,6 +30,7 @@
     --color-accent-600: var(--color-pink-600);
     --color-accent-700: var(--color-pink-700);
     --color-accent-800: var(--color-pink-800);
+    --color-accent-900: var(--color-pink-900);
 
     --color-accent: var(--color-accent-500);
     --color-accent-hover: var(--color-accent-600);
@@ -175,6 +176,10 @@
 
     .focus-ring-primary-inverted {
         @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-800 focus-visible:ring-offset-4 focus-visible:ring-offset-primary;
+    }
+
+    .focus-ring-accent {
+        @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-200 focus-visible:ring-offset-2;
     }
 
     .focus-ring-neutral {
