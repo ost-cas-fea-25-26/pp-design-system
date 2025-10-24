@@ -11,11 +11,11 @@ export const AvatarButton: FC<AvatarButtonProps> = ({
   onClick,
 }) => {
   return (
-    <div
+    <button
       onClick={onClick}
       className="p-[8px] cursor-pointer flex justify-center items-center bg-primary-600 hover:bg-primary-700 flex-col rounded-lg"
     >
       <Avatar {...avatarProps} size="s" />
-    </div>
+    </button>
   );
 };
