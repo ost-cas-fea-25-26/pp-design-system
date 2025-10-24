@@ -6,7 +6,7 @@ import { EditIcon } from "../icons";
 
 type AvatarSize = "s" | "m" | "l" | "xl";
 
-type AvatarProps = {
+export type AvatarProps = {
   size?: AvatarSize;
   border?: boolean;
   src?: string;
