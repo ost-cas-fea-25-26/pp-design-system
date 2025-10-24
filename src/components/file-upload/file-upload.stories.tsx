@@ -30,14 +30,16 @@ export const Default: Story = {
     const [file, setFile] = useState<File | null>(null);
 
     return (
-      <FileUpload
-        file={file}
-        onFileChange={setFile}
-        title="Drag your file here..."
-        description="JPEG or PNG, up to 50 MB"
-        selectLabel="... or choose a file"
-        removeLabel="Remove file"
-      />
+      <div className="w-[20rem]">
+        <FileUpload
+          file={file}
+          onFileChange={setFile}
+          title="Drag your file here..."
+          description="JPEG or PNG, up to 50 MB"
+          selectLabel="... or choose a file"
+          removeLabel="Remove file"
+        />
+      </div>
     );
   },
 };
@@ -68,7 +70,7 @@ export const WithForm: Story = {
       <FormProvider {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="flex flex-col gap-5 w-[24rem]"
+          className="flex flex-col gap-5 w-[20rem]"
         >
           <FormField
             control={form.control}

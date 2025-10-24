@@ -42,7 +42,7 @@ export const FileUpload: FC<FileUploadProps> = ({
     props["aria-invalid"] === true || props["aria-invalid"] === "true";
 
   return (
-    <div className="flex flex-col gap-4 w-full sm:min-w-sm">
+    <div className="flex flex-col gap-4 w-full">
       <input
         type="file"
         accept={Object.keys(accept).join(",")}
