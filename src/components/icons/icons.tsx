@@ -41,7 +41,7 @@ type IconColor =
 
 type IconSize = keyof typeof ICON_SIZE_MAP;
 
-type IconProps = {
+export type IconProps = {
   color?: IconColor;
   size?: IconSize;
 };
@@ -64,6 +64,7 @@ const makeIcon = (
       className={ICON_COLOR_CLASSES[color]}
       width={ICON_SIZE_MAP[size]}
       height={ICON_SIZE_MAP[size]}
+      data-testid={`icon-${name}`}
     />
   );
   Component.displayName = name;
