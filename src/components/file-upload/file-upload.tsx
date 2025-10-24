@@ -1,5 +1,3 @@
-"use client";
-
 import { FC } from "react";
 import { Dropzone } from "./components/dropzone";
 import { UploadedFile } from "./components/uploaded-file";
@@ -15,6 +13,7 @@ type FileUploadProps = {
   description: string;
   selectLabel: string;
   removeLabel: string;
+  "aria-invalid"?: boolean | "true" | "false";
 };
 
 export const FileUpload: FC<FileUploadProps> = ({
@@ -26,6 +25,7 @@ export const FileUpload: FC<FileUploadProps> = ({
   description,
   selectLabel,
   removeLabel,
+  ...props
 }) => {
   const {
     removeFile,
@@ -38,8 +38,11 @@ export const FileUpload: FC<FileUploadProps> = ({
     formatSize,
   } = useFileUpload({ file, onFileChange, accept, maxSize });
 
+  const isInvalid =
+    props["aria-invalid"] === true || props["aria-invalid"] === "true";
+
   return (
-    <div className="flex flex-col gap-4 w-full sm:min-w-[430px]">
+    <div className="flex flex-col gap-4 w-full sm:min-w-sm">
       <input
         type="file"
         accept={Object.keys(accept).join(",")}
@@ -54,6 +57,7 @@ export const FileUpload: FC<FileUploadProps> = ({
         isDragActive={isDragActive}
         title={title}
         description={description}
+        isInvalid={isInvalid}
       />
 
       <UploadedFile

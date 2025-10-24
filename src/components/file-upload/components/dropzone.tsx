@@ -1,5 +1,3 @@
-"use client";
-
 import { FC } from "react";
 import { twMerge } from "tailwind-merge";
 import { DropzoneInputProps, DropzoneRootProps } from "react-dropzone";
@@ -11,6 +9,7 @@ type DropzoneProps = {
   isDragActive: boolean;
   title: string;
   description: string;
+  isInvalid?: boolean;
 };
 
 export const Dropzone: FC<DropzoneProps> = ({
@@ -19,12 +18,14 @@ export const Dropzone: FC<DropzoneProps> = ({
   isDragActive,
   title,
   description,
+  isInvalid = false,
 }) => (
   <div
     {...getRootProps()}
     className={twMerge(
-      "flex flex-col items-center justify-center rounded-lg border border-dashed border-neutral-200 bg-neutral-100 text-center h-[194px] p-4 focus-ring-neutral outline-none",
-      isDragActive && "border-primary-500 bg-primary-50",
+      "flex flex-col items-center justify-center rounded-lg border border-dashed text-center h-[194px] p-4 bg-neutral-100 focus-ring-neutral outline-none",
+      isInvalid ? "border-error" : "border-neutral-200",
+      isDragActive && !isInvalid && "border-primary-500 bg-primary-50",
     )}
     tabIndex={0}
   >
