@@ -1,4 +1,4 @@
-import { FC, ReactNode, useCallback, useState } from "react";
+import { FC, ReactNode, useState } from "react";
 import * as TogglePrimitive from "@radix-ui/react-toggle";
 import { VariantProps } from "class-variance-authority";
 import { toggleVariants } from "./variants";
@@ -18,24 +18,21 @@ export const Toggle: FC<ToggleProps> = ({
   const [isOn, setIsOn] = useState<boolean>(isActive);
   const children = isOn ? props.activeChildren : props.defaultChildren;
 
-  const clickHandler = useCallback(() => {
+  const handleClick = async () => {
     const nextState = !isOn;
-    if (props.onToggle) {
-      Promise.resolve(props.onToggle(nextState))
-        .then(() => {
-          setIsOn(nextState);
-        })
-        .catch(console.error);
-    } else {
+    try {
+      await props.onToggle?.(nextState);
       setIsOn(nextState);
+    } catch (error) {
+      console.error(error);
     }
-  }, [isOn]);
+  };
 
   return (
     <TogglePrimitive.Toggle
       data-state={isOn ? "on" : "off"}
       className={toggleVariants({ variant: variant })}
-      onClick={clickHandler}
+      onClick={handleClick}
     >
       {children}
     </TogglePrimitive.Toggle>
