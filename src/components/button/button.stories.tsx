@@ -13,7 +13,7 @@ const meta: Meta<typeof Button> = {
   argTypes: {
     variant: {
       control: "select",
-      options: ["primary", "neutral", "neutralLight", "gradient"],
+      options: ["primary", "neutral", "light", "gradient"],
     },
     size: {
       control: "select",
@@ -48,10 +48,10 @@ export const Neutral: Story = {
   },
 };
 
-export const NeutralLight: Story = {
+export const Light: Story = {
   args: {
-    variant: "neutralLight",
-    children: "Neutral Light Button",
+    variant: "light",
+    children: "Light Button",
   },
 };
 
