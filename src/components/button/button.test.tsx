@@ -64,4 +64,16 @@ describe("Button", () => {
     const root = container.firstChild as HTMLElement;
     expect(root).not.toHaveClass("w-full");
   });
+
+  it("applies circular style when isCircular is true", () => {
+    const { container } = render(<Button isCircular>+</Button>);
+    const root = container.firstChild as HTMLElement;
+    expect(root.className).toContain("rounded-full");
+  });
+
+  it("does not apply circular style when isCircular is false", () => {
+    const { container } = render(<Button>Not circular</Button>);
+    const root = container.firstChild as HTMLElement;
+    expect(root.className).not.toContain("rounded-full");
+  });
 });
