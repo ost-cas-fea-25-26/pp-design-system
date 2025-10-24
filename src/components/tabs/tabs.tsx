@@ -1,18 +1,18 @@
 import { FC, ReactNode } from "react";
 import * as TabsPrimitive from "@radix-ui/react-tabs";
 
-export type TabItem = {
+type TabItem = {
   text: string;
   content: ReactNode;
 };
 
-export type TabsProps = {
+type TabsProps = {
   tabs: TabItem[];
   defaultTab?: string;
 };
 
 export const Tabs: FC<TabsProps> = ({ tabs, defaultTab }) => {
-  const defaultValue = defaultTab || tabs[0]?.text || "";
+  const defaultValue = defaultTab ?? tabs[0]?.text ?? "";
 
   return (
     <TabsPrimitive.Root defaultValue={defaultValue} className="w-full">

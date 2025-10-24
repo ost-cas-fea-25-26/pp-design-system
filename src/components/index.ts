@@ -8,4 +8,5 @@ export * from "./input";
 export * from "./label";
 export * from "./link";
 export * from "./modal";
+export * from "./tabs";
 export * from "./textarea";
