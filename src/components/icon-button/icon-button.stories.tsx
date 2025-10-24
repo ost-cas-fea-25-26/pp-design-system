@@ -29,7 +29,7 @@ type Story = StoryObj<typeof IconButton>;
 export const Default: Story = {
   args: {
     label: "Username",
-    icon: <ProfileIcon />,
+    IconComponent: ProfileIcon,
   },
 };
 
@@ -37,7 +37,7 @@ export const Neutral: Story = {
   args: {
     color: "neutral",
     label: "Timestamp",
-    icon: <TimeIcon />,
+    IconComponent: TimeIcon,
   },
 };
 
@@ -46,6 +46,6 @@ export const Stacked: Story = {
     layout: "stacked",
     color: "primary",
     label: "Settings",
-    icon: <SettingsIcon />,
+    IconComponent: SettingsIcon,
   },
 };

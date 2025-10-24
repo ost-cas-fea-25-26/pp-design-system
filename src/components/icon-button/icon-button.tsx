@@ -1,10 +1,11 @@
-import React, { FC } from "react";
+import { ComponentType, FC } from "react";
 import { iconButtonVariants } from "./variants";
 import { VariantProps } from "class-variance-authority";
+import { IconProps } from "@/components";
 
 type IconButtonProps = VariantProps<typeof iconButtonVariants> & {
   label: string;
-  icon: React.ReactNode;
+  IconComponent: ComponentType<IconProps>;
   color: "primary" | "neutral";
   layout: "horizontal" | "stacked";
   onClick?: () => void;
@@ -12,11 +13,13 @@ type IconButtonProps = VariantProps<typeof iconButtonVariants> & {
 
 export const IconButton: FC<IconButtonProps> = ({
   label,
-  icon,
+  IconComponent,
   color = "primary",
   layout = "horizontal",
   onClick,
 }) => {
+  const iconSize = layout === "stacked" ? "m" : "s";
+
   return (
     <button
       className={iconButtonVariants({
@@ -25,7 +28,8 @@ export const IconButton: FC<IconButtonProps> = ({
       })}
       onClick={onClick}
     >
-      {icon} <span className="label-s ml-1">{label}</span>
+      <IconComponent size={iconSize} color="inherit" />
+      <span className="label-s ml-1">{label}</span>
     </button>
   );
 };

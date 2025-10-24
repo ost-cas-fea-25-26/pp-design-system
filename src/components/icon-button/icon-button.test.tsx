@@ -3,20 +3,21 @@ import { describe, it, expect, vi } from "vitest";
 import "@testing-library/jest-dom";
 import { IconButton } from "./index";
 import { iconButtonVariants } from "./variants";
+import { SettingsIcon } from "../icons";
 
 describe("IconButton", () => {
   it("renders the label and icon", () => {
-    const { getByText } = render(
+    const { getByText, getByTestId } = render(
       <IconButton
         label="Settings"
-        icon={<span>Icon</span>}
+        IconComponent={SettingsIcon}
         color="primary"
         layout="horizontal"
       />,
     );
 
     expect(getByText("Settings")).toBeInTheDocument();
-    expect(getByText("Icon")).toBeInTheDocument();
+    expect(getByTestId("icon-SettingsIcon")).toBeInTheDocument();
   });
 
   it("calls onClick when clicked", () => {
@@ -24,7 +25,7 @@ describe("IconButton", () => {
     const { getByRole } = render(
       <IconButton
         label="Settings"
-        icon={<span>Icon</span>}
+        IconComponent={SettingsIcon}
         color="neutral"
         layout="stacked"
         onClick={handleClick}
@@ -44,7 +45,7 @@ describe("IconButton", () => {
     const { getByRole } = render(
       <IconButton
         label="Settings"
-        icon={<span>Icon</span>}
+        IconComponent={SettingsIcon}
         color="primary"
         layout="horizontal"
       />,
@@ -66,7 +67,7 @@ describe("IconButton", () => {
     const { getByRole } = render(
       <IconButton
         label="Settings"
-        icon={<span>Icon</span>}
+        IconComponent={SettingsIcon}
         color="neutral"
         layout="stacked"
       />,
@@ -83,7 +84,7 @@ describe("IconButton", () => {
     const { getByRole } = render(
       <IconButton
         label="Settings"
-        icon={<span>Icon</span>}
+        IconComponent={SettingsIcon}
         color="primary"
         layout="horizontal"
       />,
