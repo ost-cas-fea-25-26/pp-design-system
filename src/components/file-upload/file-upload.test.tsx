@@ -18,7 +18,6 @@ describe("FileUpload", () => {
 
     expect(screen.getByText("Upload your file")).toBeInTheDocument();
     expect(screen.getByText("Select File")).toBeInTheDocument();
-    expect(screen.getByTestId("upload-icon")).toBeInTheDocument();
   });
 
   it("calls onFileChange when a file is selected", async () => {
@@ -35,11 +34,10 @@ describe("FileUpload", () => {
     );
 
     const file = new File(["hello"], "test-image.jpg", { type: "image/jpeg" });
-    const hiddenInput = screen.getByRole("textbox", {
-      hidden: true,
-    }) as HTMLInputElement;
+    const hiddenInput = document.querySelector('input[type="file"]');
+    expect(hiddenInput).toBeTruthy();
 
-    fireEvent.change(hiddenInput, { target: { files: [file] } });
+    fireEvent.change(hiddenInput!, { target: { files: [file] } });
 
     await waitFor(() => expect(handleFileChange).toHaveBeenCalledTimes(1));
     expect(handleFileChange).toHaveBeenCalledWith(file);

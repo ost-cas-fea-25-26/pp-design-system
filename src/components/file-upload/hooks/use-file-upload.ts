@@ -41,7 +41,7 @@ export const useFileUpload = ({
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const selected = Array.from(e.target.files || []);
+    const selected = Array.from(e.target.files ?? []);
     if (selected.length > 0) {
       applyFile(selected);
     }
@@ -65,6 +65,7 @@ export const useFileUpload = ({
     if (size >= 1024 * 1024) {
       return `${(size / (1024 * 1024)).toFixed(1)} MB`;
     }
+
     return `${Math.round(size / 1024)} KB`;
   };
 
