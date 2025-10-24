@@ -25,29 +25,45 @@ import Send from "./svg/send.svg?react";
 import Share from "./svg/share.svg?react";
 import Time from "./svg/time.svg?react";
 
-const ICON_SIZE = 16;
+const ICON_SIZE_MAP = {
+  s: 12,
+  m: 16,
+  l: 28,
+} as const;
 
-type IconColor = "primary" | "accent" | "neutral" | "white" | "error";
+type IconColor =
+  | "primary"
+  | "accent"
+  | "neutral"
+  | "white"
+  | "error"
+  | "inherit";
 
-type IconProps = { color?: IconColor };
+type IconSize = keyof typeof ICON_SIZE_MAP;
 
-const iconClassMap: Record<IconColor, string> = {
+type IconProps = {
+  color?: IconColor;
+  size?: IconSize;
+};
+
+const ICON_COLOR_CLASSES: Record<IconColor, string> = {
   primary: "text-primary",
   accent: "text-accent",
   neutral: "text-neutral",
   white: "text-white",
   error: "text-error",
+  inherit: "",
 };
 
 const makeIcon = (
   Icon: FC<{ className?: string; width?: number; height?: number }>,
   name: string,
 ): FC<IconProps> => {
-  const Component: FC<IconProps> = ({ color = "primary" }) => (
+  const Component: FC<IconProps> = ({ color = "primary", size = "m" }) => (
     <Icon
-      className={iconClassMap[color]}
-      width={ICON_SIZE}
-      height={ICON_SIZE}
+      className={ICON_COLOR_CLASSES[color]}
+      width={ICON_SIZE_MAP[size]}
+      height={ICON_SIZE_MAP[size]}
     />
   );
   Component.displayName = name;
