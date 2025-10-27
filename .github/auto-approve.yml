@@ -1,0 +1,4 @@
+pulls:
+  - author: renovate[bot]
+    requiredLabels:
+      - dependencies
