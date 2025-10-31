@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { useFormField } from "./form-field";
 
 export const FormMessage: FC<React.ComponentProps<"p">> = ({
