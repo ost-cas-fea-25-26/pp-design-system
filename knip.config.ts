@@ -19,6 +19,8 @@ const config: KnipConfig = {
     "@semantic-release/release-notes-generator",
     "@semantic-release/npm",
     "@semantic-release/github",
+    "@semantic-release/changelog",
+    "@semantic-release/git",
   ],
 };
 
