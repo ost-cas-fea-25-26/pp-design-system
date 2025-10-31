@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react-vite";
 import { TimedButton } from "./index";
-import { HeartIcon } from "../icons";
+import { HeartIcon, ShareIcon } from "../icons";
 
 const meta = {
   title: "Timed Button",
@@ -13,8 +13,8 @@ const meta = {
     duration: { control: "number" },
   },
   args: {
-    label: "Please like me",
-    activeLabel: "I like you, too",
+    label: "Copy Link",
+    activeLabel: "Link copied",
     duration: 5000,
   },
 } satisfies Meta<typeof TimedButton>;
@@ -27,8 +27,7 @@ export const Default: Story = {
     const clickHandler = () => {
       return new Promise<void>((resolve) => {
         setTimeout(() => {
-          // eslint-disable-next-line no-alert
-          alert("API call finished.");
+          console.info("copied link to clipboard!");
           resolve();
         }, 1000);
       });
@@ -39,7 +38,7 @@ export const Default: Story = {
         label={args.label}
         activeLabel={args.activeLabel}
         duration={args.duration}
-        icon={<HeartIcon color="neutral" />}
+        icon={<ShareIcon color="neutral" />}
         onClick={clickHandler}
       />
     );
