@@ -79,11 +79,11 @@ type Story = StoryObj<typeof meta>;
 
 export const Icons: Story = {
   render: (args) => (
-    <div className="flex flex-wrap gap-10 justify-center text-center">
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-10 gap-y-8 w-full max-w-5xl mx-auto">
       {ICONS.map((Icon, i) => (
         <div key={i} className="flex flex-col items-center gap-2">
           <Icon {...args} />
-          <pre className="text-xs text-gray-500">
+          <pre className="text-xs text-gray-500 text-center whitespace-nowrap">
             &lt;{Icon.displayName} /&gt;
           </pre>
         </div>
