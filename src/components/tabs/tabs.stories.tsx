@@ -32,7 +32,7 @@ export const Default: Story = {
   ),
 };
 
-export const WithDefaultBilling: Story = {
+export const WithDefaultTab: Story = {
   render: () => (
     <Tabs
       defaultTab="Billing"

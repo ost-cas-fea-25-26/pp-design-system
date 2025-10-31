@@ -19,8 +19,10 @@ describe("Tabs", () => {
     expect(screen.getByText("Password")).toBeVisible();
     expect(screen.getByText("Billing")).toBeVisible();
 
-    expect(screen.getByText("Account content")).toBeVisible();
+    const activeTab = screen.getByText("Account");
+    expect(activeTab).toHaveAttribute("data-state", "active");
 
+    expect(screen.getByText("Account content")).toBeVisible();
     expect(screen.queryByText("Password content")).not.toBeInTheDocument();
     expect(screen.queryByText("Billing content")).not.toBeInTheDocument();
   });
@@ -35,6 +37,9 @@ describe("Tabs", () => {
         ]}
       />,
     );
+
+    const activeTab = screen.getByText("Billing");
+    expect(activeTab).toHaveAttribute("data-state", "active");
 
     expect(screen.getByText("Billing content")).toBeVisible();
     expect(screen.queryByText("Account content")).not.toBeInTheDocument();
