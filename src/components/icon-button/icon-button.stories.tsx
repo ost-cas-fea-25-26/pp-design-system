@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react-vite";
 import { IconButton } from "./index";
-import { ProfileIcon, SettingsIcon, TimeIcon } from "../icons";
+import { LogoutIcon, ProfileIcon, SettingsIcon, TimeIcon } from "../icons";
 
 const meta = {
   title: "Icon Button",
@@ -19,6 +19,10 @@ const meta = {
     label: {
       control: "text",
       description: "Label",
+    },
+    animation: {
+      control: "radio",
+      options: ["none", "rotate", "move"],
     },
   },
 } satisfies Meta<typeof IconButton>;
@@ -41,11 +45,22 @@ export const Neutral: Story = {
   },
 };
 
-export const Stacked: Story = {
+export const Settings: Story = {
   args: {
     layout: "stacked",
     color: "primary",
     label: "Settings",
     IconComponent: SettingsIcon,
+    animation: "rotate",
+  },
+};
+
+export const Logout: Story = {
+  args: {
+    layout: "stacked",
+    color: "primary",
+    label: "Logout",
+    IconComponent: LogoutIcon,
+    animation: "move",
   },
 };
