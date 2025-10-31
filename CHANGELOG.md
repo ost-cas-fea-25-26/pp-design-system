@@ -1,3 +1,10 @@
+## [2.3.1](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.3.0...v2.3.1) (2025-10-31)
+
+
+### Bug Fixes
+
+* font-rendering ([#53](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/53)) ([a161e42](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/a161e420da1bf23306a539005e4014c3f36a598e))
+
 # [2.3.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.2.0...v2.3.0) (2025-10-31)
 
 
