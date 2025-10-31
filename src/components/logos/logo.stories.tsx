@@ -1,4 +1,12 @@
 import { Meta, StoryObj } from "@storybook/react-vite";
+import appIconGradient from "/src/assets/logo/app-icon-gradient.svg";
+import appIconWhite from "/src/assets/logo/app-icon-white.svg";
+import logoInlineViolet from "/src/assets/logo/inline-violet.svg";
+import logoInlineWhite from "/src/assets/logo/inline-white.svg";
+import logoInlineGradient from "/src/assets/logo/inline-gradient.svg";
+import logoStackedViolet from "/src/assets/logo/stacked-violet.svg";
+import logoStackedWhite from "/src/assets/logo/stacked-white.svg";
+import logoStackedGradient from "/src/assets/logo/stacked-gradient.svg";
 
 const meta: Meta = {
   title: "Logos",
@@ -12,7 +20,7 @@ export const Default: Story = {
     const logos = [
       {
         filename: "app-icon-gradient.svg",
-        src: "/logo/app-icon-gradient.svg",
+        src: appIconGradient,
         bg: "bg-white",
         text: "text-neutral-900",
         group: "App Icons",
@@ -20,7 +28,7 @@ export const Default: Story = {
       },
       {
         filename: "app-icon-white.svg",
-        src: "/logo/app-icon-white.svg",
+        src: appIconWhite,
         bg: "bg-violet-700",
         text: "text-white",
         group: "App Icons",
@@ -28,7 +36,7 @@ export const Default: Story = {
       },
       {
         filename: "inline-violet.svg",
-        src: "/logo/inline-violet.svg",
+        src: logoInlineViolet,
         bg: "bg-white",
         text: "text-neutral-900",
         group: "Violet",
@@ -36,7 +44,7 @@ export const Default: Story = {
       },
       {
         filename: "inline-white.svg",
-        src: "/logo/inline-white.svg",
+        src: logoInlineWhite,
         bg: "bg-violet-700",
         text: "text-white",
         group: "White",
@@ -44,7 +52,7 @@ export const Default: Story = {
       },
       {
         filename: "inline-gradient.svg",
-        src: "/logo/inline-gradient.svg",
+        src: logoInlineGradient,
         bg: "bg-white",
         text: "text-neutral-900",
         group: "Gradient",
@@ -52,7 +60,7 @@ export const Default: Story = {
       },
       {
         filename: "stacked-violet.svg",
-        src: "/logo/stacked-violet.svg",
+        src: logoStackedViolet,
         bg: "bg-white",
         text: "text-neutral-900",
         group: "Violet",
@@ -60,7 +68,7 @@ export const Default: Story = {
       },
       {
         filename: "stacked-white.svg",
-        src: "/logo/stacked-white.svg",
+        src: logoStackedWhite,
         bg: "bg-violet-700",
         text: "text-white",
         group: "White",
@@ -68,7 +76,7 @@ export const Default: Story = {
       },
       {
         filename: "stacked-gradient.svg",
-        src: "/logo/stacked-gradient.svg",
+        src: logoStackedGradient,
         bg: "bg-white",
         text: "text-neutral-900",
         group: "Gradient",
