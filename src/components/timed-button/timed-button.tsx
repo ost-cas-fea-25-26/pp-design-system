@@ -10,7 +10,7 @@ type TimedButtonProps = {
 };
 
 export const TimedButton: FC<TimedButtonProps> = ({
-  duration = 2000,
+  duration = 1000,
   ...props
 }) => {
   const [status, setStatus] = useState<"idle" | "processing" | "active">(

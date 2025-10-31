@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react-vite";
 import { TimedButton } from "./index";
-import { HeartIcon, ShareIcon } from "../icons";
+import { ShareIcon } from "../icons";
 
 const meta = {
   title: "Timed Button",
@@ -15,7 +15,7 @@ const meta = {
   args: {
     label: "Copy Link",
     activeLabel: "Link copied",
-    duration: 5000,
+    duration: 1000,
   },
 } satisfies Meta<typeof TimedButton>;
 export default meta;
