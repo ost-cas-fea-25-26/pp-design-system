@@ -1,6 +1,7 @@
 import {Canvas, Meta} from "@storybook/addon-docs/blocks";
 import * as TypographyStories from './components/typography/typography.stories';
 import * as ColorStories from './components/colors/colors.stories';
+import * as LogoStories from "./components/logos/logo.stories";
 
 <Meta title="Branding" />
 
@@ -8,19 +9,19 @@ import * as ColorStories from './components/colors/colors.stories';
 Welcome to the Mumble Design System. Below you find some general branding guidelines.
 
 ## Table of Contents
+- [Logo](#logo)
 - [Colors](#colors)
 - [Typography](#typography)
-- [Logo](#logo)
 - [Icons](#icons)
+
+### Logo
+<Canvas of={LogoStories.Default} />
 
 ### Colors
 <Canvas of={ColorStories.Default} />
 
 ### Typography
 <Canvas of={TypographyStories.Default} />
-
-### Logo
-TODO
 
 ### Icons
 TODO
