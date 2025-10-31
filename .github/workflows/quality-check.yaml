@@ -10,34 +10,47 @@ jobs:
   lint:
     name: "✨ Lint"
     runs-on: ubuntu-latest
-    if: github.event.pull_request.draft == false
     steps:
-      - name: "Checkout"
-        uses: actions/checkout@v4
-      - name: "Setup Node.js"
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
-      - name: "Install dependencies"
-        run: npm ci --no-audit --no-fund
-      - name: "Run linter"
-        run: npm run lint
+      - run: npm ci --no-audit --no-fund
+      - run: npm run lint
 
   test:
     name: "🧪 Test"
     runs-on: ubuntu-latest
-    if: github.event.pull_request.draft == false
-    needs: [ lint ]
     steps:
-      - name: "Checkout"
-        uses: actions/checkout@v4
-      - name: "Setup Node.js"
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
-      - name: "Install dependencies"
-        run: npm ci --no-audit --no-fund
-      - name: "Run tests"
-        run: npm run test
+      - run: npm ci --no-audit --no-fund
+      - run: npm run test
+
+  verify_library_build:
+    name: "🏗️ Verify — Library Build"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: npm run build:lib
+
+  verify_storybook_build:
+    name: "📘 Verify — Storybook Build"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: npm run build:storybook
