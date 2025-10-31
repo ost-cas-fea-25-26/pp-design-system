@@ -1,6 +1,6 @@
 {
   "name": "@ost-cas-fea-25-26/pp-design-system",
-  "version": "2.3.2",
+  "version": "2.4.0",
   "type": "module",
   "scripts": {
     "dev": "storybook dev -p 6006",

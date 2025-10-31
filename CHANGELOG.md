@@ -1,3 +1,10 @@
+# [2.4.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.3.2...v2.4.0) (2025-10-31)
+
+
+### Features
+
+* avatar button component ([#51](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/51)) ([62e8024](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/62e80245989bb1be009fb0868b74de6350ca5c2a))
+
 ## [2.3.2](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.3.1...v2.3.2) (2025-10-31)
 
 
