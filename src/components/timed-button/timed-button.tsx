@@ -11,7 +11,10 @@ type TimedButtonProps = {
 
 export const TimedButton: FC<TimedButtonProps> = ({
   duration = 1000,
-  ...props
+  label,
+  activeLabel,
+  icon,
+  onClick,
 }) => {
   const [status, setStatus] = useState<"idle" | "processing" | "active">(
     "idle",
@@ -22,13 +25,13 @@ export const TimedButton: FC<TimedButtonProps> = ({
       return;
     }
 
-    if (!props.onClick) {
+    if (!onClick) {
       return;
     }
     setStatus("processing");
 
     try {
-      await props.onClick();
+      await onClick();
       setStatus("active");
       setTimeout(() => {
         setStatus("idle");
@@ -48,34 +51,23 @@ export const TimedButton: FC<TimedButtonProps> = ({
         status === "active" && "cursor-default bg-neutral-100",
       )}
     >
-      {props.icon && <span className="mr-2">{props.icon}</span>}
-      <span className="relative flex-1 flex justify-center items-center">
-        {(!props.activeLabel || status !== "active") && (
-          <span
-            className={twMerge(
-              "transition-opacity duration-[350ms] ease-in-out block text-center whitespace-nowrap",
-              props.activeLabel && status === "active"
-                ? "opacity-0 absolute left-0 right-0 top-0 bottom-0 flex justify-center items-center"
-                : "opacity-100",
-            )}
-            key={props.label}
-          >
-            {props.label}
+      {icon && <span className="mr-2">{icon}</span>}
+      <span className="relative flex justify-center items-center">
+        {status !== "active" && (
+          <span className="transition-opacity duration-[350ms] ease-in-out block text-center whitespace-nowrap opacity-100">
+            {label}
           </span>
         )}
-        {props.activeLabel && (
-          <span
-            className={twMerge(
-              "transition-opacity duration-[350ms] ease-in-out block text-center whitespace-nowrap",
-              status === "active"
-                ? "opacity-100"
-                : "opacity-0 absolute left-0 right-0 top-0 bottom-0 flex justify-center items-center",
-            )}
-            key={props.activeLabel}
-          >
-            {props.activeLabel}
-          </span>
-        )}
+        <span
+          className={twMerge(
+            "transition-opacity duration-[350ms] ease-in-out block text-center whitespace-nowrap",
+            status === "active"
+              ? "opacity-100"
+              : "opacity-0 absolute left-0 right-0 top-0 bottom-0",
+          )}
+        >
+          {activeLabel ?? label}
+        </span>
       </span>
     </button>
   );
