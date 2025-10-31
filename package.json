@@ -1,6 +1,6 @@
 {
   "name": "@ost-cas-fea-25-26/pp-design-system",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "type": "module",
   "scripts": {
     "dev": "storybook dev -p 6006",
@@ -69,7 +69,9 @@
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^4.1.1",
+    "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^11.0.6",
     "@semantic-release/npm": "^12.0.2",
     "@semantic-release/release-notes-generator": "^14.1.0",

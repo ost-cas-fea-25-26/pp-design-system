@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import * as LabelPrimitive from "@radix-ui/react-label";
 import { twMerge } from "tailwind-merge";
 
