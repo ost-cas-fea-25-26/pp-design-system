@@ -39,8 +39,6 @@ export const TimedButton: FC<TimedButtonProps> = ({
     }
   };
 
-  const buttonText = status === "active" ? props.activeLabel : props.label;
-
   return (
     <button
       onClick={handleClick}
@@ -51,7 +49,34 @@ export const TimedButton: FC<TimedButtonProps> = ({
       )}
     >
       {props.icon && <span className="mr-2">{props.icon}</span>}
-      {buttonText}
+      <span className="relative flex-1 flex justify-center items-center">
+        {(!props.activeLabel || status !== "active") && (
+          <span
+            className={twMerge(
+              "transition-opacity duration-[350ms] ease-in-out block text-center whitespace-nowrap",
+              props.activeLabel && status === "active"
+                ? "opacity-0 absolute left-0 right-0 top-0 bottom-0 flex justify-center items-center"
+                : "opacity-100",
+            )}
+            key={props.label}
+          >
+            {props.label}
+          </span>
+        )}
+        {props.activeLabel && (
+          <span
+            className={twMerge(
+              "transition-opacity duration-[350ms] ease-in-out block text-center whitespace-nowrap",
+              status === "active"
+                ? "opacity-100"
+                : "opacity-0 absolute left-0 right-0 top-0 bottom-0 flex justify-center items-center",
+            )}
+            key={props.activeLabel}
+          >
+            {props.activeLabel}
+          </span>
+        )}
+      </span>
     </button>
   );
 };
