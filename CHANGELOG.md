@@ -1,3 +1,24 @@
+# [2.3.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.2.0...v2.3.0) (2025-10-31)
+
+
+### Bug Fixes
+
+* auto-approve renovate prs ([7780b2e](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/7780b2e4ff251749baffbda7997da9037b95c01d))
+* failing build ([edde9ec](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/edde9ecfe769695e5708a52d7bab96cb5c471d98))
+* missing dep ([035cc19](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/035cc194c208b09274b0baea94b1c94e497d9072))
+* release with protected main branch ([c251a7e](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/c251a7e40b8d3a611fdd2286b9a8eef24d86194b))
+
+
+### Features
+
+* add editable avatar variant ([14dcee4](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/14dcee4ad7b84543d17b9cfa20f2f4bf408c37c1))
+* add file upload component ([d7b148d](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/d7b148d0219d1350f2fe990d3aae24cae7265b7a))
+* add input and textarea with form-validation using react-hook-form ([#12](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/12)) ([8c3dc65](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/8c3dc65ac85a7272bfd223b27eed7a11e146f885))
+* icon button ([#41](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/41)) ([0651411](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/0651411d6e1d58aa18563464cb3670e0c5210a8a))
+* timed button ([330e79c](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/330e79c960995f0d0dfe6cf4525bdb55d091f986))
+* Toggle component ([#27](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/27)) ([9fe788a](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/9fe788a667c44ca86428d3889aef44c12a277f35))
+* update storybook to 9.1.13 ([#30](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/30)) ([355cade](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/355cade619e96cfed27cfec7bb52db725dcf9955))
+
 # [2.2.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.1.0...v2.2.0) (2025-10-14)
 
 
