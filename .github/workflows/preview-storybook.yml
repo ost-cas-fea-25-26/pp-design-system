@@ -36,7 +36,7 @@ jobs:
         run: npm ci --no-audit --no-fund
 
       - name: "Build Storybook"
-        run: npm run build:storybook -- --public-url /pr-${{ github.event.pull_request.number }}/
+        run: npm run build:storybook -- --base /pr-${{ github.event.pull_request.number }}/
 
       - name: "Deploy Storybook Preview"
         uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
