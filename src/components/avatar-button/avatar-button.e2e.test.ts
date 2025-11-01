@@ -1,6 +1,7 @@
 import { test } from "@playwright/test";
-import { visualTestsFor } from "../../../test/helpers/playwright";
+import { a11yTestsFor, visualTestsFor } from "../../../test/helpers/playwright";
 
 test.describe("Avatar Button", () => {
   visualTestsFor("/avatar-button.stories.tsx");
+  a11yTestsFor("/avatar-button.stories.tsx");
 });
