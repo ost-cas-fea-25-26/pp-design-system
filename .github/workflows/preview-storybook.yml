@@ -1,0 +1,31 @@
+name: "📘 Deploy — Storybook Preview"
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - name: Deploy to Netlify (anonymous)
+        uses: netlify/actions@v3
+        with:
+          publish-dir: storybook-static
+      - name: Comment Preview URL on PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const url = context.payload.deployment_status?.deployment_url || 'Preview URL not found';
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `🚀 **Storybook preview deployed**\n🔗 ${url}`
+            });
