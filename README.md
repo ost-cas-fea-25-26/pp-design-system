@@ -1,15 +1,26 @@
 <p align="center">
-  <img src="./src/assets/logo/stacked-gradient.svg" width="80" alt="Mumble Logo" />
+  <img src="./src/assets/logo/stacked-gradient.svg" width="120" alt="Mumble Logo" />
 </p>
 
 # PP Design System
 
 [![CI Status](https://github.com/ost-cas-fea-25-26/pp-design-system/actions/workflows/quality-check.yml/badge.svg)](https://github.com/ost-cas-fea-25-26/pp-design-system/actions/workflows/quality-check.yml)
+[![E2E Tests](https://github.com/ost-cas-fea-25-26/pp-design-system/actions/workflows/e2e.yml/badge.svg)](https://github.com/ost-cas-fea-25-26/pp-design-system/actions/workflows/e2e.yml)
 [![npm version](https://img.shields.io/npm/v/@ost-cas-fea-25-26/pp-design-system)](https://www.npmjs.com/package/@ost-cas-fea-25-26/pp-design-system)
+![npm downloads](https://img.shields.io/npm/dm/@ost-cas-fea-25-26/pp-design-system)
+[![bundle size](https://img.shields.io/bundlephobia/minzip/@ost-cas-fea-25-26/pp-design-system)](https://bundlephobia.com/package/@ost-cas-fea-25-26/pp-design-system)
+![types](https://img.shields.io/badge/types-TypeScript-blue)
 [![Coverage](https://img.shields.io/badge/coverage-❓%25-yellowgreen)](https://github.com/ost-cas-fea-25-26/pp-design-system)
-[![Storybook](https://img.shields.io/badge/storybook-online-blue)](https://ost-cas-fea-25-26.github.io/pp-design-system/)
-[![Semantic Release](https://img.shields.io/badge/release%20automation-active-brightgreen)](https://github.com/ost-cas-fea-25-26/pp-design-system)
-[![Node version](https://img.shields.io/badge/node-%3E%3D24-blue)](https://nodejs.org/)
+[![Storybook](https://img.shields.io/badge/storybook-online-ff4785)](https://ost-cas-fea-25-26.github.io/pp-design-system/)
+![code style](https://img.shields.io/badge/code_style-prettier-ff69b4)
+![ESLint](https://img.shields.io/badge/lint-eslint-blue)
+![Conventional Commits](https://img.shields.io/badge/commits-conventional-ff8c00)
+![Semantic Release](https://img.shields.io/badge/release%20automation-active-brightgreen)
+![Maintained](https://img.shields.io/badge/maintained-yes-brightgreen)
+![Node version](https://img.shields.io/badge/node-%3E%3D24-blue)
+![Issues](https://img.shields.io/github/issues/ost-cas-fea-25-26/pp-design-system)
+![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)
+![License](https://img.shields.io/github/license/ost-cas-fea-25-26/pp-design-system)
 
 ---
 
