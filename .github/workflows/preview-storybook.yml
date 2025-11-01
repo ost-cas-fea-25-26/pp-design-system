@@ -1,0 +1,81 @@
+name: "📘 Deploy — Storybook Preview"
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  pull_request_target:
+    types: [closed]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  pull-requests: write
+
+concurrency:
+  group: storybook-preview-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+
+  build-and-deploy:
+    if: github.event.action != 'closed'
+    name: "🚀 Build & Deploy Preview"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v4
+
+      - name: "Setup Node.js"
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: "Install dependencies"
+        run: npm ci --no-audit --no-fund
+
+      - name: "Build Storybook"
+        run: npm run build:storybook
+
+      - name: "Upload to GitHub Pages (Preview)"
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: storybook-static
+          branch: gh-pages
+          target-folder: pr-${{ github.event.pull_request.number }}
+
+      - name: "Comment Preview URL on PR"
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = context.payload.pull_request.number;
+            const url = `https://ost-cas-fea-25-26.github.io/pp-design-system/pr-${pr}/`;
+            const body = `🚀 **Storybook preview deployed**\n🔗 ${url}`;
+            github.rest.issues.createComment({
+              issue_number: pr,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body
+            });
+
+  cleanup:
+    if: github.event.action == 'closed'
+    name: "🧹 Remove Preview Deployment"
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: "Delete folder from gh-pages"
+        run: |
+          git fetch origin gh-pages
+          git switch gh-pages
+          rm -rf pr-${{ github.event.pull_request.number }}
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -am "chore: cleanup Storybook preview for PR #${{ github.event.pull_request.number }}" || echo "No changes"
+          git push origin gh-pages
