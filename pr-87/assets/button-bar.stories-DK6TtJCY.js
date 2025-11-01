@@ -1,0 +1,5 @@
+import{j as r}from"./jsx-runtime-D_zvdyIk.js";import{B as o}from"./button-bar-DcwTHoCy.js";import{C as s,a as n}from"./icons-CrCLVlP4.js";import{B as e}from"./button-DQWdcEmz.js";import"./iframe-bW3SthuQ.js";import"./preload-helper-PPVm8Dsz.js";import"./bundle-mjs-D6B6e0vX.js";import"./index-DutoEiXV.js";const B={title:"Button Bar",component:o,parameters:{layout:"centered"},tags:["autodocs"],argTypes:{leftButton:{control:!1},rightButton:{control:!1}},args:{leftButton:r.jsxs(e,{variant:"neutral",fullWidth:!0,children:["Cancel",r.jsx(n,{color:"white"})]}),rightButton:r.jsxs(e,{variant:"primary",fullWidth:!0,children:["Save",r.jsx(s,{color:"white"})]})}},t={render:a=>r.jsx("div",{className:"w-sm border border-primary/40 border-dashed rounded-md p-4",children:r.jsx(o,{...a})})};t.parameters={...t.parameters,docs:{...t.parameters?.docs,source:{originalSource:`{
+  render: args => <div className="w-sm border border-primary/40 border-dashed rounded-md p-4">
+      <ButtonBar {...args} />
+    </div>
+}`,...t.parameters?.docs?.source}}};const h=["Default"];export{t as Default,h as __namedExportsOrder,B as default};
