@@ -17,7 +17,6 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-
   build-and-deploy:
     if: github.event.action != 'closed'
     name: "🚀 Build & Deploy Preview"
@@ -37,18 +36,19 @@ jobs:
         run: npm ci --no-audit --no-fund
 
       - name: "Build Storybook"
-        run: npm run build:storybook
+        run: |
+          npm run clean:storybook
+          storybook build --output-dir storybook-static --public-url /pr-${{ github.event.pull_request.number }}/
 
-      - name: "Add .nojekyll file"
-        run: touch storybook-static/.nojekyll
-
-      - name: "Upload to GitHub Pages (Preview)"
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: "Deploy Storybook Preview"
+        uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
         with:
-          folder: storybook-static
-          branch: gh-pages
-          target-folder: pr-${{ github.event.pull_request.number }}
-          clean: false
+          install_command: npm ci --no-audit --no-fund
+          build_command: echo "already built"
+          path: storybook-static
+          target_branch: gh-pages
+          target_path: pr-${{ github.event.pull_request.number }}
+          checkout: false
 
       - name: "Comment Preview URL on PR"
         uses: actions/github-script@v7
