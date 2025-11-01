@@ -73,8 +73,8 @@ pnpm add @ost-cas-fea-25-26/pp-design-system
 Import components and styles in your React application:
 
 ```tsx
-import { Button } from '@ost-cas-fea-25-26/pp-design-system';
-import '@ost-cas-fea-25-26/pp-design-system/styles';
+import { Button } from "@ost-cas-fea-25-26/pp-design-system";
+import "@ost-cas-fea-25-26/pp-design-system/styles";
 
 function App() {
   return (
@@ -90,10 +90,10 @@ function App() {
 ### Using Form Components
 
 ```tsx
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
-import { Input, Form } from '@ost-cas-fea-25-26/pp-design-system';
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { Input, Form } from "@ost-cas-fea-25-26/pp-design-system";
 
 const schema = z.object({
   email: z.string().email(),
@@ -117,8 +117,8 @@ function LoginForm() {
 ### Using Modal Component
 
 ```tsx
-import { Modal, Button } from '@ost-cas-fea-25-26/pp-design-system';
-import { useState } from 'react';
+import { Modal, Button } from "@ost-cas-fea-25-26/pp-design-system";
+import { useState } from "react";
 
 function ModalExample() {
   const [open, setOpen] = useState(false);
@@ -141,6 +141,7 @@ function ModalExample() {
 The design system includes the following components:
 
 ### Core Components
+
 - **Button** - Primary, secondary, and icon variants with different sizes
 - **Button Bar** - Grouped button layouts
 - **Icon Button** - Compact icon-only buttons
@@ -148,6 +149,7 @@ The design system includes the following components:
 - **Link** - Styled anchor components
 
 ### Form Components
+
 - **Input** - Text input with validation support
 - **Textarea** - Multi-line text input
 - **Label** - Form labels with accessibility
@@ -156,10 +158,12 @@ The design system includes the following components:
 - **Toggle** - On/off switch component
 
 ### Navigation & Layout
+
 - **Tabs** - Tabbed navigation component
 - **Modal** - Dialog/modal overlay
 
 ### Display Components
+
 - **Avatar** - User avatar with image fallback
 - **Avatar Button** - Clickable avatar component
 - **Typography** - Text styles and headings
@@ -172,11 +176,13 @@ The design system includes the following components:
 ## 🛠️ Tech Stack
 
 ### Core Dependencies
+
 - **React** (^19.1.1) - UI library
 - **Tailwind CSS** (^4.1.13) - Utility-first CSS framework
 - **TypeScript** (~5.9.0) - Type safety
 
 ### UI Primitives
+
 - **Radix UI** - Accessible component primitives
   - `@radix-ui/react-avatar`
   - `@radix-ui/react-dialog`
@@ -186,17 +192,20 @@ The design system includes the following components:
   - `@radix-ui/react-toggle`
 
 ### Form Handling
+
 - **React Hook Form** (^7.64.0) - Form state management
 - **Zod** (^4.1.12) - Schema validation
 - **@hookform/resolvers** (^5.2.2) - Form validation resolvers
 
 ### Utilities
+
 - **Lucide React** (^0.552.0) - Icon library
 - **clsx** & **tailwind-merge** - Class name utilities
 - **class-variance-authority** (^0.7.1) - Variant management
 - **react-dropzone** (^14.3.8) - File upload handling
 
 ### Development Tools
+
 - **Storybook** (^9.1.13) - Component documentation
 - **Vitest** (^3.2.4) - Testing framework
 - **ESLint** (^9.35.0) - Linting
@@ -214,17 +223,20 @@ Ensure you have Node.js >= 24.0.0 installed.
 ### Setup
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/ost-cas-fea-25-26/pp-design-system.git
 cd pp-design-system
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Start Storybook for development:
+
 ```bash
 npm run dev
 ```
@@ -245,17 +257,17 @@ This creates both ESM and CJS builds in the `dist/` directory.
 
 ## 📜 Scripts
 
-| Script | Description |
-|--------|-------------|
-| `npm run dev` | Start Storybook development server on port 6006 |
-| `npm run build:lib` | Build the library (ESM + CJS) |
-| `npm run build:storybook` | Build static Storybook site |
-| `npm run lint` | Run ESLint, TypeScript checks, and unused code detection |
-| `npm run format` | Format code with Prettier |
-| `npm run test` | Run test suite with Vitest |
-| `npm run coverage` | Generate test coverage report |
-| `npm run type-check` | Run TypeScript type checking |
-| `npm run check:unused` | Check for unused exports and dependencies |
+| Script                    | Description                                              |
+| ------------------------- | -------------------------------------------------------- |
+| `npm run dev`             | Start Storybook development server on port 6006          |
+| `npm run build:lib`       | Build the library (ESM + CJS)                            |
+| `npm run build:storybook` | Build static Storybook site                              |
+| `npm run lint`            | Run ESLint, TypeScript checks, and unused code detection |
+| `npm run format`          | Format code with Prettier                                |
+| `npm run test`            | Run test suite with Vitest                               |
+| `npm run coverage`        | Generate test coverage report                            |
+| `npm run type-check`      | Run TypeScript type checking                             |
+| `npm run check:unused`    | Check for unused exports and dependencies                |
 
 ---
 
@@ -270,7 +282,7 @@ Currently, the project does not require environment variables for basic usage. R
 To use the design system's styles, import the CSS file in your application:
 
 ```tsx
-import '@ost-cas-fea-25-26/pp-design-system/styles';
+import "@ost-cas-fea-25-26/pp-design-system/styles";
 ```
 
 ### TypeScript Configuration
@@ -287,6 +299,7 @@ The library provides TypeScript definitions out of the box. Both ESM and CJS typ
 ### Storybook
 
 The component library is fully documented in Storybook, which includes:
+
 - Interactive component examples
 - Props documentation
 - Accessibility guidelines
@@ -328,6 +341,7 @@ For a detailed list of changes, see the [CHANGELOG.md](./CHANGELOG.md).
 ### Release Process
 
 Releases are automated using [Semantic Release](https://semantic-release.gitbook.io/):
+
 - Commits to `main` trigger automatic versioning
 - Changelog is automatically generated
 - NPM package is published automatically
