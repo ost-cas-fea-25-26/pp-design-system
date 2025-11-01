@@ -3,68 +3,47 @@ name: "📘 Deploy — Storybook Preview"
 on:
   pull_request:
     types: [opened, synchronize, reopened]
-  pull_request_target:
-    types: [closed]
 
 permissions:
-  contents: write
-  pages: write
-  id-token: write
   pull-requests: write
 
-concurrency:
-  group: storybook-preview-${{ github.event.pull_request.number }}
-  cancel-in-progress: true
-
 jobs:
-  build-and-deploy:
-    if: github.event.action != 'closed'
-    name: "🚀 Build & Deploy Preview"
+  preview:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
           node-version: 24
           cache: npm
 
-      - run: npm ci --no-audit --no-fund
+      - name: Install deps
+        run: npm ci --no-audit --no-fund
 
       - name: Build Storybook
         run: npm run build:storybook
 
-      - name: Deploy to temporary preview branch
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages-pr-${{ github.event.pull_request.number }}
-          folder: storybook-static
-          clean: true
+      - name: Deploy to Netlify (anonymous)
+        id: deploy
+        run: |
+          url=$(npx netlify deploy --dir=storybook-static --json | jq -r '.deploy_url')
+          echo "preview_url=$url" >> $GITHUB_OUTPUT
 
       - name: Comment Preview URL on PR
         uses: actions/github-script@v7
         with:
           script: |
-            const pr = context.payload.pull_request.number;
-            const branch = `gh-pages-pr-${pr}`;
-            const url = `https://ost-cas-fea-25-26.github.io/pp-design-system/`;
-            const body = `🚀 **Storybook preview deployed**\n🔗 ${url}\n\n🛠️ Branch: \`${branch}\``;
+            const url = process.env.PREVIEW_URL
+            const body = `🚀 **Storybook Preview is ready**\n🔗 ${url}`
             github.rest.issues.createComment({
-              issue_number: pr,
+              issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body,
-            });
-
-  cleanup:
-    if: github.event.action == 'closed'
-    name: "🧹 Cleanup Preview Branch"
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Delete preview branch
-        run: |
-          git push origin --delete gh-pages-pr-${{ github.event.pull_request.number }} || echo "Branch already deleted"
+              body
+            })
+        env:
+          PREVIEW_URL: ${{ steps.deploy.outputs.preview_url }}
