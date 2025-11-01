@@ -75,6 +75,7 @@
     "zod": "^4.1.12"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.11.0",
     "@chromatic-com/storybook": "^4.1.1",
     "@playwright/test": "^1.56.1",
     "@semantic-release/changelog": "^6.0.3",
