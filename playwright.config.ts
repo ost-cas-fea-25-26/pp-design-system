@@ -15,6 +15,13 @@ export default defineConfig({
     trace: "on-first-retry",
   },
 
+  expect: {
+    toHaveScreenshot: {
+      maxDiffPixelRatio: 0.005,
+      animations: "disabled",
+    },
+  },
+
   projects: [
     { name: "chromium", use: { ...devices["Desktop Chrome"] } },
     { name: "firefox", use: { ...devices["Desktop Firefox"] } },

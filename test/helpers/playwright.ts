@@ -55,7 +55,11 @@ export const visualTestsFor = (fileName: string): void => {
 export const a11yTestsFor = (fileName: string): void => {
   const stories = loadStories(fileName);
 
-  const IGNORED_RULES = ["landmark-one-main", "page-has-heading-one"];
+  const IGNORED_RULES = [
+    "landmark-one-main", // Storybook iframe doesn't include a <main> landmark, unrelated to component
+    "page-has-heading-one", // Stories intentionally do not include <h1> headings
+    "region", // Storybook wraps components outside semantic landmarks, not a component issue
+  ];
 
   for (const story of stories) {
     test(`a11y — ${story.name}`, async ({ page }) => {
