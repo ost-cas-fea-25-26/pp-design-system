@@ -7,6 +7,8 @@ type ButtonProps = React.ComponentProps<"button"> &
   VariantProps<typeof buttonVariants> & {
     fullWidth?: boolean;
     isCircular?: boolean;
+    /** Needed for icon-only buttons */
+    "aria-label"?: string;
   };
 
 export const Button: React.FC<ButtonProps> = ({
