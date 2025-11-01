@@ -14,14 +14,14 @@ type StoryIndex = {
   entries: Record<string, StoryEntry>;
 };
 
-export const openStory = async (page: Page, storyId: string): Promise<void> => {
+const openStory = async (page: Page, storyId: string): Promise<void> => {
   await page.goto(`/iframe.html?path=/story/${storyId}`);
 };
 
 export const visualTestsFor = async (filePath: string): Promise<void> => {
   const indexPath = join(process.cwd(), "storybook-static", "index.json");
   const file = await readFile(indexPath, "utf8");
-  const index: StoryIndex = JSON.parse(file);
+  const index = JSON.parse(file) as StoryIndex;
 
   const stories = Object.values(index.entries).filter(
     (e) => e.type === "story" && e.importPath.endsWith(filePath),
