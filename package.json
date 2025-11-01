@@ -3,7 +3,7 @@
   "version": "2.6.1",
   "type": "module",
   "engines": {
-    "node": ">=24.0.0"
+    "node": ">=18.0.0"
   },
   "scripts": {
     "dev": "storybook dev -p 6006",
