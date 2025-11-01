@@ -22,7 +22,7 @@ jobs:
       - run: npm run lint
 
   test:
-    name: "🧪 Test"
+    name: "🧪 Unit Test"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -31,10 +31,10 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci --no-audit --no-fund
-      - run: npm run test
+      - run: npm run test:unit
 
-  verify_library_build:
-    name: "🏗️ Verify — Library Build"
+  build_library:
+    name: "🏗️ Build Test — Library"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -45,8 +45,8 @@ jobs:
       - run: npm ci --no-audit --no-fund
       - run: npm run build:lib
 
-  verify_storybook_build:
-    name: "📘 Verify — Storybook Build"
+  build_storybook:
+    name: "📘 Build Test — Storybook"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -58,9 +58,9 @@ jobs:
       - run: npm run build:storybook
 
   e2e:
-    name: "🎭 Playwright — ${{ matrix.browser }} — shard ${{ matrix.shard }}"
+    name: "📸 E2E Test — ${{ matrix.browser }} — shard ${{ matrix.shard }}"
     runs-on: ubuntu-latest
-    needs: verify_storybook_build
+    needs: build_storybook
 
     strategy:
       fail-fast: false
