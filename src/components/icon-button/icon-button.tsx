@@ -9,6 +9,7 @@ type IconButtonProps = VariantProps<typeof iconButtonVariants> & {
   color: "primary" | "neutral";
   layout: "horizontal" | "stacked";
   onClick?: () => void;
+  animation?: "rotate";
 };
 
 export const IconButton: FC<IconButtonProps> = ({
@@ -17,8 +18,14 @@ export const IconButton: FC<IconButtonProps> = ({
   color = "primary",
   layout = "horizontal",
   onClick,
+  animation,
 }) => {
   const iconSize = layout === "stacked" ? "m" : "s";
+
+  const animationClasses =
+    animation === "rotate"
+      ? "inline-flex transition-transform duration-300 ease-in-out group-hover:rotate-180"
+      : "";
 
   return (
     <button
@@ -28,7 +35,9 @@ export const IconButton: FC<IconButtonProps> = ({
       })}
       onClick={onClick}
     >
-      <IconComponent size={iconSize} color="inherit" />
+      <span className={animationClasses} data-testid="icon-wrapper">
+        <IconComponent size={iconSize} color="inherit" />
+      </span>
       <span className="label-s ml-1">{label}</span>
     </button>
   );

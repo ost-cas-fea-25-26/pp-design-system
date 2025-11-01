@@ -1,3 +1,10 @@
+## [2.6.1](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.6.0...v2.6.1) (2025-11-01)
+
+
+### Bug Fixes
+
+* icon button animation ([#73](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/73)) ([271f637](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/271f637e4c89d8cc1b9271beb6a810357333c688))
+
 # [2.6.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.5.0...v2.6.0) (2025-10-31)
 
 

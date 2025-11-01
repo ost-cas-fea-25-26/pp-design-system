@@ -94,4 +94,19 @@ describe("IconButton", () => {
     expect(button.className).toContain("text-primary-600");
     expect(button.className).toContain("flex-row");
   });
+
+  it("applies rotate animation class when animation='rotate'", () => {
+    const { getByTestId } = render(
+      <IconButton
+        label="Settings"
+        IconComponent={SettingsIcon}
+        color="primary"
+        layout="horizontal"
+        animation="rotate"
+      />,
+    );
+    expect(getByTestId("icon-wrapper").className).toContain(
+      "group-hover:rotate-180",
+    );
+  });
 });
