@@ -39,12 +39,16 @@ jobs:
       - name: "Build Storybook"
         run: npm run build:storybook
 
+      - name: "Add .nojekyll file"
+        run: touch storybook-static/.nojekyll
+
       - name: "Upload to GitHub Pages (Preview)"
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: storybook-static
           branch: gh-pages
           target-folder: pr-${{ github.event.pull_request.number }}
+          clean: false
 
       - name: "Comment Preview URL on PR"
         uses: actions/github-script@v7
