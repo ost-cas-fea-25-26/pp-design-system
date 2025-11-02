@@ -6,7 +6,6 @@ import {
   TimeIcon,
   CalendarIcon,
   LocationIcon,
-  CheckmarkIcon,
   MumbleIcon,
 } from "../icons";
 import { Meta, StoryObj } from "@storybook/react-vite";
