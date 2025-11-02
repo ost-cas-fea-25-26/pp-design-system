@@ -5,12 +5,11 @@
 # PP Design System
 
 [![Quality Check](https://github.com/ost-cas-fea-25-26/pp-design-system/actions/workflows/quality-check.yaml/badge.svg)](https://github.com/ost-cas-fea-25-26/pp-design-system/actions/workflows/quality-check.yaml)
-[![Deploy Storybook](https://github.com/ost-cas-fea-25-26/pp-design-system/actions/workflows/deploy-storybook.yml/badge.svg)](https://github.com/ost-cas-fea-25-26/pp-design-system/actions/workflows/deploy-storybook.yml)
 [![Release](https://github.com/ost-cas-fea-25-26/pp-design-system/actions/workflows/release-lib.yaml/badge.svg)](https://github.com/ost-cas-fea-25-26/pp-design-system/actions/workflows/release-lib.yaml)
+[![Vercel Deploy](https://img.shields.io/badge/vercel-live-000?logo=vercel)](https://pp-design-system.vercel.app/)
 ![npm downloads](https://img.shields.io/npm/dm/@ost-cas-fea-25-26/pp-design-system)
 [![bundle size](https://img.shields.io/bundlephobia/minzip/@ost-cas-fea-25-26/pp-design-system)](https://bundlephobia.com/package/@ost-cas-fea-25-26/pp-design-system)
 ![types](https://img.shields.io/badge/types-TypeScript-blue)
-[![Storybook](https://img.shields.io/badge/storybook-online-ff4785)](https://ost-cas-fea-25-26.github.io/pp-design-system/)
 ![code style](https://img.shields.io/badge/code_style-prettier-ff69b4)
 ![ESLint](https://img.shields.io/badge/lint-eslint-blue)
 ![Conventional Commits](https://img.shields.io/badge/commits-conventional-ff8c00)
@@ -30,6 +29,18 @@
 - Visual regression tests with Playwright
 - Automated CI: linting, building, testing, and publish
 - Reusable design system for web applications
+
+---
+
+## 🔗 Storybook
+
+### Production Storybook
+https://pp-design-system.vercel.app/
+
+### Preview Deployments (per PR)
+Every Pull Request gets a live Storybook preview automatically via Vercel.
+
+> ✅ Shared via bot comment — no manual setup or tokens required.
 
 ---
 
@@ -71,17 +82,6 @@ npm run test:e2e           # Run Playwright tests
 npm run test:e2e:update    # Regenerate snapshots via Docker
 npm run test:e2e:ui        # Playwright UI runner
 ```
----
-
-## 📚 Storybook
-
-Run locally:
-
-```bash
-npm run dev
-```
-
-Live demo: [https://ost-cas-fea-25-26.github.io/pp-design-system/](https://ost-cas-fea-25-26.github.io/pp-design-system/)
 
 ---
 
@@ -106,4 +106,4 @@ Live demo: [https://ost-cas-fea-25-26.github.io/pp-design-system/](https://ost-c
 - [Storybook](https://storybook.js.org/)
 - [Vitest](https://vitest.dev/)
 - [Playwright](https://playwright.dev/)
-- [Semantic Release](https://semantic-release.gitbook.io/)  
+- [Semantic Release](https://semantic-release.gitbook.io/)
