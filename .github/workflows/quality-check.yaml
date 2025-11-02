@@ -8,6 +8,11 @@ on:
       - main
       - 'gh-readonly-queue/**'
 
+permissions:
+  contents: read
+  pull-requests: write
+  checks: write
+
 jobs:
   lint:
     name: "✨ Lint"
@@ -66,9 +71,10 @@ jobs:
         run: npm ci --no-audit --no-fund
 
       - name: SonarCloud Scan
-        uses: SonarSource/sonarqube-scan-action@v6
+        uses: SonarSource/sonarcloud-github-action@v2
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_HOST_URL: https://sonarcloud.io
 
   build_library:
