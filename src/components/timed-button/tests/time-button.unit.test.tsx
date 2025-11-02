@@ -13,7 +13,7 @@ describe("Timed Button", () => {
 
   it("renders with icon", () => {
     const { getByTestId } = render(
-      <TimedButton icon={<svg data-testid="icon" />} label="Icon Button" />,
+      <TimedButton icon={<svg data-testid="icon" />} label="Click me" />,
     );
     expect(getByTestId("icon")).toBeInTheDocument();
   });
@@ -24,7 +24,6 @@ describe("Timed Button", () => {
         label="Click me"
         activeLabel="Active"
         onClick={vi.fn().mockResolvedValue(undefined)}
-        duration={10}
       />,
     );
 
@@ -34,12 +33,12 @@ describe("Timed Button", () => {
   });
 
   it("calls onClick when clicked", async () => {
-    const onClick = vi.fn().mockResolvedValue(undefined);
-    const { getByText } = render(
+    const onClick = vi.fn(() => Promise.resolve());
+    const { getByRole } = render(
       <TimedButton label="Click" onClick={onClick} />,
     );
-    fireEvent.click(getByText("Click"));
-    await waitFor(() => expect(onClick).toHaveBeenCalled());
+    fireEvent.click(getByRole("button"));
+    await waitFor(() => expect(onClick).toHaveBeenCalledTimes(1));
   });
 
   it("does not call onClick if already processing", () => {
@@ -50,10 +49,10 @@ describe("Timed Button", () => {
           resolve = r;
         }),
     );
-    const { getByText } = render(
+    const { getByRole } = render(
       <TimedButton label="Click" onClick={onClick} />,
     );
-    const button = getByText("Click");
+    const button = getByRole("button");
     fireEvent.click(button);
     fireEvent.click(button);
     expect(onClick).toHaveBeenCalledTimes(1);

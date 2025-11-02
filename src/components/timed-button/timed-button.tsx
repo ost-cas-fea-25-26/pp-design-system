@@ -10,8 +10,11 @@ type TimedButtonProps = {
 };
 
 export const TimedButton: FC<TimedButtonProps> = ({
-  duration = 2000,
-  ...props
+  duration = 1000,
+  label,
+  activeLabel,
+  icon,
+  onClick,
 }) => {
   const [status, setStatus] = useState<"idle" | "processing" | "active">(
     "idle",
@@ -22,13 +25,13 @@ export const TimedButton: FC<TimedButtonProps> = ({
       return;
     }
 
-    if (!props.onClick) {
+    if (!onClick) {
       return;
     }
     setStatus("processing");
 
     try {
-      await props.onClick();
+      await onClick();
       setStatus("active");
       setTimeout(() => {
         setStatus("idle");
@@ -39,19 +42,31 @@ export const TimedButton: FC<TimedButtonProps> = ({
     }
   };
 
-  const buttonText = status === "active" ? props.activeLabel : props.label;
-
   return (
     <button
       onClick={handleClick}
       className={twMerge(
-        'focus-ring-neutral inline-flex items-center px-4 py-2 cursor-pointer rounded-2xl hover:bg-neutral-100 active:bg-neutral-100"',
+        "focus-ring-neutral inline-flex items-center px-4 py-2 cursor-pointer rounded-2xl hover:bg-neutral-100 active:bg-neutral-100 transition-colors transition-default",
         status === "processing" && "cursor-wait bg-neutral-100",
         status === "active" && "cursor-default bg-neutral-100",
       )}
     >
-      {props.icon && <span className="mr-2">{props.icon}</span>}
-      {buttonText}
+      {icon && <span className="mr-2">{icon}</span>}
+      <span className="relative flex justify-center items-center">
+        {status !== "active" && (
+          <span className="transition-opacity transition-default block text-center whitespace-nowrap opacity-100">
+            {label}
+          </span>
+        )}
+        <span
+          className={twMerge(
+            "transition-opacity transition-default block text-center whitespace-nowrap",
+            status === "active" ? "opacity-100" : "opacity-0 absolute inset-0",
+          )}
+        >
+          {activeLabel ?? label}
+        </span>
+      </span>
     </button>
   );
 };

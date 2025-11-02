@@ -90,6 +90,9 @@
 
     --text-base: 1.125rem;
     --text-base--line-height: calc(1.575 / 1.125);
+
+    /* Animations */
+    --default-transition-duration: 350ms;
 }
 
 @layer components {
@@ -184,6 +187,11 @@
 
     .focus-ring-neutral {
         @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-200 focus-visible:ring-offset-2;
+    }
+
+    .transition-default {
+        animation-duration: var(--default-transition-duration);
+        animation-timing-function: ease-in-out;
     }
 }
 
