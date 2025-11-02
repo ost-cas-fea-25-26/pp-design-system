@@ -46,7 +46,7 @@ export const TimedButton: FC<TimedButtonProps> = ({
     <button
       onClick={handleClick}
       className={twMerge(
-        "focus-ring-neutral inline-flex items-center px-4 py-2 cursor-pointer rounded-2xl hover:bg-neutral-100 active:bg-neutral-100 transition-colors duration-[350ms] ease-in-out",
+        "focus-ring-neutral inline-flex items-center px-4 py-2 cursor-pointer rounded-2xl hover:bg-neutral-100 active:bg-neutral-100 transition-colors transition-default",
         status === "processing" && "cursor-wait bg-neutral-100",
         status === "active" && "cursor-default bg-neutral-100",
       )}
@@ -54,16 +54,14 @@ export const TimedButton: FC<TimedButtonProps> = ({
       {icon && <span className="mr-2">{icon}</span>}
       <span className="relative flex justify-center items-center">
         {status !== "active" && (
-          <span className="transition-opacity duration-[350ms] ease-in-out block text-center whitespace-nowrap opacity-100">
+          <span className="transition-opacity transition-default block text-center whitespace-nowrap opacity-100">
             {label}
           </span>
         )}
         <span
           className={twMerge(
-            "transition-opacity duration-[350ms] ease-in-out block text-center whitespace-nowrap",
-            status === "active"
-              ? "opacity-100"
-              : "opacity-0 absolute left-0 right-0 top-0 bottom-0",
+            "transition-opacity transition-default block text-center whitespace-nowrap",
+            status === "active" ? "opacity-100" : "opacity-0 absolute inset-0",
           )}
         >
           {activeLabel ?? label}
