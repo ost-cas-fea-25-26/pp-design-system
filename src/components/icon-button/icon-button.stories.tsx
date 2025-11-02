@@ -20,6 +20,10 @@ const meta = {
       control: "text",
       description: "Label",
     },
+    animation: {
+      control: "radio",
+      options: ["none", "rotate"],
+    },
   },
 } satisfies Meta<typeof IconButton>;
 
@@ -41,11 +45,12 @@ export const Neutral: Story = {
   },
 };
 
-export const Stacked: Story = {
+export const Settings: Story = {
   args: {
     layout: "stacked",
     color: "primary",
     label: "Settings",
     IconComponent: SettingsIcon,
+    animation: "rotate",
   },
 };

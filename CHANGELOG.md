@@ -1,3 +1,31 @@
+## [2.6.2](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.6.1...v2.6.2) (2025-11-01)
+
+
+### Bug Fixes
+
+* downgrade engines ([#88](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/88)) ([9096bb5](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/9096bb5be1294d31334c4b25c28b91a165b7bc64))
+
+## [2.6.1](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.6.0...v2.6.1) (2025-11-01)
+
+
+### Bug Fixes
+
+* icon button animation ([#73](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/73)) ([271f637](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/271f637e4c89d8cc1b9271beb6a810357333c688))
+
+# [2.6.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.5.0...v2.6.0) (2025-10-31)
+
+
+### Features
+
+* add tabs component ([#52](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/52)) ([95aa8d8](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/95aa8d8df52812197436133a89eabfd5cc16433e))
+
+# [2.5.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.4.0...v2.5.0) (2025-10-31)
+
+
+### Features
+
+* logo ([#61](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/61)) ([e4a4dd7](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/e4a4dd7dee3444ec42dbd0c5eaca520074b07a5e))
+
 # [2.4.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.3.2...v2.4.0) (2025-10-31)
 
 
