@@ -1,3 +1,10 @@
+# [2.8.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.7.0...v2.8.0) (2025-11-02)
+
+
+### Features
+
+* add coverage to sonar ([3b65f05](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/3b65f054053240f1e8f58ed234c645e2033fa150))
+
 # [2.7.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.6.3...v2.7.0) (2025-11-02)
 
 
