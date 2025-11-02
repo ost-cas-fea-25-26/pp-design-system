@@ -4,12 +4,6 @@
 
 # PP Design System
 
-<p align="center">
-  <img src="public/mumble-logo.svg" alt="Mumble Logo" width="120" />
-</p>
-
-# PP Design System
-
 [![Quality Check](https://github.com/ost-cas-fea-25-26/pp-design-system/actions/workflows/quality-check.yaml/badge.svg)](https://github.com/ost-cas-fea-25-26/pp-design-system/actions/workflows/quality-check.yaml)
 [![Deploy Storybook](https://github.com/ost-cas-fea-25-26/pp-design-system/actions/workflows/deploy-storybook.yml/badge.svg)](https://github.com/ost-cas-fea-25-26/pp-design-system/actions/workflows/deploy-storybook.yml)
 [![Release](https://github.com/ost-cas-fea-25-26/pp-design-system/actions/workflows/release-lib.yaml/badge.svg)](https://github.com/ost-cas-fea-25-26/pp-design-system/actions/workflows/release-lib.yaml)
