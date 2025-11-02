@@ -3,10 +3,10 @@ import { IconButton } from "../icon-button";
 import { ProfileIcon, SettingsIcon, TimeIcon, LocationIcon } from "../icons";
 
 import { Link } from "../link";
-import { UserInfo } from "./user-info";
+import { UserInfo } from "./index";
 
 const meta: Meta<typeof UserInfo> = {
-  title: "Compositions/User",
+  title: "Compositions/User Info",
   component: UserInfo,
   parameters: { layout: "centered" },
   tags: ["autodocs"],

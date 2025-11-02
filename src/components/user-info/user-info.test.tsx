@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import { UserInfo } from "./user-info";
+import { UserInfo } from "./index";
 import { SettingsIcon } from "../icons";
 import "@testing-library/jest-dom";
 
