@@ -7,7 +7,7 @@ export default defineConfig({
     include: ["src/**/*.unit.test.ts?(x)"],
     coverage: {
       provider: "v8",
-      reporter: ["text", "html"],
+      reporter: ["text", "html", "lcov"],
       lines: 80,
       functions: 80,
       branches: 80,
