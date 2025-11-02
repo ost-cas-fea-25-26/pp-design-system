@@ -63,6 +63,33 @@ import "@ost-cas-fea-25-26/pp-design-system/styles";
 
 ---
 
+---
+
+## 🎨 Design Tokens (required)
+
+All components in this library rely on global CSS variables  
+(colors, typography, spacing, radius, shadows, motion).
+
+➡️ **You must import the stylesheet once in your application**:
+
+```ts
+import "@ost-cas-fea-25-26/pp-design-system/styles";
+```
+
+This injects the design tokens (e.g. `--color-primary`, `--radius-md`, `--text-base`, …).
+
+You can also use the tokens in your own styles:
+
+```css
+.card {
+  background: var(--color-neutral-50);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-4);
+}
+```
+
+Token overview is available in Storybook under **Foundation**.
+
 ## 🛠️ Development
 
 ```bash

@@ -16,7 +16,7 @@ import {
 } from "../form";
 
 const meta: Meta<typeof FileUpload> = {
-  title: "File Upload",
+  title: "Components/File Upload",
   component: FileUpload,
   parameters: { layout: "centered" },
   tags: ["autodocs"],

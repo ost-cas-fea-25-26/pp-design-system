@@ -3,7 +3,7 @@ import { Input } from "./input";
 import { MumbleIcon } from "../icons";
 
 const meta: Meta<typeof Input> = {
-  title: "Input",
+  title: "Components/Input",
   component: Input,
   parameters: { layout: "centered" },
   tags: ["autodocs"],

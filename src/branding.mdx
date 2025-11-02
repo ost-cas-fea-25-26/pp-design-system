@@ -1,28 +1,46 @@
-import {Canvas, Meta} from "@storybook/addon-docs/blocks";
-import * as TypographyStories from './components/typography/typography.stories';
-import * as ColorStories from './components/colors/colors.stories';
+import { Canvas, Meta } from "@storybook/addon-docs/blocks";
+import * as TypographyStories from "./foundation/typography/typography.stories";
+import * as ColorStories from "./foundation/colors/colors.stories";
+import * as RadiusStories from "./foundation/radius/radius.stories";
+import * as ShadowStories from "./foundation/shadows/shadows.stories";
+import * as SpacingStories from "./foundation/spacing/spacing.stories";
+
 import * as IconStories from "./components/icons/icons.stories";
-import * as LogoStories from "./components/logos/logo.stories";
+import * as LogoStories from "./foundation/logos/logo.stories";
 
 <Meta title="Branding" />
 
 # Mumble Brand Guidelines
-Welcome to the Mumble Design System. Below you find some general branding guidelines.
+
+The Mumble Design System provides the visual foundations used across all digital products.
+These guidelines define the core brand identity — colors, typography, spacing, radius, and more — to ensure visual and functional consistency.
 
 ## Table of Contents
 - [Logo](#logo)
 - [Colors](#colors)
 - [Typography](#typography)
+- [Radius](#radius)
+- [Shadows](#shadows)
+- [Spacing](#spacing)
 - [Icons](#icons)
 
-### Logo
+## Logo
 <Canvas of={LogoStories.Default} />
 
-### Colors
+## Colors
 <Canvas of={ColorStories.Default} />
 
-### Typography
+## Typography
 <Canvas of={TypographyStories.Default} />
 
-### Icons
+## Radius
+<Canvas of={RadiusStories.Default} />
+
+## Shadows
+<Canvas of={ShadowStories.Default} />
+
+## Spacing
+<Canvas of={SpacingStories.Default} />
+
+## Icons
 <Canvas of={IconStories.Icons} />

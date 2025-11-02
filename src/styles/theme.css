@@ -4,7 +4,7 @@
 @import "tw-animate-css";
 
 @theme {
-    /* Colors */
+    /* colors: primary */
     --color-primary-50: var(--color-violet-50);
     --color-primary-100: var(--color-violet-100);
     --color-primary-200: var(--color-violet-200);
@@ -21,6 +21,7 @@
     --color-primary-active: var(--color-primary-800);
     --color-primary-foreground: white;
 
+    /* colors: accent */
     --color-accent-50: var(--color-pink-50);
     --color-accent-100: var(--color-pink-100);
     --color-accent-200: var(--color-pink-200);
@@ -37,6 +38,7 @@
     --color-accent-active: var(--color-accent-700);
     --color-accent-foreground: white;
 
+    /* colors: neutral */
     --color-neutral-50: var(--color-slate-50);
     --color-neutral-100: var(--color-slate-100);
     --color-neutral-200: var(--color-slate-200);
@@ -53,13 +55,18 @@
     --color-neutral-active: var(--color-neutral-700);
     --color-neutral-foreground: white;
 
+    /* colors: error */
     --color-error: var(--color-red-600);
     --color-error-hover: var(--color-red-700);
     --color-error-active: var(--color-red-800);
     --color-error-foreground: white;
 
-    /* Typography  */
+    /* typography */
     --default-font-family: "Poppins", sans-serif;
+
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
 
     --text-9xl: 3rem;
     --text-9xl--line-height: calc(3.75 / 3);
@@ -91,8 +98,41 @@
     --text-base: 1.125rem;
     --text-base--line-height: calc(1.575 / 1.125);
 
-    /* Animations */
-    --default-transition-duration: 350ms;
+    /* spacing */
+    --spacing-1: 0.25rem;
+    --spacing-2: 0.5rem;
+    --spacing-3: 0.75rem;
+    --spacing-4: 1rem;
+    --spacing-6: 1.5rem;
+    --spacing-8: 2rem;
+    --spacing-12: 3rem;
+
+    /* radius */
+    --radius-xs: 2px;
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 8px;
+    --radius-xl: 12px;
+    --radius-full: 9999px;
+
+    /* shadows */
+    --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.06);
+    --shadow-md: 0 4px 6px rgb(0 0 0 / 0.08);
+    --shadow-lg: 0 10px 15px rgb(0 0 0 / 0.1);
+
+    /* motion */
+    --transition-fast: 250ms;
+    --transition-default: 350ms;
+    --transition-slow: 450ms;
+    --easing-default: ease-in-out;
+}
+
+@layer base {
+    html {
+        @apply antialiased;
+        text-rendering: optimizeLegibility;
+        font-family: var(--default-font-family);
+    }
 }
 
 @layer components {
@@ -190,14 +230,7 @@
     }
 
     .transition-default {
-        animation-duration: var(--default-transition-duration);
-        animation-timing-function: ease-in-out;
-    }
-}
-
-@layer base {
-    html {
-        @apply antialiased;
-        text-rendering: optimizeLegibility;
+        animation-duration: var(--transition-default);
+        animation-timing-function: var(--easing-default);
     }
 }

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
 const meta: Meta = {
-  title: "Typography",
+  title: "Foundation/Typography",
   parameters: { layout: "centered" },
   tags: ["autodocs"],
 };

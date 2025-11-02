@@ -4,7 +4,7 @@ import { Button } from "../button";
 import { CancelIcon, CheckmarkIcon } from "../icons";
 
 const meta: Meta<typeof ButtonBar> = {
-  title: "Button Bar",
+  title: "Components/Button Bar",
   component: ButtonBar,
   parameters: { layout: "centered" },
   tags: ["autodocs"],

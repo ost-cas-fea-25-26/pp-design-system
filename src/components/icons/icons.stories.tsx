@@ -54,7 +54,7 @@ const ICONS = [
 ];
 
 const meta = {
-  title: "Icons",
+  title: "Components/Icons",
   tags: ["autodocs"],
   parameters: { layout: "centered" },
   argTypes: {

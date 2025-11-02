@@ -3,7 +3,7 @@ import { Textarea } from "./textarea";
 import { MumbleIcon } from "../icons";
 
 const meta: Meta<typeof Textarea> = {
-  title: "Textarea",
+  title: "Components/Textarea",
   component: Textarea,
   parameters: { layout: "centered" },
   tags: ["autodocs"],

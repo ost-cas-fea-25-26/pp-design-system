@@ -22,7 +22,7 @@ const schema = z.object({
 });
 
 const meta: Meta = {
-  title: "Form",
+  title: "Components/Form",
   parameters: { layout: "centered" },
   tags: ["autodocs"],
 };
