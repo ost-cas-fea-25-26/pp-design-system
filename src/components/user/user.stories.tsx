@@ -6,9 +6,12 @@ import {
   TimeIcon,
   CalendarIcon,
   LocationIcon,
+  CheckmarkIcon,
+  MumbleIcon,
 } from "../icons";
 import { Meta, StoryObj } from "@storybook/react-vite";
 import { Link } from "../link";
+import { Button } from "../button";
 
 const meta: Meta = {
   title: "Compositions/User",
@@ -31,10 +34,8 @@ export const S: Story = {
         src="/avatars/rory.jpg"
         border={false}
       />
-
       <div className="flex flex-col">
         <span className="label-m text-neutral-900">Rory McIlroy</span>
-
         <div className="flex gap-4 pt-2">
           <IconButton
             color="primary"
@@ -60,7 +61,6 @@ export const M: Story = {
     <div className="grid items-center gap-2">
       <div className="flex flex-col">
         <span className="label-lg text-neutral-900">Rory McIlroy</span>
-
         <div className="flex gap-4 pt-2">
           <IconButton
             color="primary"
@@ -115,7 +115,6 @@ export const XL: Story = {
           <SettingsIcon color="primary" size="m" />
         </Link>
       </div>
-
       <div className="flex gap-4 pt-2">
         <IconButton
           color="primary"
@@ -135,6 +134,36 @@ export const XL: Story = {
           label="joined"
           IconComponent={CalendarIcon}
         />
+      </div>
+    </div>
+  ),
+};
+
+export const Card: Story = {
+  name: "User Card",
+  render: () => (
+    <div className="bg-primary-100 p-4 border border-primary/40 border-dashed">
+      <div className="bg-primary-foreground rounded-xl flex flex-col items-center p-4 gap-4">
+        <Avatar
+          alt="Rory McIlory"
+          fallbackText="RM"
+          src="/avatars/rory.jpg"
+          size="l"
+          border={true}
+        />
+        <div className="flex flex-col items-center gap-1">
+          <span className="label-lg text-neutral-900">Rory McIlroy</span>
+          <IconButton
+            label="rory_goat"
+            IconComponent={ProfileIcon}
+            color="primary"
+            layout="horizontal"
+          />
+        </div>
+        <Button variant="primary" fullWidth={true}>
+          Follow
+          <MumbleIcon color="white" />
+        </Button>
       </div>
     </div>
   ),
