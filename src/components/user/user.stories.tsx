@@ -1,6 +1,12 @@
 import { Avatar } from "../avatar";
 import { IconButton } from "../icon-button";
-import { ProfileIcon, SettingsIcon, TimeIcon, CalendarIcon } from "../icons";
+import {
+  ProfileIcon,
+  SettingsIcon,
+  TimeIcon,
+  CalendarIcon,
+  LocationIcon,
+} from "../icons";
 import { Meta, StoryObj } from "@storybook/react-vite";
 import { Link } from "../link";
 
@@ -15,6 +21,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const S: Story = {
+  name: "Small with Avatar",
   render: () => (
     <div className="grid grid-cols-[auto_1fr] items-center gap-2">
       <Avatar
@@ -48,16 +55,9 @@ export const S: Story = {
 };
 
 export const M: Story = {
+  name: "Medium without Avatar",
   render: () => (
-    <div className="grid grid-cols-[auto_1fr] items-center gap-2">
-      <Avatar
-        alt="Rory McIlroy"
-        fallbackText="RM"
-        size="s"
-        src="/avatars/rory.jpg"
-        border={false}
-      />
-
+    <div className="grid items-center gap-2">
       <div className="flex flex-col">
         <span className="label-lg text-neutral-900">Rory McIlroy</span>
 
@@ -81,40 +81,32 @@ export const M: Story = {
 };
 
 export const L: Story = {
+  name: "Large - Without Avatar",
   render: () => (
-    <div className="grid grid-cols-[auto_1fr] items-center gap-2">
-      <Avatar
-        alt="Rory McIlroy"
-        fallbackText="RM"
-        size="s"
-        src="/avatars/rory.jpg"
-        border={false}
-      />
-
-      <div className="flex flex-col">
+    <div className="items-center gap-2">
+      <div className="flex items-center gap-2">
         <span className="label-xl text-neutral-900">Rory McIlroy</span>
-
-        <div className="flex gap-4 pt-2">
-          <IconButton
-            color="primary"
-            layout="horizontal"
-            label="rory_goat"
-            IconComponent={ProfileIcon}
-          />
-          <IconButton
-            color="neutral"
-            layout="horizontal"
-            label="vor 20 Minuten"
-            IconComponent={TimeIcon}
-          />
-        </div>
+      </div>
+      <div className="flex gap-4 pt-2">
+        <IconButton
+          color="primary"
+          layout="horizontal"
+          label="rory_goat"
+          IconComponent={ProfileIcon}
+        />
+        <IconButton
+          color="neutral"
+          layout="horizontal"
+          label="vor 20 Minuten"
+          IconComponent={TimeIcon}
+        />
       </div>
     </div>
   ),
 };
 
 export const XL: Story = {
-  name: "XL with Settings Icon",
+  name: "Own Profile",
   render: () => (
     <div className="items-center gap-2">
       <div className="flex items-center gap-2">
@@ -134,8 +126,8 @@ export const XL: Story = {
         <IconButton
           color="neutral"
           layout="horizontal"
-          label="vor 20 Minuten"
-          IconComponent={TimeIcon}
+          label="Ireland"
+          IconComponent={LocationIcon}
         />
         <IconButton
           color="neutral"
