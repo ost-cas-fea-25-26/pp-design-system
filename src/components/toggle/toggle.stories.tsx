@@ -1,5 +1,11 @@
 import { Meta, StoryObj } from "@storybook/react-vite";
 import { Toggle } from "./index";
+import {
+  HeartFilledIcon,
+  HeartIcon,
+  ReplyFilledIcon,
+  ReplyIcon,
+} from "../icons";
 
 const meta = {
   title: "Toggle",
@@ -36,20 +42,52 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+export const Default: Story = {
+  args: {
+    defaultChildren: (
+      <span className="inline-flex items-center gap-2">
+        <ReplyIcon color="inherit" />
+        Comment
+      </span>
+    ),
+    activeChildren: (
+      <span className="inline-flex items-center gap-2">
+        <ReplyFilledIcon color="inherit" />1 Comment
+      </span>
+    ),
+  },
+};
 
 export const Accent: Story = {
   args: {
     variant: "accent",
-    defaultChildren: <span className="label-m">Like</span>,
-    activeChildren: <span className="label-m">Liked</span>,
+    defaultChildren: (
+      <span className="inline-flex items-center gap-2">
+        <HeartIcon color="inherit" />
+        Like
+      </span>
+    ),
+    activeChildren: (
+      <span className="inline-flex items-center gap-2">
+        <HeartFilledIcon color="inherit" />
+        Liked
+      </span>
+    ),
   },
 };
 
 export const Metric: Story = {
   args: {
     variant: "metric",
-    defaultChildren: <span className="label-m">5 Likes</span>,
-    activeChildren: <span className="label-m">6 Likes</span>,
+    defaultChildren: (
+      <span className="inline-flex items-center gap-2">
+        <HeartFilledIcon color="inherit" />5 Likes
+      </span>
+    ),
+    activeChildren: (
+      <span className="inline-flex items-center gap-2">
+        <HeartFilledIcon color="inherit" />6 Likes
+      </span>
+    ),
   },
 };

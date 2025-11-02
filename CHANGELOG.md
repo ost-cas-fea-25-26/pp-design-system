@@ -1,3 +1,10 @@
+## [2.6.2](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.6.1...v2.6.2) (2025-11-01)
+
+
+### Bug Fixes
+
+* downgrade engines ([#88](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/88)) ([9096bb5](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/9096bb5be1294d31334c4b25c28b91a165b7bc64))
+
 ## [2.6.1](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.6.0...v2.6.1) (2025-11-01)
 
 
