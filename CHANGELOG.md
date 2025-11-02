@@ -1,3 +1,10 @@
+# [2.7.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.6.3...v2.7.0) (2025-11-02)
+
+
+### Features
+
+* add sonar scans ([#93](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/93)) ([fc4fbcb](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/fc4fbcb251e44a44f599d376ed189d77939010ba))
+
 ## [2.6.3](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.6.2...v2.6.3) (2025-11-02)
 
 

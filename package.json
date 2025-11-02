@@ -1,6 +1,6 @@
 {
   "name": "@ost-cas-fea-25-26/pp-design-system",
-  "version": "2.6.3",
+  "version": "2.7.0",
   "type": "module",
   "engines": {
     "node": ">=22.0.0"
