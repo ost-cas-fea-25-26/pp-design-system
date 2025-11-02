@@ -1,3 +1,10 @@
+# [2.9.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.8.0...v2.9.0) (2025-11-02)
+
+
+### Features
+
+* exclude stories from sonar coverage ([#97](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/97)) ([5df712a](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/5df712a6c7ff316defe9946755deb889a72a4e44))
+
 # [2.8.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.7.0...v2.8.0) (2025-11-02)
 
 
