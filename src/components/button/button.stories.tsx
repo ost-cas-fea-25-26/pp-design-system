@@ -77,6 +77,7 @@ export const Circular: Story = {
   args: {
     isCircular: true,
     children: <HeartFilledIcon color="white" />,
+    "aria-label": "Like",
   },
 };
 
