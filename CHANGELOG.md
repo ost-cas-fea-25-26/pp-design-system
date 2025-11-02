@@ -1,3 +1,10 @@
+## [2.6.3](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.6.2...v2.6.3) (2025-11-02)
+
+
+### Bug Fixes
+
+* timed button animations ([#72](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/72)) ([38c7a35](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/38c7a35b7c549cf52b7141956852d2c3bcc11158))
+
 ## [2.6.2](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.6.1...v2.6.2) (2025-11-01)
 
 

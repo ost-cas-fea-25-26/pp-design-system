@@ -21,6 +21,7 @@ const config: KnipConfig = {
     "@semantic-release/github",
     "@semantic-release/changelog",
     "@semantic-release/git",
+    "http-server",
   ],
 };
 
