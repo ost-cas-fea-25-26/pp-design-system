@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { twMerge } from "tailwind-merge";
 
 const meta: Meta = {
-  title: "Colors",
+  title: "Foundation/Colors",
   parameters: { layout: "centered" },
   tags: ["autodocs"],
 };

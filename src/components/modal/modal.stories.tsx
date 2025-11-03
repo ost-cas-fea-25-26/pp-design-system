@@ -6,7 +6,7 @@ import { CancelIcon, CheckmarkIcon } from "../icons";
 import { ButtonBar } from "../button-bar";
 
 const meta: Meta<typeof Modal> = {
-  title: "Modal",
+  title: "Components/Modal",
   component: Modal,
   parameters: { layout: "centered" },
   tags: ["autodocs"],

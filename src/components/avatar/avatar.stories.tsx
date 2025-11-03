@@ -3,7 +3,7 @@ import { fn } from "storybook/test";
 import { Avatar } from "./index";
 
 const meta = {
-  title: "Avatar",
+  title: "Components/Avatar",
   component: Avatar,
   tags: ["autodocs"],
   parameters: { layout: "centered" },

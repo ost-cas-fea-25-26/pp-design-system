@@ -8,7 +8,7 @@ import {
 } from "../icons";
 
 const meta = {
-  title: "Toggle",
+  title: "Components/Toggle",
   component: Toggle,
   parameters: {
     layout: "centered",
