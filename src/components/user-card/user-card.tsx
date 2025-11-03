@@ -23,7 +23,7 @@ export const UserCard: FC<UserCardProps> = ({
         fallbackText={handle}
         src={avatarSrc}
         size="l"
-        border={true}
+        border
       />
       <div className="flex flex-col gap-1">
         <span className="text-center label-lg text-neutral-900">{name}</span>
