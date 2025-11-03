@@ -1,3 +1,10 @@
+# [2.10.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.9.0...v2.10.0) (2025-11-03)
+
+
+### Features
+
+* add foundation docs and global theme setup ([#98](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/98)) ([020712e](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/020712e6b32d72cb76d0ab323a93f36fc9403907))
+
 # [2.9.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.8.0...v2.9.0) (2025-11-02)
 
 
