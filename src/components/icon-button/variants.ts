@@ -6,7 +6,7 @@ export const iconButtonVariants = cva(
     variants: {
       color: {
         primary: "focus-ring-primary text-primary-600 hover:text-primary-900",
-        neutral: "focus-ring-neutral text-neutral-400 hover:text-neutral-600",
+        neutral: "focus-ring-neutral text-neutral-500 hover:text-neutral-700",
       },
       layout: {
         horizontal: "flex-row",
