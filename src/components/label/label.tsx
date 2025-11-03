@@ -18,7 +18,7 @@ export const Label: FC<LabelProps> = ({
       "flex items-center gap-2 text-sm font-medium leading-none select-none",
 
       // Disabled
-      disabled && "cursor-not-allowed opacity-50 pointer-events-none",
+      disabled && "cursor-not-allowed opacity-60 pointer-events-none",
 
       // Error
       error && "text-error",
