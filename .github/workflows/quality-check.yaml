@@ -97,5 +97,5 @@ jobs:
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: playwright-report-${{ matrix.browser }}-shard-${{ matrix.shard }}
+          name: playwright-report-${{ matrix.browser }}-${{ github.sha }}
           path: playwright-report/
