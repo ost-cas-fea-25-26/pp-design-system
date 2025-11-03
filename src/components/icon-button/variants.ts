@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 
 export const iconButtonVariants = cva(
-  "text-sm cursor-pointer flex justify-center items-center transition-colors duration-[350ms] ease-in-out group",
+  "text-sm cursor-pointer flex justify-center items-center transition-colors transition-default group",
   {
     variants: {
       color: {
