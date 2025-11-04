@@ -1,12 +1,12 @@
 import { render } from "@testing-library/react";
-import { describe, it, expect, vi } from "vitest";
+import { describe, it, expect } from "vitest";
 import "@testing-library/jest-dom";
 import { LogoLink } from "../index";
+import { ComponentProps } from "react";
 
 describe("LogoLink", () => {
   it("renders both desktop and mobile logos", () => {
     const { getAllByAltText } = render(<LogoLink />);
-
     const logos = getAllByAltText("Mumble");
     expect(logos.length).toBe(2);
   });
@@ -24,7 +24,11 @@ describe("LogoLink", () => {
   });
 
   it("supports custom link components via asLink", () => {
-    const FakeLink = ({ href, children, ...rest }: any) => (
+    type FakeLinkProps = ComponentProps<"a"> & {
+      "data-testid"?: string;
+    };
+
+    const FakeLink = ({ href, children, ...rest }: FakeLinkProps) => (
       <span data-testid="custom-link" data-href={href} {...rest}>
         {children}
       </span>
