@@ -2,8 +2,7 @@ import { FC } from "react";
 import { AvatarButton } from "../../components/avatar-button";
 import { IconButton } from "../../components/icon-button";
 import { LogoutIcon, SettingsIcon } from "../../components/icons";
-import logoInlineWhite from "/src/assets/logo/inline-white.svg";
-import logoStackedWhite from "/src/assets/logo/stacked-white.svg";
+import { LogoLink } from "../../components/logo-link/logo-link";
 
 type HeaderProps = {
   userAvatar?: string;
@@ -24,21 +23,7 @@ export const Header: FC<HeaderProps> = ({
 }) => (
   <header className="bg-primary w-full sticky top-0 z-50 py-3 px-8">
     <div className="w-full max-w-[680px] mx-auto flex items-center justify-between">
-      <a href={logoHref} className="shrink-0">
-        {/* Desktop Logo */}
-        <img
-          src={logoInlineWhite}
-          alt="Mumble"
-          className="hidden sm:block h-[28px] w-auto object-contain"
-        />
-
-        {/* Mobile Logo */}
-        <img
-          src={logoStackedWhite}
-          alt="Mumble"
-          className="block sm:hidden h-[32px] w-auto object-contain"
-        />
-      </a>
+      <LogoLink href={logoHref} />
 
       <div className="flex items-center gap-4">
         <AvatarButton
