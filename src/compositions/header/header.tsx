@@ -25,7 +25,7 @@ export const Header: FC<HeaderProps> = ({
     <div className="w-full max-w-[680px] mx-auto flex items-center justify-between">
       <LogoLink href={logoHref} />
 
-      <div className="flex items-center gap-4">
+      <div className="flex items-center justify-between gap-2 sm:gap-4">
         <AvatarButton
           onClick={onAvatarClick}
           avatarProps={{
