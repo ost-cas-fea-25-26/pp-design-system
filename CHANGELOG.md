@@ -1,3 +1,10 @@
+# [2.11.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.10.0...v2.11.0) (2025-11-05)
+
+
+### Features
+
+* user composition ([#91](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/91)) ([ff809dd](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/ff809dd1b27e6572246a771b2f048e7a2fb18eaf))
+
 # [2.10.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.9.0...v2.10.0) (2025-11-03)
 
 
