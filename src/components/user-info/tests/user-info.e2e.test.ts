@@ -4,7 +4,7 @@ import {
   visualTestsFor,
 } from "../../../../test/helpers/playwright";
 
-test.describe("Textarea", () => {
-  visualTestsFor("/textarea.stories.tsx");
-  a11yTestsFor("/textarea.stories.tsx");
+test.describe("UserInfo", () => {
+  visualTestsFor("/user-info.stories.tsx");
+  a11yTestsFor("/user-info.stories.tsx");
 });

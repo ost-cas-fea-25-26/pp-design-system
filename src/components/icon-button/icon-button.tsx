@@ -38,7 +38,7 @@ export const IconButton: FC<IconButtonProps> = ({
       <span className={animationClasses} data-testid="icon-wrapper">
         <IconComponent size={iconSize} color="inherit" />
       </span>
-      <span className="label-s ml-1">{label}</span>
+      <span className="ml-1">{label}</span>
     </button>
   );
 };
