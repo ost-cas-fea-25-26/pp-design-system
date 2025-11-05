@@ -23,7 +23,7 @@ export const Default: Story = {
     handle: "rory_goat",
     avatarSrc: "/avatars/rory.jpg",
     button: (
-      <Button variant="primary" fullWidth={true}>
+      <Button variant="primary" fullWidth>
         Follow
         <MumbleIcon color="white" />
       </Button>

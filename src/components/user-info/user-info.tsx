@@ -56,7 +56,7 @@ export const UserInfo: FC<UserInfoProps> = ({
       {profileSettingsLink ? (
         <>
           <div className="flex items-center gap-2">
-            <span className={twMerge(fontSizeMap[size], " text-neutral-900")}>
+            <span className={twMerge(fontSizeMap[size], "text-neutral-900")}>
               {name}
             </span>
             {profileSettingsLink}
@@ -65,7 +65,7 @@ export const UserInfo: FC<UserInfoProps> = ({
         </>
       ) : (
         <div className="flex flex-col">
-          <span className={twMerge(fontSizeMap[size], " text-neutral-900")}>
+          <span className={twMerge(fontSizeMap[size], "text-neutral-900")}>
             {name}
           </span>
           {iconButtons && <div className="flex gap-4 pt-2">{iconButtons}</div>}

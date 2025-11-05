@@ -39,12 +39,7 @@ describe("UserInfo", () => {
 
   it("renders the avatar if showAvatar is true", () => {
     const { getByTestId } = render(
-      <UserInfo
-        size="m"
-        name="Rory McIlroy"
-        handle="rory_goat"
-        showAvatar={true}
-      />,
+      <UserInfo size="m" name="Rory McIlroy" handle="rory_goat" showAvatar />,
     );
     expect(getByTestId("avatar-root")).toBeInTheDocument();
   });
@@ -88,12 +83,7 @@ describe("UserInfo", () => {
 
   it("calculates fallbackText correctly from handle", () => {
     const { getByText } = render(
-      <UserInfo
-        size="m"
-        name="Rory McIlroy"
-        handle="rory_goat"
-        showAvatar={true}
-      />,
+      <UserInfo size="m" name="Rory McIlroy" handle="rory_goat" showAvatar />,
     );
     expect(getByText("RO")).toBeInTheDocument();
   });
