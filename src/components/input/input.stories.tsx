@@ -39,7 +39,7 @@ export const Disabled: Story = {
   },
 };
 
-export const Error: Story = {
+export const WithError: Story = {
   args: {
     placeholder: "Invalid input",
     "aria-invalid": true,
