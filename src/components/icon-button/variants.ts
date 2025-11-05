@@ -1,12 +1,12 @@
 import { cva } from "class-variance-authority";
 
 export const iconButtonVariants = cva(
-  "cursor-pointer flex justify-center items-center transition-colors duration-[350ms] ease-in-out group",
+  "text-sm cursor-pointer flex justify-center items-center transition-colors transition-default group",
   {
     variants: {
       color: {
         primary: "focus-ring-primary text-primary-600 hover:text-primary-900",
-        neutral: "focus-ring-neutral text-neutral-400 hover:text-neutral-600",
+        neutral: "focus-ring-neutral text-neutral-500 hover:text-neutral-700",
       },
       layout: {
         horizontal: "flex-row",
