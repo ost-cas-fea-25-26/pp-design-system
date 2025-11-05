@@ -1,3 +1,31 @@
+# [2.10.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.9.0...v2.10.0) (2025-11-03)
+
+
+### Features
+
+* add foundation docs and global theme setup ([#98](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/98)) ([020712e](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/020712e6b32d72cb76d0ab323a93f36fc9403907))
+
+# [2.9.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.8.0...v2.9.0) (2025-11-02)
+
+
+### Features
+
+* exclude stories from sonar coverage ([#97](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/97)) ([5df712a](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/5df712a6c7ff316defe9946755deb889a72a4e44))
+
+# [2.8.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.7.0...v2.8.0) (2025-11-02)
+
+
+### Features
+
+* add coverage to sonar ([3b65f05](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/3b65f054053240f1e8f58ed234c645e2033fa150))
+
+# [2.7.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.6.3...v2.7.0) (2025-11-02)
+
+
+### Features
+
+* add sonar scans ([#93](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/93)) ([fc4fbcb](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/fc4fbcb251e44a44f599d376ed189d77939010ba))
+
 ## [2.6.3](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.6.2...v2.6.3) (2025-11-02)
 
 

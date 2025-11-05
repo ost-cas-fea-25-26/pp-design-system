@@ -3,7 +3,7 @@ import { IconButton } from "./index";
 import { ProfileIcon, SettingsIcon, TimeIcon } from "../icons";
 
 const meta = {
-  title: "Icon Button",
+  title: "Components/Icon Button",
   component: IconButton,
   tags: ["autodocs"],
   parameters: { layout: "centered" },

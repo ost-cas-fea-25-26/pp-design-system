@@ -3,7 +3,7 @@ import { TimedButton } from "./index";
 import { ShareIcon } from "../icons";
 
 const meta = {
-  title: "Timed Button",
+  title: "Components/Timed Button",
   tags: ["autodocs"],
   parameters: { layout: "centered" },
   component: TimedButton,

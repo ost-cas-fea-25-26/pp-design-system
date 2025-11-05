@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react-vite";
 import { AvatarButton } from "./index";
 
 const meta = {
-  title: "Avatar Button",
+  title: "Components/Avatar Button",
   component: AvatarButton,
   tags: ["autodocs"],
   parameters: { layout: "centered" },

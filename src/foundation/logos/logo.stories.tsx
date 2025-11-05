@@ -9,7 +9,9 @@ import logoStackedWhite from "/src/assets/logo/stacked-white.svg";
 import logoStackedGradient from "/src/assets/logo/stacked-gradient.svg";
 
 const meta: Meta = {
-  title: "Logos",
+  title: "Foundation/Logos",
+  parameters: { layout: "centered" },
+  tags: ["autodocs"],
 };
 
 export default meta;

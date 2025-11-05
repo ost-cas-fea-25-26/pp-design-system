@@ -4,6 +4,10 @@
 
 # PP Design System
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=putt-and-push_pp-design-system&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=putt-and-push_pp-design-system)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=putt-and-push_pp-design-system&metric=coverage)](https://sonarcloud.io/summary/new_code?id=putt-and-push_pp-design-system)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=putt-and-push_pp-design-system&metric=bugs)](https://sonarcloud.io/summary/new_code?id=putt-and-push_pp-design-system)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=putt-and-push_pp-design-system&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=putt-and-push_pp-design-system)
 [![Quality Check](https://github.com/ost-cas-fea-25-26/pp-design-system/actions/workflows/quality-check.yaml/badge.svg)](https://github.com/ost-cas-fea-25-26/pp-design-system/actions/workflows/quality-check.yaml)
 [![Release](https://github.com/ost-cas-fea-25-26/pp-design-system/actions/workflows/release-lib.yaml/badge.svg)](https://github.com/ost-cas-fea-25-26/pp-design-system/actions/workflows/release-lib.yaml)
 [![Vercel Deploy](https://img.shields.io/badge/vercel-live-000?logo=vercel)](https://pp-design-system.vercel.app/)
@@ -58,6 +62,33 @@ import "@ost-cas-fea-25-26/pp-design-system/styles";
 ```
 
 ---
+
+---
+
+## 🎨 Design Tokens (required)
+
+All components in this library rely on global CSS variables  
+(colors, typography, spacing, radius, shadows, motion).
+
+➡️ **You must import the stylesheet once in your application**:
+
+```ts
+import "@ost-cas-fea-25-26/pp-design-system/styles";
+```
+
+This injects the design tokens (e.g. `--color-primary`, `--radius-md`, `--text-base`, …).
+
+You can also use the tokens in your own styles:
+
+```css
+.card {
+  background: var(--color-neutral-50);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-4);
+}
+```
+
+Token overview is available in Storybook under **Foundation**.
 
 ## 🛠️ Development
 
