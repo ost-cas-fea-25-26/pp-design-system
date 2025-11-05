@@ -1,3 +1,10 @@
+## [2.11.1](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.11.0...v2.11.1) (2025-11-05)
+
+
+### Bug Fixes
+
+* add a11y tests ([#102](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/102)) ([e83dded](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/e83ddede2c5a8f76a4b7643f42d71073acdd7311))
+
 # [2.11.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.10.0...v2.11.0) (2025-11-05)
 
 
