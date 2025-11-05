@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { CancelIcon } from "../../icons";
+import { CancelIcon } from "@/components/icons";
 
 type UploadedFileProps = {
   file: File | null;

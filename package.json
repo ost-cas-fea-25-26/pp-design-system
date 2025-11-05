@@ -1,6 +1,6 @@
 {
   "name": "@ost-cas-fea-25-26/pp-design-system",
-  "version": "2.10.0",
+  "version": "2.12.0",
   "type": "module",
   "engines": {
     "node": ">=22.0.0"
@@ -17,6 +17,7 @@
     "check:unused": "knip --config knip.config.ts",
     "type-check": "tsc --noEmit",
     "lint": "eslint src --ext .ts,.tsx && npm run type-check && npm run check:unused",
+    "lint:fix": "eslint src --ext .ts,.tsx --fix && npm run format",
     "format": "prettier --write .",
     "test:unit": "vitest run",
     "test:unit:coverage": "vitest run --coverage",
@@ -100,6 +101,7 @@
     "@vitest/browser": "^4.0.0",
     "@vitest/coverage-v8": "^4.0.0",
     "eslint": "^9.35.0",
+    "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-storybook": "9.1.16",
     "happy-dom": "^20.0.8",
     "http-server": "^14.1.1",

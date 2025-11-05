@@ -3,7 +3,7 @@ import { describe, it, expect, vi } from "vitest";
 import "@testing-library/jest-dom";
 import { IconButton } from "../index";
 import { iconButtonVariants } from "../variants";
-import { SettingsIcon } from "../../icons";
+import { SettingsIcon } from "@/components/icons";
 
 describe("IconButton", () => {
   it("renders the label and icon", () => {

@@ -1,8 +1,8 @@
 import { FC } from "react";
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
 import { twMerge } from "tailwind-merge";
-import { Button } from "../button";
-import { EditIcon } from "../icons";
+import { Button } from "@/components/button";
+import { EditIcon } from "@/components/icons";
 
 type AvatarSize = "s" | "m" | "l" | "xl";
 

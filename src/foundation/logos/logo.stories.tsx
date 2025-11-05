@@ -1,12 +1,12 @@
 import { Meta, StoryObj } from "@storybook/react-vite";
-import appIconGradient from "/src/assets/logo/app-icon-gradient.svg";
-import appIconWhite from "/src/assets/logo/app-icon-white.svg";
-import logoInlineViolet from "/src/assets/logo/inline-violet.svg";
-import logoInlineWhite from "/src/assets/logo/inline-white.svg";
-import logoInlineGradient from "/src/assets/logo/inline-gradient.svg";
-import logoStackedViolet from "/src/assets/logo/stacked-violet.svg";
-import logoStackedWhite from "/src/assets/logo/stacked-white.svg";
-import logoStackedGradient from "/src/assets/logo/stacked-gradient.svg";
+import appIconGradient from "@/assets/logo/app-icon-gradient.svg";
+import appIconWhite from "@/assets/logo/app-icon-white.svg";
+import logoInlineViolet from "@/assets/logo/inline-violet.svg";
+import logoInlineWhite from "@/assets/logo/inline-white.svg";
+import logoInlineGradient from "@/assets/logo/inline-gradient.svg";
+import logoStackedViolet from "@/assets/logo/stacked-violet.svg";
+import logoStackedWhite from "@/assets/logo/stacked-white.svg";
+import logoStackedGradient from "@/assets/logo/stacked-gradient.svg";
 
 const meta: Meta = {
   title: "Foundation/Logos",
