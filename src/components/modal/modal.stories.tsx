@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { useState } from "react";
 import { Modal } from "./modal";
-import { Button } from "../button";
-import { CancelIcon, CheckmarkIcon } from "../icons";
-import { ButtonBar } from "../button-bar";
+import { Button } from "@/components/button";
+import { CancelIcon, CheckmarkIcon } from "@/components/icons";
+import { ButtonBar } from "@/components/button-bar";
 
 const meta: Meta<typeof Modal> = {
   title: "Components/Modal",

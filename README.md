@@ -39,9 +39,11 @@
 ## 🔗 Storybook
 
 ### Production Storybook
+
 https://pp-design-system.vercel.app/
 
 ### Preview Deployments (per PR)
+
 Every Pull Request gets a live Storybook preview automatically via Vercel.
 
 > ✅ Shared via bot comment — no manual setup or tokens required.
@@ -118,15 +120,15 @@ npm run test:e2e:ui        # Playwright UI runner
 
 ## 🔧 Tech Stack
 
-| Area           | Tool                              |
-|----------------|-----------------------------------|
-| UI Framework   | React + TailwindCSS                |
-| Documentation  | Storybook (Vite)                   |
-| Unit Testing   | Vitest + Testing Library           |
-| Visual Testing | Playwright                         |
-| Build System   | TypeScript + tsc                   |
-| Release        | Semantic Release                   |
-| CI             | GitHub Actions                     |
+| Area           | Tool                     |
+| -------------- | ------------------------ |
+| UI Framework   | React + TailwindCSS      |
+| Documentation  | Storybook (Vite)         |
+| Unit Testing   | Vitest + Testing Library |
+| Visual Testing | Playwright               |
+| Build System   | TypeScript + tsc         |
+| Release        | Semantic Release         |
+| CI             | GitHub Actions           |
 
 ---
 

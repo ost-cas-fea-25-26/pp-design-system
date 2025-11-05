@@ -1,4 +1,4 @@
-import { Avatar } from "../avatar";
+import { Avatar } from "@/components/avatar";
 import * as React from "react";
 import { FC } from "react";
 import { twMerge } from "tailwind-merge";

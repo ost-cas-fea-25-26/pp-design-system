@@ -9,19 +9,17 @@ const config: KnipConfig = {
     "release.config.js",
   ],
   ignoreDependencies: [
-    "tailwindcss",
-    "clsx",
-    "lucide-react",
-    "tw-animate-css",
     "@smartive/prettier-config",
-    "prettier-plugin-tailwindcss",
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
     "@semantic-release/npm",
     "@semantic-release/github",
     "@semantic-release/changelog",
     "@semantic-release/git",
+    "clsx",
     "http-server",
+    "lucide-react",
+    "prettier-plugin-tailwindcss",
   ],
 };
 

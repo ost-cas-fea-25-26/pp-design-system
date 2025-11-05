@@ -25,7 +25,7 @@ export const Disabled: Story = {
   },
 };
 
-export const Error: Story = {
+export const WithError: Story = {
   args: {
     children: "Email (error)",
     htmlFor: "error-input",

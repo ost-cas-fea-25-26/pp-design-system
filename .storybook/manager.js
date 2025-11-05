@@ -1,6 +1,6 @@
-import { addons } from 'storybook/manager-api';
-import mumbleTheme from './MumbleTheme';
+import { addons } from "storybook/manager-api";
+import mumbleTheme from "./MumbleTheme";
 
 addons.setConfig({
-    theme: mumbleTheme
-})
+  theme: mumbleTheme,
+});

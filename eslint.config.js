@@ -4,14 +4,26 @@ import storybook from "eslint-plugin-storybook";
 import { config as smartiveConfig } from "@smartive/eslint-config";
 
 const config = [
-  ...smartiveConfig("react"), {
-  settings: {
-    react: { version: "detect" },
+  ...smartiveConfig("react"),
+  {
+    settings: {
+      react: { version: "detect" },
+    },
+    rules: {
+      "react/forbid-component-props": [
+        "warn",
+        {
+          forbid: [
+            {
+              propName: "style",
+              message: "Use className instead of inline styles",
+            },
+          ],
+        },
+      ],
+    },
   },
-  rules: {
-    "react/forbid-component-props": "off",
-    "import/no-unresolved": "off",
-  },
-}, ...storybook.configs["flat/recommended"]];
+  ...storybook.configs["flat/recommended"],
+];
 
 export default config;

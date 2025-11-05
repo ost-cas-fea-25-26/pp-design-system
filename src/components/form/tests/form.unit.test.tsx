@@ -13,9 +13,9 @@ import {
   FormControl,
   FormMessage,
 } from "../index";
-import { Input } from "../../input";
-import { Textarea } from "../../textarea";
-import { Button } from "../../button";
+import { Input } from "@/components/input";
+import { Textarea } from "@/components/textarea";
+import { Button } from "@/components/button";
 
 vi.mock("../../icons", () => ({
   CancelIcon: () => <svg data-testid="cancel-icon" />,

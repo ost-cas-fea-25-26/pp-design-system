@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { ButtonBar } from "./button-bar";
-import { Button } from "../button";
-import { CancelIcon, CheckmarkIcon } from "../icons";
+import { Button } from "@/components/button";
+import { CancelIcon, CheckmarkIcon } from "@/components/icons";
 
 const meta: Meta<typeof ButtonBar> = {
   title: "Components/Button Bar",

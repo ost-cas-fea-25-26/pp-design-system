@@ -1,6 +1,6 @@
 import { FC, ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
-import { CancelIcon } from "../icons";
+import { CancelIcon } from "@/components/icons";
 
 type TextareaProps = React.ComponentProps<"textarea"> & {
   icon?: ReactNode;

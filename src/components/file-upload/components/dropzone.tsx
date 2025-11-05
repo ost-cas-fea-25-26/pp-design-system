@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { twMerge } from "tailwind-merge";
 import { DropzoneInputProps, DropzoneRootProps } from "react-dropzone";
-import { UploadIcon } from "../../icons";
+import { UploadIcon } from "@/components/icons";
 
 type DropzoneProps = {
   getRootProps: () => DropzoneRootProps;
@@ -27,7 +27,6 @@ export const Dropzone: FC<DropzoneProps> = ({
       isInvalid ? "border-error" : "border-neutral-200",
       isDragActive && !isInvalid && "border-primary-500 bg-primary-50",
     )}
-    tabIndex={0}
   >
     <input aria-label={title} {...getInputProps()} />
 
