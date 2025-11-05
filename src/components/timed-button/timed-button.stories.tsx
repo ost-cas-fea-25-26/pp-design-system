@@ -1,6 +1,6 @@
-import { Meta, StoryObj } from "@storybook/react-vite";
-import { TimedButton } from "./index";
-import { ShareIcon } from "../icons";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { TimedButton } from "./timed-button";
+import { ShareIcon } from "@/components/icons";
 
 const meta = {
   title: "Components/Timed Button",

@@ -10,8 +10,17 @@ const config = [
       react: { version: "detect" },
     },
     rules: {
-      "react/forbid-component-props": "off",
-      "import/no-unresolved": "off",
+      "react/forbid-component-props": [
+        "warn",
+        {
+          forbid: [
+            {
+              propName: "style",
+              message: "Use className instead of inline styles",
+            },
+          ],
+        },
+      ],
     },
   },
   ...storybook.configs["flat/recommended"],

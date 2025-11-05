@@ -9,9 +9,7 @@ export const FormControl: FC<ComponentProps<typeof Slot>> = (props) => {
   return (
     <Slot
       id={formItemId}
-      aria-describedby={
-        !error ? formDescriptionId : `${formDescriptionId} ${formMessageId}`
-      }
+      aria-describedby={`${formDescriptionId}${error ? ` ${formMessageId}` : ""}`}
       aria-invalid={!!error}
       {...props}
     />

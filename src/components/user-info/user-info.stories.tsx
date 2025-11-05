@@ -1,8 +1,13 @@
 import { Meta, StoryObj } from "@storybook/react-vite";
-import { IconButton } from "../icon-button";
-import { ProfileIcon, SettingsIcon, TimeIcon, LocationIcon } from "../icons";
+import { IconButton } from "@/components/icon-button";
+import {
+  ProfileIcon,
+  SettingsIcon,
+  TimeIcon,
+  LocationIcon,
+} from "@/components/icons";
 
-import { Link } from "../link";
+import { Link } from "@/components/link";
 import { UserInfo } from "./index";
 
 const meta: Meta<typeof UserInfo> = {

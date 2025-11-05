@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Textarea } from "./textarea";
-import { MumbleIcon } from "../icons";
+import { MumbleIcon } from "@/components/icons";
 
 const meta: Meta<typeof Textarea> = {
   title: "Components/Textarea",

@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { twMerge } from "tailwind-merge";
 import { DropzoneInputProps, DropzoneRootProps } from "react-dropzone";
-import { UploadIcon } from "../../icons";
+import { UploadIcon } from "@/components/icons";
 
 type DropzoneProps = {
   getRootProps: () => DropzoneRootProps;

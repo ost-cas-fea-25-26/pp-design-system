@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { UploadIcon } from "../../icons";
-import { Button } from "../../button";
+import { UploadIcon } from "@/components/icons";
+import { Button } from "@/components/button";
 
 type UploadButtonProps = {
   label: string;

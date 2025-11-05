@@ -5,7 +5,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { FileUpload } from "./file-upload";
-import { Button } from "../button";
+import { Button } from "@/components/button";
 import {
   FormProvider,
   FormField,
@@ -13,7 +13,7 @@ import {
   FormLabel,
   FormControl,
   FormMessage,
-} from "../form";
+} from "@/components/form";
 
 const meta: Meta<typeof FileUpload> = {
   title: "Components/File Upload",
