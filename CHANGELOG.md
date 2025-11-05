@@ -1,3 +1,10 @@
+# [2.12.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.11.1...v2.12.0) (2025-11-05)
+
+
+### Features
+
+* resolve sonar issues ([3994398](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/3994398ed81afa63bb923e144d231ff9e53aed6a))
+
 ## [2.11.1](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.11.0...v2.11.1) (2025-11-05)
 
 
