@@ -25,7 +25,7 @@ export const Dropzone: FC<DropzoneProps> = ({
     className={twMerge(
       "flex flex-col items-center justify-center rounded-lg border border-dashed text-center h-[194px] p-4 bg-neutral-100 focus-ring-neutral outline-none",
       isInvalid ? "border-error" : "border-neutral-200",
-      isDragActive && !isInvalid && "border-primary-500 bg-primary-50"
+      isDragActive && !isInvalid && "border-primary-500 bg-primary-50",
     )}
   >
     <input {...getInputProps()} />

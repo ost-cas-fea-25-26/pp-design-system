@@ -17,6 +17,7 @@
     "check:unused": "knip --config knip.config.ts",
     "type-check": "tsc --noEmit",
     "lint": "eslint src --ext .ts,.tsx && npm run type-check && npm run check:unused",
+    "lint:fix": "eslint src --ext .ts,.tsx --fix && npm run format",
     "format": "prettier --write .",
     "test:unit": "vitest run",
     "test:unit:coverage": "vitest run --coverage",
