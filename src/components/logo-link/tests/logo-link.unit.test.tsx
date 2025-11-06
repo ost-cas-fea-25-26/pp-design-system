@@ -28,8 +28,8 @@ describe("LogoLink", () => {
       "data-testid"?: string;
     };
 
-    const FakeLink = ({ href, children, ...rest }: FakeLinkProps) => (
-      <span data-testid="custom-link" data-href={href} {...rest}>
+    const FakeLink = ({ href, children, ...props }: FakeLinkProps) => (
+      <span data-testid="custom-link" data-href={href} {...props}>
         {children}
       </span>
     );
