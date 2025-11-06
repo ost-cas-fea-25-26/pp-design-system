@@ -7,8 +7,6 @@ type ButtonProps = React.ComponentProps<"button"> &
   VariantProps<typeof buttonVariants> & {
     fullWidth?: boolean;
     isCircular?: boolean;
-    /** Needed for icon-only buttons */
-    "aria-label"?: string;
   };
 
 export const Button: React.FC<ButtonProps> = ({
@@ -23,7 +21,7 @@ export const Button: React.FC<ButtonProps> = ({
     className={twMerge(
       buttonVariants({ variant, size }),
       fullWidth && "w-full",
-      isCircular && "rounded-full",
+      isCircular && "rounded-full"
     )}
   />
 );
