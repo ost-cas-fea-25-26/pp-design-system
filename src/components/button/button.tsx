@@ -21,7 +21,7 @@ export const Button: React.FC<ButtonProps> = ({
     className={twMerge(
       buttonVariants({ variant, size }),
       fullWidth && "w-full",
-      isCircular && "rounded-full"
+      isCircular && "rounded-full",
     )}
   />
 );
