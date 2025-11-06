@@ -16,7 +16,7 @@ export const LogoLink: FC<LogoLinkProps> = ({
   return (
     <LinkTag
       href={href}
-      className="shrink-0 inline-block align-middle transition-transform transition-default hover:scale-105"
+      className="shrink-0 inline-block align-middle transition-transform transition-default hover:scale-105 focus-ring-neutral outline-offset-2 p-1"
     >
       {/* Desktop Logo */}
       <ImageTag
