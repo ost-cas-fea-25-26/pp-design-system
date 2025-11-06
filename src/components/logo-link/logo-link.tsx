@@ -1,6 +1,6 @@
 import { FC, ElementType } from "react";
-import logoInlineWhite from "/src/assets/logo/inline-white.svg";
-import logoStackedWhite from "/src/assets/logo/stacked-white.svg";
+import logoInlineWhite from "@/assets/logo/inline-white.svg";
+import logoStackedWhite from "@/assets/logo/stacked-white.svg";
 
 type LogoLinkProps = {
   href?: string;
