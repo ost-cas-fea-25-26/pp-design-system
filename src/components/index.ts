@@ -15,5 +15,5 @@ export * from "./tabs";
 export * from "./textarea";
 export * from "./timed-button";
 export * from "./toggle";
-export * from "./user-card";
-export * from "./user-info";
+export * from "../compositions/user-card";
+export * from "../compositions/user-info";
