@@ -48,7 +48,7 @@ export const UserInfo: FC<UserInfoProps> = ({
         <Avatar
           alt={name}
           fallbackText={handle.substring(0, 2).toUpperCase()}
-          size="s"
+          size={size}
           src={avatarSrc}
           border={false}
         />
