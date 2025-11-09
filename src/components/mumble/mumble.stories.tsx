@@ -31,7 +31,7 @@ const meta: Meta<typeof Mumble> = {
         deepLink="https://mumble.com/mumbles/123456"
         commentCounter={30}
         likeCounter={6}
-        liked
+        liked={false}
       />
     ),
   },

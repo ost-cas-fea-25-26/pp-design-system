@@ -17,8 +17,6 @@ const meta: Meta<typeof UserInfo> = {
     avatarSrc: { control: "text" },
     showAvatar: {
       control: "boolean",
-      description:
-        'Only recommended with size="s". Not allowed in combination with an active profileSettingsLink prop.',
     },
     profileSettingsLink: { control: false },
     iconButtons: { control: false },
