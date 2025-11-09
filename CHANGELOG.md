@@ -1,3 +1,10 @@
+# [2.13.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.12.1...v2.13.0) (2025-11-09)
+
+
+### Features
+
+* add app-shell composition with header and logo-link ([#103](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/103)) ([736ce36](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/736ce36dad06d00870b51a098a0f890632d2b313))
+
 ## [2.12.1](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.12.0...v2.12.1) (2025-11-07)
 
 
