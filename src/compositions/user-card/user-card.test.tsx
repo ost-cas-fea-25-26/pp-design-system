@@ -2,7 +2,7 @@ import { render } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 import "@testing-library/jest-dom";
 import { UserCard } from "./index";
-import { Button } from "../button";
+import { Button } from "../../components/button";
 
 describe("UserCard", () => {
   it("renders all elements correctly", () => {

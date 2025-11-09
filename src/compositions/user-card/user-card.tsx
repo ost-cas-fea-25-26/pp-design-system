@@ -1,7 +1,7 @@
 import { FC } from "react";
-import { Avatar } from "../avatar";
-import { ProfileIcon } from "../icons";
-import { IconButton } from "../icon-button";
+import { Avatar } from "../../components/avatar";
+import { ProfileIcon } from "../../components/icons";
+import { IconButton } from "../../components/icon-button";
 
 type UserCardProps = {
   name: string;

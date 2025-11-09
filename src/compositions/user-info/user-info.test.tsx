@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 import { UserInfo } from "./index";
-import { SettingsIcon } from "../icons";
+import { SettingsIcon } from "../../components/icons";
 import "@testing-library/jest-dom";
 
 const profileSettingsLink = (
