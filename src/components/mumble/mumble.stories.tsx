@@ -53,7 +53,7 @@ export const Default: Story = {
                 Augusta
               </Link>
               ! The course was in perfect condition, and I managed to sink a few
-              long putts. Can't wait for the next tournament!{" "}
+              long putts. Can not wait for the next tournament!{" "}
               <Link asChild={false} title="PGA" href="#">
                 #PGA
               </Link>
