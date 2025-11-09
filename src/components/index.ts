@@ -8,6 +8,7 @@ export * from "./icon-button";
 export * from "./icons";
 export * from "./input";
 export * from "./label";
+export * from "./logo-link";
 export * from "./link";
 export * from "./modal";
 export * from "./tabs";
