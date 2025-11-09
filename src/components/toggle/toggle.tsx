@@ -13,15 +13,17 @@ type ToggleProps = VariantProps<typeof toggleVariants> & {
 export const Toggle: FC<ToggleProps> = ({
   isActive = false,
   variant = "primary",
-  ...props
+  defaultChildren,
+  activeChildren,
+  onToggle,
 }) => {
   const [isOn, setIsOn] = useState<boolean>(isActive);
-  const children = isOn ? props.activeChildren : props.defaultChildren;
+  const children = isOn ? activeChildren : defaultChildren;
 
   const handleClick = async () => {
     const nextState = !isOn;
     try {
-      await props.onToggle?.(nextState);
+      await onToggle?.(nextState);
       setIsOn(nextState);
     } catch (error) {
       console.error(error);
