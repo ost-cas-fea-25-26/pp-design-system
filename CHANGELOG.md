@@ -1,3 +1,10 @@
+## [2.13.1](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.13.0...v2.13.1) (2025-11-13)
+
+
+### Bug Fixes
+
+* font issue for next js ([#128](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/128)) ([5f50545](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/5f50545c2633fa9c143c7ffece528631781a3be2))
+
 # [2.13.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.12.1...v2.13.0) (2025-11-09)
 
 
