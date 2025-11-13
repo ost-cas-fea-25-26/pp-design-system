@@ -50,47 +50,21 @@ Every Pull Request gets a live Storybook preview automatically via Vercel.
 
 ---
 
-## 📦 Installation
+## Installation (Next.js)
+
+Install and import the styles once (e.g. in `app/layout.tsx`):
 
 ```bash
 npm install @ost-cas-fea-25-26/pp-design-system
 ```
 
-Use components:
-
 ```tsx
-import { Button } from "@ost-cas-fea-25-26/pp-design-system";
 import "@ost-cas-fea-25-26/pp-design-system/styles";
+import { Poppins } from "next/font/google";
+const poppins = Poppins({ weight: ["500", "600", "700"] });
 ```
 
----
-
----
-
-## 🎨 Design Tokens (required)
-
-All components in this library rely on global CSS variables  
-(colors, typography, spacing, radius, shadows, motion).
-
-➡️ **You must import the stylesheet once in your application**:
-
-```ts
-import "@ost-cas-fea-25-26/pp-design-system/styles";
-```
-
-This injects the design tokens (e.g. `--color-primary`, `--radius-md`, `--text-base`, …).
-
-You can also use the tokens in your own styles:
-
-```css
-.card {
-  background: var(--color-neutral-50);
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-4);
-}
-```
-
-Token overview is available in Storybook under **Foundation**.
+Importing `styles` provides the design tokens; use `next/font/google` to load fonts in Next.js.
 
 ## 🛠️ Development
 
