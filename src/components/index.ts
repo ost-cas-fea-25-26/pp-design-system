@@ -2,7 +2,7 @@ export * from "./avatar";
 export * from "./avatar-button";
 export * from "./button";
 export * from "./button-bar";
-export * from "./editable-image-wrapper";
+export * from "./profile-banner";
 export * from "./file-upload";
 export * from "./form";
 export * from "./icon-button";

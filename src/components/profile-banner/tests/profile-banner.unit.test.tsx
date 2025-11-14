@@ -1,16 +1,16 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
 import "@testing-library/jest-dom";
-import { EditableImageWrapper } from "@/components/editable-image-wrapper";
+import { ProfileBanner } from "@/components/profile-banner";
 
-describe("EditableImageWrapper", () => {
+describe("Profile Banner", () => {
   it("calls onClick when wrapper is clicked", () => {
     const handleClick = vi.fn();
 
     render(
-      <EditableImageWrapper onClick={handleClick}>
+      <ProfileBanner onClick={handleClick}>
         <img src="/test.jpg" alt="Test Image" />
-      </EditableImageWrapper>,
+      </ProfileBanner>,
     );
 
     fireEvent.click(screen.getByAltText("Test Image"));

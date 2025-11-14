@@ -17,21 +17,13 @@ const meta = {
       control: "boolean",
       description: "Adds a border around the avatar",
     },
-    src: {
-      control: "text",
-      description: "Image source URL",
-    },
-    alt: {
-      control: "text",
-      description: "Alternative text for the image",
+    imageElement: {
+      control: false,
+      description: "Custom image ReactNode (e.g. <img> or Next <Image />)",
     },
     fallbackText: {
       control: "text",
       description: "Text (e.g. initials) shown when no image is loaded",
-    },
-    editable: {
-      control: "boolean",
-      description: "Shows an edit button at the bottom-right corner",
     },
     onEditClick: {
       action: "edit clicked",
@@ -41,9 +33,16 @@ const meta = {
   args: {
     size: "m",
     border: false,
-    src: "/avatars/rory.jpg",
-    alt: "Rory McIlroy",
     fallbackText: "RM",
+    imageElement: (
+      <img
+        src="/avatars/rory.jpg"
+        alt="Rory McIlroy"
+        className="object-cover w-full h-full"
+      />
+    ),
+
+    onEditClick: undefined,
   },
 } satisfies Meta<typeof Avatar>;
 
@@ -54,7 +53,7 @@ export const Default: Story = {};
 
 export const FallbackOnly: Story = {
   args: {
-    src: "",
+    imageElement: null,
     fallbackText: "RM",
   },
 };
@@ -73,7 +72,6 @@ export const XL: Story = {
 
 export const Editable: Story = {
   args: {
-    editable: true,
     onEditClick: fn(),
     size: "xl",
   },
