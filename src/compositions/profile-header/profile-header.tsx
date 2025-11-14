@@ -30,7 +30,7 @@ export const ProfileHeader: FC<ProfileHeaderProps> = ({
 }) => (
   <div>
     <div className="relative mb-4">
-      <ProfileBanner onClick={onEditHeader}>{bannerImageElement}</ProfileBanner>
+      <ProfileBanner onClick={onEditHeader} imageElement={bannerImageElement} />
       <div className="absolute bottom-0 right-6 translate-y-1/2 sm:absolute max-sm:static max-sm:translate-y-0 max-sm:-mt-8 max-sm:flex max-sm:justify-end">
         <Avatar
           imageElement={avatarImageElement}
@@ -49,6 +49,6 @@ export const ProfileHeader: FC<ProfileHeaderProps> = ({
       showAvatar={false}
       profileSettingsLink={settingsLinkElement}
     />
-    <p className="paragraph text-neutral-400 mt-4">{bio}</p>
+    <p className="paragraph text-neutral-500 mt-4">{bio}</p>
   </div>
 );

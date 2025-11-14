@@ -15,26 +15,24 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     onClick: fn(),
-  },
-  render: (args) => (
-    <ProfileBanner {...args}>
+    imageElement: (
       <img
         src="/headers/rory-mcilroy.jpg"
         alt="Rory McIlroy absolutely nuking a fucking perfect driver"
         className="object-cover w-full h-full"
       />
-    </ProfileBanner>
-  ),
+    ),
+  },
 };
 
 export const NonEditable: Story = {
-  render: () => (
-    <ProfileBanner>
+  args: {
+    imageElement: (
       <img
         src="/headers/rory-mcilroy.jpg"
         alt="Rory McIlroy absolutely nuking a fucking perfect driver"
         className="object-cover w-full h-full"
       />
-    </ProfileBanner>
-  ),
+    ),
+  },
 };

@@ -3,14 +3,14 @@ import { twMerge } from "tailwind-merge";
 import { EditIcon } from "@/components/icons";
 
 type ProfileBannerProps = {
+  imageElement: ReactNode;
   onClick?: () => void;
-  children: ReactNode;
   ariaLabel?: string;
 };
 
 export const ProfileBanner: FC<ProfileBannerProps> = ({
+  imageElement,
   onClick,
-  children,
   ariaLabel = "Edit image",
 }) => (
   <button
@@ -22,7 +22,7 @@ export const ProfileBanner: FC<ProfileBannerProps> = ({
       onClick && "group cursor-pointer",
     )}
   >
-    {children}
+    {imageElement}
 
     {onClick && (
       <>

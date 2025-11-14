@@ -7,16 +7,21 @@ describe("Profile Banner", () => {
   it("calls onClick when wrapper is clicked", () => {
     const handleClick = vi.fn();
 
-    render(
-      <ProfileBanner onClick={handleClick}>
-        <img src="/test.jpg" alt="Test Image" />
-      </ProfileBanner>,
+    const image = (
+      <img
+        src="/test.jpg"
+        alt="Test Image"
+        className="object-cover w-full h-full"
+      />
     );
 
-    fireEvent.click(screen.getByAltText("Test Image"));
+    render(<ProfileBanner onClick={handleClick} imageElement={image} />);
+
+    fireEvent.click(screen.getByRole("button", { name: /edit image/i }));
     expect(handleClick).toHaveBeenCalledTimes(1);
 
     const button = screen.getByRole("button");
     expect(button).toHaveAttribute("aria-label", "Edit image");
+    expect(screen.getByAltText("Test Image")).toBeInTheDocument();
   });
 });

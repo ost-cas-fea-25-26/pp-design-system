@@ -10,42 +10,34 @@ describe("ProfileHeader (single test)", () => {
     const handleEditHeader = vi.fn();
     const handleEditAvatar = vi.fn();
 
-    const banner = (
-      <img
-        src="/headers/test.jpg"
-        alt="Test Banner"
-        className="object-cover w-full h-full"
-      />
-    );
-
-    const avatar = (
-      <img
-        src="/avatars/test.jpg"
-        alt="Test Avatar"
-        className="object-cover w-full h-full"
-      />
-    );
-
-    const settingsLink = <a href="/settings">Settings</a>;
-
-    const iconButtons = (
-      <IconButton
-        IconComponent={ProfileIcon}
-        color="primary"
-        label="test_label"
-        layout="horizontal"
-      />
-    );
-
     render(
       <ProfileHeader
-        bannerImageElement={banner}
-        avatarImageElement={avatar}
+        bannerImageElement={
+          <img
+            src="/headers/test.jpg"
+            alt="Test Banner"
+            className="object-cover w-full h-full"
+          />
+        }
+        avatarImageElement={
+          <img
+            src="/avatars/test.jpg"
+            alt="Test Avatar"
+            className="object-cover w-full h-full"
+          />
+        }
         avatarFallback="TA"
         name="Test User"
         handle="test_user"
-        iconButtons={iconButtons}
-        settingsLinkElement={settingsLink}
+        iconButtons={
+          <IconButton
+            IconComponent={ProfileIcon}
+            color="primary"
+            label="test_label"
+            layout="horizontal"
+          />
+        }
+        settingsLinkElement={<a href="/settings">Settings</a>}
         bio="This is a test bio"
         onEditHeader={handleEditHeader}
         onEditAvatar={handleEditAvatar}
