@@ -22,6 +22,16 @@ export default defineConfig({
       "@": path.resolve(dirname, "src"),
     },
   },
+    build: {
+        outDir: path.resolve(__dirname, "dist"),
+        cssMinify: "esbuild",
+        emitAssets: false,
+        lib: {
+            formats: ['es', 'cjs'],
+            entry: path.resolve(__dirname, 'src/index.ts'),
+            fileName: (format, entryName) => `my-lib-${entryName}.${format}.js`,
+        },
+    },
   test: {
     projects: [
       {
