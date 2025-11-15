@@ -11,7 +11,7 @@ const meta: Meta<typeof UserCard> = {
   argTypes: {
     name: { control: "text" },
     handle: { control: "text" },
-    avatarSrc: { control: "text" },
+    avatarImageElement: { control: false },
   },
 };
 
@@ -21,7 +21,13 @@ export const Default: Story = {
   args: {
     name: "Rory McIlroy",
     handle: "rory_goat",
-    avatarSrc: "/avatars/rory.jpg",
+    avatarImageElement: (
+      <img
+        src="/avatars/rory.jpg"
+        alt="Rory McIlroy"
+        className="object-cover w-full h-full"
+      />
+    ),
     button: (
       <Button variant="primary" fullWidth>
         Follow
