@@ -35,24 +35,14 @@
     "dist/**/*"
   ],
   "sideEffects": [
-    "dist/styles/*.css"
+    "dist/*.css"
   ],
   "exports": {
     ".": {
-      "import": {
-        "types": "./dist/esm/types/index.d.ts",
-        "default": "./dist/esm/index.js"
-      },
-      "require": {
-        "types": "./dist/cjs/types/index.d.ts",
-        "default": "./dist/cjs/index.cjs"
-      }
+      "import": "./dist/components-index.es.js",
+      "require": "./dist/components-index.cjs.js"
     },
-    "./styles": {
-      "import": "./dist/styles/theme.css",
-      "require": "./dist/styles/theme.css",
-      "default": "./dist/styles/theme.css"
-    }
+    "./package.json": "./package.json"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

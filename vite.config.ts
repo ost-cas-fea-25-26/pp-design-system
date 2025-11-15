@@ -25,11 +25,12 @@ export default defineConfig({
     build: {
         outDir: path.resolve(__dirname, "dist"),
         cssMinify: "esbuild",
-        emitAssets: false,
+        cssCodeSplit: false,
+        copyPublicDir: true,
         lib: {
             formats: ['es', 'cjs'],
             entry: path.resolve(__dirname, 'src/index.ts'),
-            fileName: (format, entryName) => `my-lib-${entryName}.${format}.js`,
+            fileName: (format, entryName) => `components-${entryName}.${format}.js`,
         },
     },
   test: {
