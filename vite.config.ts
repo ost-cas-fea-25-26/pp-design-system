@@ -27,6 +27,7 @@ export default defineConfig({
         cssMinify: "esbuild",
         cssCodeSplit: false,
         copyPublicDir: true,
+        emitAssets: true, // CSS
         lib: {
             formats: ['es', 'cjs'],
             entry: path.resolve(__dirname, 'src/index.ts'),
