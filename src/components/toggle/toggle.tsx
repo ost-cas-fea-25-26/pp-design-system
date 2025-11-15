@@ -1,6 +1,6 @@
 import { FC, ReactNode, useState } from "react";
 import * as TogglePrimitive from "@radix-ui/react-toggle";
-import { VariantProps } from "class-variance-authority";
+import { type VariantProps } from "class-variance-authority";
 import { toggleVariants } from "./variants";
 
 type ToggleProps = VariantProps<typeof toggleVariants> & {

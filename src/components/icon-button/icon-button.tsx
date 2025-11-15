@@ -1,7 +1,7 @@
 import { ComponentType, FC } from "react";
 import { iconButtonVariants } from "./variants";
 import { VariantProps } from "class-variance-authority";
-import { IconProps } from "@/components";
+import { IconProps } from "../icons";
 
 type IconButtonProps = VariantProps<typeof iconButtonVariants> & {
   label: string;
