@@ -11,7 +11,7 @@
     "clean:lib": "rm -rf ./dist",
     "clean:storybook": "rm -rf ./storybook-static",
     "generate:types": "rollup -c rollup.config.dts.mjs",
-    "build:lib": "npm run clean:lib && vite build && npm run generate:types",
+    "build:lib": "npm run clean:lib && vite build && npm run generate:types && npm run copy-styles",
     "build:lib:esm": "tsc -p tsconfig.build-lib.esm.json",
     "build:lib:cjs": "tsc -p tsconfig.build-lib.cjs.json && mv dist/cjs/index.js dist/cjs/index.cjs",
     "copy-styles": "mkdir -p dist/styles && cp src/styles/theme.css dist/styles/theme.css",
@@ -44,6 +44,11 @@
       "types": "./dist/types/index.d.ts",
       "import": "./dist/components-index.es.js",
       "require": "./dist/components-index.cjs"
+    },
+    "./styles": {
+      "import": "./dist/styles/theme.css",
+      "require": "./dist/styles/theme.css",
+      "default": "./dist/styles/theme.css"
     }
   },
   "dependencies": {
