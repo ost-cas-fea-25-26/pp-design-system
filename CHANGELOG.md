@@ -1,3 +1,10 @@
+# [2.15.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.14.0...v2.15.0) (2025-11-15)
+
+
+### Features
+
+* upload image modal ([#133](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/133)) ([cddf0e8](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/cddf0e828117ea95c9e7e1e0b2cf26c997bc54bd))
+
 # [2.14.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.13.1...v2.14.0) (2025-11-15)
 
 
