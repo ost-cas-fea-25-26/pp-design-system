@@ -7,11 +7,14 @@ describe("AvatarButton", () => {
   it("renders avatar correctly", () => {
     render(
       <AvatarButton
-        avatarProps={{
-          src: "/avatars/rory.jpg",
-          alt: "User Avatar",
-          fallbackText: "Fallback",
-        }}
+        imageElement={
+          <img
+            src="/avatars/rory.jpg"
+            alt="User Avatar"
+            className="object-cover w-full h-full"
+          />
+        }
+        fallbackText="Fallback"
       />,
     );
     expect(screen.getByTestId("avatar-root")).toBeInTheDocument();
@@ -20,12 +23,15 @@ describe("AvatarButton", () => {
   it("overrides avatar size prop", () => {
     render(
       <AvatarButton
-        avatarProps={{
-          src: "/avatars/rory.jpg",
-          alt: "User Avatar",
-          fallbackText: "Fallback",
-          size: "xl",
-        }}
+        imageElement={
+          <img
+            src="/avatars/rory.jpg"
+            alt="User Avatar"
+            className="object-cover w-full h-full"
+          />
+        }
+        fallbackText="Fallback"
+        size="xl"
       />,
     );
     const avatar = screen.getByTestId("avatar-root");
@@ -37,11 +43,14 @@ describe("AvatarButton", () => {
     const handleClick = vi.fn();
     render(
       <AvatarButton
-        avatarProps={{
-          src: "/avatars/rory.jpg",
-          alt: "User Avatar",
-          fallbackText: "Fallback",
-        }}
+        imageElement={
+          <img
+            src="/avatars/rory.jpg"
+            alt="User Avatar"
+            className="object-cover w-full h-full"
+          />
+        }
+        fallbackText="Fallback"
         onClick={handleClick}
       />,
     );

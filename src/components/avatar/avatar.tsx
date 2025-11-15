@@ -9,10 +9,8 @@ type AvatarSize = "s" | "m" | "l" | "xl";
 export type AvatarProps = {
   size?: AvatarSize;
   border?: boolean;
-  src?: string;
-  alt: string;
+  imageElement?: React.ReactNode;
   fallbackText: string;
-  editable?: boolean;
   onEditClick?: () => void;
 };
 
@@ -26,10 +24,8 @@ const sizeClassMap: Record<AvatarSize, string> = {
 export const Avatar: FC<AvatarProps> = ({
   size = "m",
   border = false,
-  src,
-  alt,
+  imageElement,
   fallbackText,
-  editable = false,
   onEditClick,
 }) => (
   <div className="relative inline-block">
@@ -38,20 +34,22 @@ export const Avatar: FC<AvatarProps> = ({
       className={twMerge(
         "relative flex shrink-0 overflow-hidden rounded-full",
         sizeClassMap[size],
+        "max-w-24 max-h-24 sm:max-w-none sm:max-h-none",
         border && "border-[6px] border-neutral-100",
       )}
     >
-      <AvatarPrimitive.Image
-        src={src}
-        alt={alt}
-        className="aspect-square size-full object-cover"
-      />
+      {imageElement && (
+        <div className="absolute inset-0 w-full h-full overflow-hidden">
+          {imageElement}
+        </div>
+      )}
+
       <AvatarPrimitive.Fallback className="bg-primary-100 text-primary flex size-full items-center justify-center rounded-full font-medium">
         {fallbackText}
       </AvatarPrimitive.Fallback>
     </AvatarPrimitive.Root>
 
-    {editable && (
+    {onEditClick && (
       <div className="absolute bottom-0 right-0">
         <Button
           variant="neutral"
