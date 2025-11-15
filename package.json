@@ -1,5 +1,6 @@
 {
   "name": "@ost-cas-fea-25-26/pp-design-system",
+  "types": "dist/types/index.d.ts",
   "version": "2.13.1",
   "type": "module",
   "engines": {
@@ -9,7 +10,8 @@
     "dev": "storybook dev -p 6006",
     "clean:lib": "rm -rf ./dist",
     "clean:storybook": "rm -rf ./storybook-static",
-    "build:lib": "npm run clean:lib && vite build",
+    "generate:types": "rollup -c rollup.config.dts.mjs",
+    "build:lib": "npm run clean:lib && vite build && npm run generate:types",
     "build:lib:esm": "tsc -p tsconfig.build-lib.esm.json",
     "build:lib:cjs": "tsc -p tsconfig.build-lib.cjs.json && mv dist/cjs/index.js dist/cjs/index.cjs",
     "copy-styles": "mkdir -p dist/styles && cp src/styles/theme.css dist/styles/theme.css",
@@ -39,10 +41,10 @@
   ],
   "exports": {
     ".": {
+      "types": "./dist/types/index.d.ts",
       "import": "./dist/components-index.es.js",
-      "require": "./dist/components-index.cjs.js"
-    },
-    "./package.json": "./package.json"
+      "require": "./dist/components-index.cjs"
+    }
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -100,6 +102,7 @@
     "knip": "^5.30.5",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.7.0",
+    "rollup-plugin-dts": "^6.2.3",
     "storybook": "^10.0.5",
     "typescript": "~5.9.0",
     "vite": "^7.1.6",
