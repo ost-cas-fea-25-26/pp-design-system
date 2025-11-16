@@ -28,18 +28,19 @@ export const Default: Story = {
         }
         actions={
           <>
-            <AvatarButton
-              onClick={fn()}
-              imageElement={
-                <img
-                  src="/avatars/rory.jpg"
-                  alt="User avatar"
-                  className="object-cover w-full h-full"
-                />
-              }
-              fallbackText="RM"
-              size="s"
-            />
+            <a href="/profile">
+              <AvatarButton
+                imageElement={
+                  <img
+                    src="/avatars/rory.jpg"
+                    alt="User avatar"
+                    className="object-cover w-full h-full"
+                  />
+                }
+                fallbackText="RM"
+                size="s"
+              />
+            </a>
             <IconButton
               label="Settings"
               IconComponent={SettingsIcon}
