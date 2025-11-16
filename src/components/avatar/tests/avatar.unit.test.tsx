@@ -13,8 +13,13 @@ describe("Avatar", () => {
       <Avatar
         size="m"
         border
-        src="/avatars/rory.jpg"
-        alt="Rory McIlroy"
+        imageElement={
+          <img
+            src="/avatars/rory.jpg"
+            alt="Rory McIlroy"
+            className="object-cover w-full h-full"
+          />
+        }
         fallbackText="RM"
       />,
     );
@@ -24,39 +29,25 @@ describe("Avatar", () => {
     expect(screen.getByText("RM")).toBeInTheDocument();
   });
 
-  it("renders editable button when editable is true", () => {
+  it("renders edit button when onEditClick is provided", () => {
     const handleEdit = vi.fn();
 
-    render(
-      <Avatar
-        editable
-        alt="John Doe"
-        fallbackText="JD"
-        onEditClick={handleEdit}
-      />,
-    );
+    render(<Avatar fallbackText="JD" onEditClick={handleEdit} />);
 
     const button = screen.getByRole("button");
     expect(button).toBeInTheDocument();
     expect(screen.getByTestId("edit-icon")).toBeInTheDocument();
   });
 
-  it("does not render edit button when editable is false", () => {
-    render(<Avatar alt="John Doe" fallbackText="JD" />);
+  it("does not render edit button when no onEditClick is provided", () => {
+    render(<Avatar fallbackText="JD" />);
     expect(screen.queryByRole("button")).not.toBeInTheDocument();
   });
 
   it("calls onEditClick when edit button is clicked", () => {
     const handleEdit = vi.fn();
 
-    render(
-      <Avatar
-        editable
-        alt="John Doe"
-        fallbackText="JD"
-        onEditClick={handleEdit}
-      />,
-    );
+    render(<Avatar fallbackText="JD" onEditClick={handleEdit} />);
 
     const button = screen.getByRole("button");
     fireEvent.click(button);

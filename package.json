@@ -1,7 +1,7 @@
 {
   "name": "@ost-cas-fea-25-26/pp-design-system",
   "types": "dist/types/index.d.ts",
-  "version": "2.13.1",
+  "version": "2.15.0",
   "type": "module",
   "engines": {
     "node": ">=22.0.0"

@@ -30,12 +30,15 @@ export const Default: Story = {
           <>
             <AvatarButton
               onClick={fn()}
-              avatarProps={{
-                src: "/avatars/rory.jpg",
-                alt: "User avatar",
-                fallbackText: "RM",
-                size: "s",
-              }}
+              imageElement={
+                <img
+                  src="/avatars/rory.jpg"
+                  alt="User avatar"
+                  className="object-cover w-full h-full"
+                />
+              }
+              fallbackText="RM"
+              size="s"
             />
             <IconButton
               label="Settings"
