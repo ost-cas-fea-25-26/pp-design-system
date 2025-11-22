@@ -1,3 +1,17 @@
+# [2.15.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.14.0...v2.15.0) (2025-11-15)
+
+
+### Features
+
+* upload image modal ([#133](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/133)) ([cddf0e8](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/cddf0e828117ea95c9e7e1e0b2cf26c997bc54bd))
+
+# [2.14.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.13.1...v2.14.0) (2025-11-15)
+
+
+### Features
+
+* add profile header composition ([#131](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/131)) ([4ebfd47](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/4ebfd47dd55025279e71d8b881ab3f48b809d6fc))
+
 ## [2.13.1](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.13.0...v2.13.1) (2025-11-13)
 
 

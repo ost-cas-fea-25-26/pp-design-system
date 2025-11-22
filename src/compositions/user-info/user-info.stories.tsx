@@ -19,7 +19,7 @@ const meta: Meta<typeof UserInfo> = {
     size: { control: "select", options: ["s", "m", "l", "xl"] },
     name: { control: "text" },
     handle: { control: "text" },
-    avatarSrc: { control: "text" },
+    avatarImageElement: { control: false },
     showAvatar: {
       control: "boolean",
       description:
@@ -37,8 +37,14 @@ export const Default: Story = {
     size: "s",
     name: "Rory McIlroy",
     handle: "rory_goat",
-    avatarSrc: "/avatars/rory.jpg",
     showAvatar: true,
+    avatarImageElement: (
+      <img
+        src="/avatars/rory.jpg"
+        alt="Rory McIlroy"
+        className="object-cover w-full h-full"
+      />
+    ),
     iconButtons: (
       <>
         <IconButton
@@ -50,7 +56,7 @@ export const Default: Story = {
         <IconButton
           color="neutral"
           layout="horizontal"
-          label="vor 20 Minuten"
+          label="20 minutes ago"
           IconComponent={TimeIcon}
         />
       </>
@@ -81,7 +87,7 @@ export const WithProfileSettingsLink: Story = {
         <IconButton
           color="neutral"
           layout="horizontal"
-          label="vor 20 Minuten"
+          label="20 minutes ago"
           IconComponent={TimeIcon}
         />
       </>

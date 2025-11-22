@@ -10,7 +10,13 @@ describe("UserCard", () => {
       <UserCard
         name="Rory McIlroy"
         handle="rory_goat"
-        avatarSrc="/avatars/rory.jpg"
+        avatarImageElement={
+          <img
+            src="/avatars/rory.jpg"
+            alt="Rory McIlroy"
+            className="object-cover w-full h-full"
+          />
+        }
         button={<button>Follow</button>}
       />,
     );

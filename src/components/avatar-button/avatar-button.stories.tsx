@@ -13,10 +13,13 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    avatarProps: {
-      src: "/avatars/rory.jpg",
-      alt: "Rory McIlroy",
-      fallbackText: "RM",
-    },
+    fallbackText: "RM",
+    imageElement: (
+      <img
+        src="/avatars/rory.jpg"
+        alt="Rory McIlroy"
+        className="w-full h-full object-cover"
+      />
+    ),
   },
 };
