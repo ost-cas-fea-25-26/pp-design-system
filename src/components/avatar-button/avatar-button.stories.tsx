@@ -22,4 +22,10 @@ export const Default: Story = {
       />
     ),
   },
+
+  render: (args) => (
+    <a href="/profile">
+      <AvatarButton {...args} />
+    </a>
+  ),
 };
