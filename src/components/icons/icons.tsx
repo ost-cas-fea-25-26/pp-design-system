@@ -58,7 +58,7 @@ const ICON_COLOR_CLASSES: Record<IconColor, string> = {
 
 const makeIcon = (
   Icon: FC<{ className?: string; width?: number; height?: number }>,
-  name: string
+  name: string,
 ): FC<IconProps> => {
   const Component: FC<IconProps> = ({ color = "primary", size = "m" }) => (
     <Icon
