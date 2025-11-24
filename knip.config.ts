@@ -7,6 +7,7 @@ const config: KnipConfig = {
     ".storybook/**",
     "storybook-static/**",
     "release.config.js",
+    "svgr.config.cjs",
   ],
   ignoreDependencies: [
     "@smartive/prettier-config",

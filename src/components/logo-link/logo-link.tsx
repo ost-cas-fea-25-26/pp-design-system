@@ -1,5 +1,5 @@
 import { FC, ElementType } from "react";
-import { InlineWhite, StackedWhite } from "../logo/svg-react";
+import { InlineWhite, StackedWhite } from "../../foundation/logos/svg-react";
 
 type LogoLinkProps = {
   href?: string;
