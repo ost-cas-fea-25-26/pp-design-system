@@ -12,8 +12,6 @@
     "clean:storybook": "rm -rf ./storybook-static",
     "generate:types": "rollup -c rollup.config.dts.mjs",
     "build:lib": "npm run clean:lib && vite build && npm run generate:types && npm run copy-styles",
-    "build:lib:esm": "tsc -p tsconfig.build-lib.esm.json",
-    "build:lib:cjs": "tsc -p tsconfig.build-lib.cjs.json && mv dist/cjs/index.js dist/cjs/index.cjs",
     "copy-styles": "mkdir -p dist/styles && cp src/styles/theme.css dist/styles/theme.css",
     "build:storybook": "npm run clean:storybook && storybook build",
     "check:unused": "knip --config knip.config.ts",
@@ -63,14 +61,16 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.553.0",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
     "react-dropzone": "^14.3.8",
     "react-hook-form": "^7.64.0",
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.13",
     "tw-animate-css": "^1.3.8",
     "zod": "^4.1.12"
+  },
+  "peerDependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.11.0",
@@ -113,6 +113,8 @@
     "vite": "^7.1.6",
     "vite-plugin-svgr": "^4.5.0",
     "vitest": "^4.0.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
     "rollup": "^4.16.0"
   }
 }

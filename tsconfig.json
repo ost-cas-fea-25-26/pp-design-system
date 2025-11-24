@@ -7,7 +7,10 @@
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "strict": true,
     "skipLibCheck": true,
-    "noEmit": true,
+    "declaration": true,
+    "stripInternal": true,
+    "noEmit": false,
+    "rootDir": "./src",
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
@@ -15,5 +18,13 @@
     "types": ["vite/client", "react", "react-dom"]
   },
   "include": ["src", ".storybook", "vitest.config.*"],
-  "exclude": ["dist", "storybook-static", "node_modules"]
+  "exclude": [
+    "dist",
+    "storybook-static",
+    "node_modules",
+    "**/*.stories.*",
+    "**/*.test.*",
+    "**/__tests__/**",
+    "**/__mocks__/**"
+  ]
 }

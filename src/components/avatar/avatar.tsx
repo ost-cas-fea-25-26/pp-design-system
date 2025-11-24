@@ -29,6 +29,7 @@ export const Avatar: FC<AvatarProps> = ({
   onEditClick,
 }) => (
   <div className="relative inline-block">
+    wixoooo
     <AvatarPrimitive.Root
       data-testid="avatar-root"
       className={twMerge(
