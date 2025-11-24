@@ -1,3 +1,10 @@
+## [2.16.1](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.16.0...v2.16.1) (2025-11-24)
+
+
+### Bug Fixes
+
+* asset bundling ([#134](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/134)) ([e1509ad](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/e1509ad91162013e2a77d23ecb8cb7dec5677dac))
+
 # [2.16.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.15.0...v2.16.0) (2025-11-23)
 
 
