@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Avatar, AvatarProps } from "@/components/avatar";
+import { Avatar, AvatarProps } from "../avatar";
 
 type AvatarButtonProps = AvatarProps;
 
