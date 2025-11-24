@@ -1,3 +1,10 @@
+# [2.16.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.15.0...v2.16.0) (2025-11-23)
+
+
+### Features
+
+* change avatarbutton to link ([#136](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/136)) ([b16c6bd](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/b16c6bdf06fcb88cb5c8e85106b8976bad1e7b29))
+
 # [2.15.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.14.0...v2.15.0) (2025-11-15)
 
 
