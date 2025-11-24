@@ -6,8 +6,8 @@ import { ComponentProps } from "react";
 
 describe("LogoLink", () => {
   it("renders both desktop and mobile logos", () => {
-    const { getAllByAltText } = render(<LogoLink />);
-    const logos = getAllByAltText("Mumble");
+    const { getAllByLabelText } = render(<LogoLink />);
+    const logos = getAllByLabelText("Mumble");
     expect(logos.length).toBe(2);
   });
 
