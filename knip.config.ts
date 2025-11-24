@@ -7,7 +7,6 @@ const config: KnipConfig = {
     ".storybook/**",
     "storybook-static/**",
     "release.config.js",
-    "rollup.config.dts.mjs"
   ],
   ignoreDependencies: [
     "@smartive/prettier-config",
@@ -21,7 +20,6 @@ const config: KnipConfig = {
     "http-server",
     "lucide-react",
     "prettier-plugin-tailwindcss",
-    "rollup-plugin-dts"
   ],
 };
 

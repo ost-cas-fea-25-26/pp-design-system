@@ -1,29 +1,30 @@
-/// <reference types="vite-plugin-svgr/client" />
 import { FC } from "react";
-import Settings from "./svg/settings.svg?react";
-import Upload from "./svg/upload.svg?react";
-import Heart from "./svg/heart.svg?react";
-import HeartFilled from "./svg/heart-filled.svg?react";
-import Reply from "./svg/reply.svg?react";
-import ReplyFilled from "./svg/reply-filled.svg?react";
-import ArrowDown from "./svg/arrow-down.svg?react";
-import ArrowUp from "./svg/arrow-up.svg?react";
-import ArrowLeft from "./svg/arrow-left.svg?react";
-import ArrowRight from "./svg/arrow-right.svg?react";
-import Mumble from "./svg/mumble.svg?react";
-import Profile from "./svg/profile.svg?react";
-import Calendar from "./svg/calendar.svg?react";
-import Cancel from "./svg/cancel.svg?react";
-import Checkmark from "./svg/checkmark.svg?react";
-import Edit from "./svg/edit.svg?react";
-import Eye from "./svg/eye.svg?react";
-import Fullscreen from "./svg/fullscreen.svg?react";
-import Location from "./svg/location.svg?react";
-import Logout from "./svg/logout.svg?react";
-import Repost from "./svg/repost.svg?react";
-import Send from "./svg/send.svg?react";
-import Share from "./svg/share.svg?react";
-import Time from "./svg/time.svg?react";
+import {
+  Settings,
+  Upload,
+  Heart,
+  HeartFilled,
+  Reply,
+  ReplyFilled,
+  ArrowDown,
+  ArrowUp,
+  ArrowLeft,
+  ArrowRight,
+  Mumble,
+  Profile,
+  Calendar,
+  Cancel,
+  Location,
+  Checkmark,
+  Edit,
+  Eye,
+  Fullscreen,
+  Logout,
+  Repost,
+  Send,
+  Share,
+  Time,
+} from "./svg-react";
 
 const ICON_SIZE_MAP = {
   s: 12,
@@ -57,7 +58,7 @@ const ICON_COLOR_CLASSES: Record<IconColor, string> = {
 
 const makeIcon = (
   Icon: FC<{ className?: string; width?: number; height?: number }>,
-  name: string,
+  name: string
 ): FC<IconProps> => {
   const Component: FC<IconProps> = ({ color = "primary", size = "m" }) => (
     <Icon

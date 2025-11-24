@@ -22,18 +22,6 @@ export default defineConfig({
       "@": path.resolve(dirname, "src"),
     },
   },
-    build: {
-        outDir: path.resolve(__dirname, "dist"),
-        cssMinify: "esbuild",
-        cssCodeSplit: false,
-        copyPublicDir: true,
-        emitAssets: true, // CSS
-        lib: {
-            formats: ['es', 'cjs'],
-            entry: path.resolve(__dirname, 'src/index.ts'),
-            fileName: (format, entryName) => `components-${entryName}.${format}.js`,
-        },
-    },
   test: {
     projects: [
       {
