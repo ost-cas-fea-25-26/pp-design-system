@@ -1,12 +1,16 @@
 import { Meta, StoryObj } from "@storybook/react-vite";
-import appIconGradient from "@/assets/logo/app-icon-gradient.svg";
-import appIconWhite from "@/assets/logo/app-icon-white.svg";
-import logoInlineViolet from "@/assets/logo/inline-violet.svg";
-import logoInlineWhite from "@/assets/logo/inline-white.svg";
-import logoInlineGradient from "@/assets/logo/inline-gradient.svg";
-import logoStackedViolet from "@/assets/logo/stacked-violet.svg";
-import logoStackedWhite from "@/assets/logo/stacked-white.svg";
-import logoStackedGradient from "@/assets/logo/stacked-gradient.svg";
+
+// Import SVGR-generated components
+import AppIconGradient from "@/components/logo/svg-react/app-icon-gradient";
+import AppIconWhite from "@/components/logo/svg-react/app-icon-white";
+
+import LogoInlineViolet from "@/components/logo/svg-react/inline-violet";
+import LogoInlineWhite from "@/components/logo/svg-react/inline-white";
+import LogoInlineGradient from "@/components/logo/svg-react/inline-gradient";
+
+import LogoStackedViolet from "@/components/logo/svg-react/stacked-violet";
+import LogoStackedWhite from "@/components/logo/svg-react/stacked-white";
+import LogoStackedGradient from "@/components/logo/svg-react/stacked-gradient";
 
 const meta: Meta = {
   title: "Foundation/Logos",
@@ -22,7 +26,7 @@ export const Default: Story = {
     const logos = [
       {
         filename: "app-icon-gradient.svg",
-        src: appIconGradient,
+        Component: AppIconGradient,
         bg: "bg-white",
         text: "text-neutral-900",
         group: "App Icons",
@@ -30,7 +34,7 @@ export const Default: Story = {
       },
       {
         filename: "app-icon-white.svg",
-        src: appIconWhite,
+        Component: AppIconWhite,
         bg: "bg-violet-700",
         text: "text-white",
         group: "App Icons",
@@ -38,7 +42,7 @@ export const Default: Story = {
       },
       {
         filename: "inline-violet.svg",
-        src: logoInlineViolet,
+        Component: LogoInlineViolet,
         bg: "bg-white",
         text: "text-neutral-900",
         group: "Violet",
@@ -46,7 +50,7 @@ export const Default: Story = {
       },
       {
         filename: "inline-white.svg",
-        src: logoInlineWhite,
+        Component: LogoInlineWhite,
         bg: "bg-violet-700",
         text: "text-white",
         group: "White",
@@ -54,7 +58,7 @@ export const Default: Story = {
       },
       {
         filename: "inline-gradient.svg",
-        src: logoInlineGradient,
+        Component: LogoInlineGradient,
         bg: "bg-white",
         text: "text-neutral-900",
         group: "Gradient",
@@ -62,7 +66,7 @@ export const Default: Story = {
       },
       {
         filename: "stacked-violet.svg",
-        src: logoStackedViolet,
+        Component: LogoStackedViolet,
         bg: "bg-white",
         text: "text-neutral-900",
         group: "Violet",
@@ -70,7 +74,7 @@ export const Default: Story = {
       },
       {
         filename: "stacked-white.svg",
-        src: logoStackedWhite,
+        Component: LogoStackedWhite,
         bg: "bg-violet-700",
         text: "text-white",
         group: "White",
@@ -78,7 +82,7 @@ export const Default: Story = {
       },
       {
         filename: "stacked-gradient.svg",
-        src: logoStackedGradient,
+        Component: LogoStackedGradient,
         bg: "bg-white",
         text: "text-neutral-900",
         group: "Gradient",
@@ -93,19 +97,17 @@ export const Default: Story = {
         {groupOrder.map((group) => (
           <section key={group}>
             <h4 className="heading-4 mb-4">{group}</h4>
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mx-auto max-w-[600px] justify-items-start ml-0">
               {logos
                 .filter((logo) => logo.group === group)
-                .map(({ filename, src, bg, text }) => (
+                .map(({ filename, Component, bg, text }) => (
                   <div
                     key={filename}
                     className={`flex flex-col items-center justify-between rounded-xl shadow-sm w-[200px] min-h-[160px] p-6 ${bg}`}
                   >
-                    <img
-                      src={src}
-                      alt={filename}
-                      className="w-[200px] max-h-[80px] mb-4 object-contain"
-                    />
+                    <Component className="w-[200px] max-h-[80px] mb-4 object-contain" />
+
                     <span className={`text-xs text-center ${text}`}>
                       {filename}
                     </span>

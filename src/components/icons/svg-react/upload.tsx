@@ -4,8 +4,6 @@ const SvgUpload = (props: SVGProps<SVGSVGElement>) => (
     xmlns="http://www.w3.org/2000/svg"
     fill="currentColor"
     viewBox="0 0 14 14"
-    width="1em"
-    height="1em"
     {...props}
   >
     <path d="M13 9a1 1 0 0 0-1 1v2H2v-2a1 1 0 0 0-2 0v2a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-2a1 1 0 0 0-1-1" />

@@ -4,8 +4,6 @@ const SvgCancel = (props: SVGProps<SVGSVGElement>) => (
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 14 14"
-    width="1em"
-    height="1em"
     {...props}
   >
     <path

@@ -26,7 +26,7 @@
     "test:e2e:update": "docker run --rm -it -v $PWD:/app -w /app mcr.microsoft.com/playwright:v1.56.1-jammy bash -lc \"npm install && npx playwright install --with-deps && npx playwright test --update-snapshots\"",
     "test:e2e:report": "playwright show-report",
     "svgr:icons": "svgr --filename-case kebab ./src/components/icons/svg --out-dir ./src/components/icons/svg-react",
-    "svgr:logos": "svgr --filename-case kebab ./src/components/logo/svg --out-dir ./src/components/logo/svg-react"
+    "svgr:logos": "svgr --filename-case kebab --no-dimensions ./src/components/logo/svg --out-dir ./src/components/logo/svg-react"
   },
   "publishConfig": {
     "access": "public",

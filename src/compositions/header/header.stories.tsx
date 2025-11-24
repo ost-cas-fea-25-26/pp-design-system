@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { fn } from "storybook/test";
 import { Header } from "./header";
-import { LogoLink } from "../../components/logo/logo";
 import { AvatarButton } from "../../components/avatar-button";
 import { IconButton } from "../../components/icon-button";
 import { LogoutIcon, SettingsIcon } from "../../components/icons";
+import { LogoLink } from "@/components";
 
 const meta: Meta<typeof Header> = {
   title: "Compositions/Header",
