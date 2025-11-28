@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { fn } from "storybook/test";
 import { ProfileHeader } from "@/compositions/profile-header";
 import { IconButton } from "@/components/icon-button";
 import {
@@ -9,6 +8,9 @@ import {
   SettingsIcon,
 } from "@/components/icons";
 import { Link } from "@/components/link";
+import { ProfileBanner } from "@/components/profile-banner";
+import { Avatar } from "@/components/avatar";
+import { fn } from "storybook/test";
 
 const meta: Meta<typeof ProfileHeader> = {
   title: "Compositions/Profile Header",
@@ -17,25 +19,38 @@ const meta: Meta<typeof ProfileHeader> = {
   tags: ["autodocs"],
   args: {
     bannerImageElement: (
-      <img
-        src="/headers/rory-mcilroy.jpg"
-        alt="Rory McIlroy absolutely nuking a fucking perfect driver"
-        className="object-cover w-full h-full"
+      <ProfileBanner
+        onClick={fn()}
+        imageElement={
+          <img
+            src="/headers/rory-mcilroy.jpg"
+            alt="Rory McIlroy absolutely nuking a fucking perfect driver"
+            className="object-cover w-full h-full"
+          />
+        }
       />
     ),
+
     avatarImageElement: (
-      <img
-        src="/avatars/rory.jpg"
-        alt="Rory McIlroy"
-        className="object-cover w-full h-full"
+      <Avatar
+        imageElement={
+          <img
+            src="/avatars/rory.jpg"
+            alt="Rory McIlroy"
+            className="object-cover w-full h-full"
+          />
+        }
+        fallbackText="RM"
+        size="xl"
+        border
+        onEditClick={fn()} // exact original behavior preserved
       />
     ),
-    avatarFallback: "RM",
-    onEditHeader: fn(),
-    onEditAvatar: fn(),
+
     name: "Rory McIlroy",
     handle: "rory_goat",
     bio: "4x Major Champion. Legendary ball-striker. Known for 340-yard draws, questionable tee-box decisions, and an unhealthy obsession with perfecting the modern golf swing. If found, please return my Pro V1 — it left the fairway on hole 7 and never came back.",
+
     iconButtons: (
       <>
         <IconButton
@@ -58,6 +73,7 @@ const meta: Meta<typeof ProfileHeader> = {
         />
       </>
     ),
+
     settingsLinkElement: (
       <Link href="/settings" title="Settings">
         <SettingsIcon color="primary" size="m" />

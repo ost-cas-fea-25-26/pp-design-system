@@ -1,15 +1,12 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import { describe, it, expect, vi } from "vitest";
+import { describe, it, expect } from "vitest";
 import { ProfileHeader } from "../profile-header";
 import { IconButton } from "@/components/icon-button";
 import { ProfileIcon } from "@/components/icons";
 
 describe("ProfileHeader (single test)", () => {
-  it("renders all elements and triggers all interactions", () => {
-    const handleEditHeader = vi.fn();
-    const handleEditAvatar = vi.fn();
-
+  it("renders all elements", () => {
     render(
       <ProfileHeader
         bannerImageElement={
@@ -26,7 +23,6 @@ describe("ProfileHeader (single test)", () => {
             className="object-cover w-full h-full"
           />
         }
-        avatarFallback="TA"
         name="Test User"
         handle="test_user"
         iconButtons={
@@ -39,8 +35,6 @@ describe("ProfileHeader (single test)", () => {
         }
         settingsLinkElement={<a href="/settings">Settings</a>}
         bio="This is a test bio"
-        onEditHeader={handleEditHeader}
-        onEditAvatar={handleEditAvatar}
       />,
     );
 
@@ -50,11 +44,5 @@ describe("ProfileHeader (single test)", () => {
     expect(screen.getByText("This is a test bio")).toBeInTheDocument();
     expect(screen.getByText("Settings")).toBeInTheDocument();
     expect(screen.getByText("test_label")).toBeInTheDocument();
-
-    fireEvent.click(screen.getByRole("button", { name: /edit image/i }));
-    expect(handleEditHeader).toHaveBeenCalledTimes(1);
-
-    fireEvent.click(screen.getByRole("button", { name: /edit avatar/i }));
-    expect(handleEditAvatar).toHaveBeenCalledTimes(1);
   });
 });
