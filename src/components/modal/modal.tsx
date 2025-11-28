@@ -1,6 +1,6 @@
 import { FC, ReactNode } from "react";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
-import { CancelIcon } from "../icons";
+import { CancelIcon } from "@/components/icons";
 
 type ModalProps = {
   open: boolean;

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Input } from "./input";
-import { MumbleIcon } from "../icons";
+import { MumbleIcon } from "@/components/icons";
 
 const meta: Meta<typeof Input> = {
   title: "Components/Input",
@@ -39,7 +39,7 @@ export const Disabled: Story = {
   },
 };
 
-export const Error: Story = {
+export const WithError: Story = {
   args: {
     placeholder: "Invalid input",
     "aria-invalid": true,

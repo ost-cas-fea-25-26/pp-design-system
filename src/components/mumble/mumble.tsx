@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { IconButton } from "../icon-button";
 import { ProfileIcon, TimeIcon } from "../icons";
-import { UserInfo } from "../user-info";
 import * as React from "react";
+import { UserInfo } from "@/compositions";
 
 type MumbleSize = "m" | "l";
 

@@ -5,7 +5,7 @@ import {
   HeartIcon,
   ReplyFilledIcon,
   ReplyIcon,
-} from "../icons";
+} from "@/components/icons";
 
 const meta = {
   title: "Components/Toggle",

@@ -49,6 +49,7 @@ export const FileUpload: FC<FileUploadProps> = ({
         className="hidden"
         ref={hiddenFileInput}
         onChange={handleFileChange}
+        data-testid="file-upload-input"
       />
 
       <Dropzone

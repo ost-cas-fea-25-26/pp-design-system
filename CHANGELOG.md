@@ -1,3 +1,73 @@
+# [2.17.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.16.1...v2.17.0) (2025-11-28)
+
+
+### Features
+
+* tsc build for server side rendering ([#141](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/141)) ([0855183](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/08551838ee3848cc3b43142c016aca1fb9f5aec4))
+
+## [2.16.1](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.16.0...v2.16.1) (2025-11-24)
+
+
+### Bug Fixes
+
+* asset bundling ([#134](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/134)) ([e1509ad](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/e1509ad91162013e2a77d23ecb8cb7dec5677dac))
+
+# [2.16.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.15.0...v2.16.0) (2025-11-23)
+
+
+### Features
+
+* change avatarbutton to link ([#136](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/136)) ([b16c6bd](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/b16c6bdf06fcb88cb5c8e85106b8976bad1e7b29))
+
+# [2.15.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.14.0...v2.15.0) (2025-11-15)
+
+
+### Features
+
+* upload image modal ([#133](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/133)) ([cddf0e8](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/cddf0e828117ea95c9e7e1e0b2cf26c997bc54bd))
+
+# [2.14.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.13.1...v2.14.0) (2025-11-15)
+
+
+### Features
+
+* add profile header composition ([#131](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/131)) ([4ebfd47](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/4ebfd47dd55025279e71d8b881ab3f48b809d6fc))
+
+## [2.13.1](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.13.0...v2.13.1) (2025-11-13)
+
+
+### Bug Fixes
+
+* font issue for next js ([#128](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/128)) ([5f50545](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/5f50545c2633fa9c143c7ffece528631781a3be2))
+
+# [2.13.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.12.1...v2.13.0) (2025-11-09)
+
+
+### Features
+
+* add app-shell composition with header and logo-link ([#103](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/103)) ([736ce36](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/736ce36dad06d00870b51a098a0f890632d2b313))
+
+## [2.12.1](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.12.0...v2.12.1) (2025-11-07)
+
+
+### Bug Fixes
+
+* **deps:** update dependency lucide-react to ^0.553.0 ([#115](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/115)) ([d3313b9](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/d3313b9ba547816660f66555f50694ed1286cfb3))
+
+# [2.12.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.11.1...v2.12.0) (2025-11-05)
+
+
+### Features
+
+* resolve sonar issues ([3994398](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/3994398ed81afa63bb923e144d231ff9e53aed6a))
+
+## [2.11.1](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.11.0...v2.11.1) (2025-11-05)
+
+
+### Bug Fixes
+
+* add a11y tests ([#102](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/102)) ([e83dded](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/e83ddede2c5a8f76a4b7643f42d71073acdd7311))
+
 # [2.11.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.10.0...v2.11.0) (2025-11-05)
 
 

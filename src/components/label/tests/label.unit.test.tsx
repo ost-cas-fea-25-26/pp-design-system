@@ -22,7 +22,7 @@ describe("Label", () => {
     const label = getByText("Password");
     expect(label).toHaveClass(
       "cursor-not-allowed",
-      "opacity-50",
+      "opacity-60",
       "pointer-events-none",
     );
   });
