@@ -1,6 +1,7 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
 import "@testing-library/jest-dom";
+import { MumbleActions } from "../mumble-actions";
 
 vi.mock("@/components", () => ({
   HeartFilledIcon: () => <span data-testid="heart-filled-icon" />,
@@ -42,8 +43,6 @@ vi.mock("@/components", () => ({
     </button>
   ),
 }));
-
-import { MumbleActions } from "../mumble-actions";
 
 describe("MumbleActions", () => {
   it("renders all action buttons and icons", () => {

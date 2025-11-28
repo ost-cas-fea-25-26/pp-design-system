@@ -38,31 +38,27 @@ export const MumbleActions: FC<MumbleActionsProps> = ({
     return `${count} Likes`;
   };
 
-  const getLikeChildren = (count: number) => {
-    return (
-      <span className="inline-flex items-center gap-2">
-        {count === 0 ? (
-          <HeartIcon color="inherit" />
-        ) : (
-          <HeartFilledIcon color="accent" />
-        )}
-        {getLikeLabel(count)}
-      </span>
-    );
-  };
+  const getLikeChildren = (count: number) => (
+    <span className="inline-flex items-center gap-2">
+      {count === 0 ? (
+        <HeartIcon color="inherit" />
+      ) : (
+        <HeartFilledIcon color="accent" />
+      )}
+      {getLikeLabel(count)}
+    </span>
+  );
 
-  const renderLikeToggle = (count: number) => {
-    return (
-      <Toggle
-        defaultChildren={getLikeChildren(count)}
-        activeChildren={
-          liked ? getLikeChildren(count - 1) : getLikeChildren(count + 1)
-        }
-        onToggle={onLikeToggleHandler}
-        variant={liked ? "metric" : "accent"}
-      />
-    );
-  };
+  const renderLikeToggle = (count: number) => (
+    <Toggle
+      defaultChildren={getLikeChildren(count)}
+      activeChildren={
+        liked ? getLikeChildren(count - 1) : getLikeChildren(count + 1)
+      }
+      onToggle={onLikeToggleHandler}
+      variant={liked ? "metric" : "accent"}
+    />
+  );
 
   const getCommentLabel = (count: number): string => {
     if (count === 0) {
@@ -75,36 +71,27 @@ export const MumbleActions: FC<MumbleActionsProps> = ({
     return `${count} Comments`;
   };
 
-  const getCommentChildren = (count: number) => {
-    return (
-      <span className="inline-flex items-center gap-2">
-        {count === 0 ? (
-          <ReplyIcon color="inherit" />
-        ) : (
-          <ReplyFilledIcon color="primary" />
-        )}
-        {getCommentLabel(count)}
-      </span>
-    );
-  };
-
-  const renderCommentToggle = (count: number) => {
-    return (
-      <Toggle
-        defaultChildren={getCommentChildren(count)}
-        activeChildren={getCommentChildren(count + 1)}
-        onToggle={onCommentToggleHandler}
-        variant="primary"
-      />
-    );
-  };
+  const getCommentChildren = (count: number) => (
+    <span className="inline-flex items-center gap-2">
+      {count === 0 ? (
+        <ReplyIcon color="inherit" />
+      ) : (
+        <ReplyFilledIcon color="primary" />
+      )}
+      {getCommentLabel(count)}
+    </span>
+  );
+  const renderCommentToggle = (count: number) => (
+    <Toggle
+      defaultChildren={getCommentChildren(count)}
+      activeChildren={getCommentChildren(count + 1)}
+      onToggle={onCommentToggleHandler}
+      variant="primary"
+    />
+  );
 
   const handleShareLink = async () => {
-    try {
-      await navigator.clipboard.writeText(deepLink);
-    } catch (err) {
-      console.error(err);
-    }
+    await navigator.clipboard.writeText(deepLink);
   };
 
   return (
