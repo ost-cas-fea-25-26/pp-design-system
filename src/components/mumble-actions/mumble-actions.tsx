@@ -1,13 +1,14 @@
 import { FC } from "react";
+
 import {
   HeartFilledIcon,
   HeartIcon,
   ReplyFilledIcon,
   ReplyIcon,
   ShareIcon,
-} from "../icons";
-import { Toggle } from "../toggle";
-import { TimedButton } from "../timed-button";
+  TimedButton,
+  Toggle,
+} from "@/components";
 
 type MumbleActionsProps = {
   deepLink: string;
