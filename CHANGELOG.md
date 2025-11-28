@@ -1,3 +1,10 @@
+# [2.19.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.18.0...v2.19.0) (2025-11-28)
+
+
+### Features
+
+* improved profile header for SSR ([#143](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/143)) ([746490c](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/746490ce0251537bc4c3c0ea751b5e421321a32a))
+
 # [2.18.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.17.0...v2.18.0) (2025-11-28)
 
 
