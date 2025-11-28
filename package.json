@@ -69,7 +69,7 @@
     "@tailwindcss/vite": "^4.1.13",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "lucide-react": "^0.553.0",
+    "lucide-react": "^0.555.0",
     "react-dropzone": "^14.3.8",
     "react-hook-form": "^7.64.0",
     "tailwind-merge": "^3.3.1",
