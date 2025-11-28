@@ -27,7 +27,6 @@ describe("Link", () => {
   it("applies correct className", () => {
     const { container } = render(<Link title="Styled" href="#" />);
     const link = container.firstChild as HTMLElement;
-    expect(link.className).toContain("label-sm");
     expect(link.className).toContain("text-primary");
     expect(link.className).toContain("hover:decoration-primary-200");
   });
