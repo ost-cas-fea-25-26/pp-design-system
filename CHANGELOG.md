@@ -1,3 +1,10 @@
+# [2.17.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.16.1...v2.17.0) (2025-11-28)
+
+
+### Features
+
+* tsc build for server side rendering ([#141](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/141)) ([0855183](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/08551838ee3848cc3b43142c016aca1fb9f5aec4))
+
 ## [2.16.1](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.16.0...v2.16.1) (2025-11-24)
 
 
