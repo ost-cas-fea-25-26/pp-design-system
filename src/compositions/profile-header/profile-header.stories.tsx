@@ -20,7 +20,7 @@ const meta: Meta<typeof ProfileHeader> = {
   args: {
     bannerImageElement: (
       <ProfileBanner
-        onClick={fn()} // same as before
+        onClick={fn()}
         imageElement={
           <img
             src="/headers/rory-mcilroy.jpg"
