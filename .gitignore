@@ -35,3 +35,6 @@ storybook-static
 
 # Vitest
 /coverage
+
+# Ignore all generated React components from svgr
+**/svg-react/
