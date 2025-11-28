@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react-vite";
 import { Mumble } from "./index";
 import { Link } from "@/components";
-import { MumbleActions } from "@/components/mumble-actions";
+import { MumbleActions } from "@/compositions/mumble-actions";
 
 const meta: Meta<typeof Mumble> = {
   title: "Compositions/Mumble",

@@ -25,6 +25,7 @@ describe("Mumble", () => {
     render(<Mumble {...defaultProps} avatarSrc="rory.jpg" />);
     const img = screen.getByAltText("Rory McIlroy");
     expect(img).toBeInTheDocument();
+    // @ts-ignore
     expect(img.src).toContain("rory.jpg");
   });
 
