@@ -5,3 +5,4 @@ export * from "./profile-header";
 export * from "./user-card";
 export * from "./user-info";
 export * from "./mumble";
+export * from "./mumble-actions";

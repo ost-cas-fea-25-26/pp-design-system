@@ -1,7 +1,7 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
 import "@testing-library/jest-dom";
-import { MumbleActions } from "../mumble-actions";
+import { MumbleActions } from "@/compositions";
 
 vi.mock("@/components", () => ({
   HeartFilledIcon: () => <span data-testid="heart-filled-icon" />,
