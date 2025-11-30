@@ -1,3 +1,10 @@
+## [2.19.1](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.19.0...v2.19.1) (2025-11-30)
+
+
+### Bug Fixes
+
+* add mumble actions to index ([#144](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/144)) ([8511bfe](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/8511bfea4a11f696a4ee3e64ed94a1015135db3f))
+
 # [2.19.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.18.0...v2.19.0) (2025-11-28)
 
 
