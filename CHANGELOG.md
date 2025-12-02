@@ -1,3 +1,10 @@
+## [2.19.2](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.19.1...v2.19.2) (2025-12-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency lucide-react to ^0.555.0 ([#138](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/138)) ([127b704](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/127b704f1f56e21a51b01c6a525e16085c2c570b))
+
 ## [2.19.1](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.19.0...v2.19.1) (2025-11-30)
 
 
