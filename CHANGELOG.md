@@ -1,3 +1,10 @@
+## [2.19.3](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.19.2...v2.19.3) (2025-12-05)
+
+
+### Bug Fixes
+
+* do not calculate like counter ([#152](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/152)) ([0045aa7](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/0045aa7e3c3acc81e757c6553bacbc4a3ca89d65))
+
 ## [2.19.2](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.19.1...v2.19.2) (2025-12-02)
 
 
