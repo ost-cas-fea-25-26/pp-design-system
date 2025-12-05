@@ -51,17 +51,15 @@ export const MumbleActions: FC<MumbleActionsProps> = ({
     </span>
   );
 
-  const renderLikeToggle = (count: number) => {
-    return (
-      <Toggle
-        defaultChildren={getLikeChildren(count)}
-        activeChildren={getLikeChildren(count)}
-        onToggle={onLikeToggleHandler}
-        variant={liked ? "metric" : "accent"}
-        isActive={liked}
-      />
-    );
-  };
+  const renderLikeToggle = (count: number) => (
+    <Toggle
+      defaultChildren={getLikeChildren(count)}
+      activeChildren={getLikeChildren(count)}
+      onToggle={onLikeToggleHandler}
+      variant={liked ? "metric" : "accent"}
+      isActive={liked}
+    />
+  );
 
   const getCommentLabel = (count: number): string => {
     if (count === 0) {
@@ -84,6 +82,7 @@ export const MumbleActions: FC<MumbleActionsProps> = ({
       {getCommentLabel(count)}
     </span>
   );
+
   const renderCommentToggle = (count: number) => (
     <Toggle
       defaultChildren={getCommentChildren(count)}
