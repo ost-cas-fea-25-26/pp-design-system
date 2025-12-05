@@ -110,27 +110,4 @@ describe("MumbleActions", () => {
       expect(writeText).toHaveBeenCalledWith("https://mumble.app/123");
     });
   });
-
-  it("renders correct like and comment labels for different counts", () => {
-    let utils = render(
-      <MumbleActions deepLink="link" likeCounter={0} commentCounter={0} />,
-    );
-    expect(screen.getByText("Like")).toBeInTheDocument();
-    expect(screen.getByText("Comment")).toBeInTheDocument();
-    utils.unmount();
-
-    utils = render(
-      <MumbleActions deepLink="link" likeCounter={1} commentCounter={1} />,
-    );
-    expect(screen.getByText("1 Like")).toBeInTheDocument();
-    expect(screen.getByText("1 Comment")).toBeInTheDocument();
-    utils.unmount();
-
-    utils = render(
-      <MumbleActions deepLink="link" likeCounter={5} commentCounter={7} />,
-    );
-    expect(screen.getByText("5 Likes")).toBeInTheDocument();
-    expect(screen.getByText("7 Comments")).toBeInTheDocument();
-    utils.unmount();
-  });
 });

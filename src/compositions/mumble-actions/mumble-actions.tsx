@@ -1,3 +1,5 @@
+"use client";
+
 import { FC } from "react";
 
 import {
@@ -49,16 +51,17 @@ export const MumbleActions: FC<MumbleActionsProps> = ({
     </span>
   );
 
-  const renderLikeToggle = (count: number) => (
-    <Toggle
-      defaultChildren={getLikeChildren(count)}
-      activeChildren={
-        liked ? getLikeChildren(count - 1) : getLikeChildren(count + 1)
-      }
-      onToggle={onLikeToggleHandler}
-      variant={liked ? "metric" : "accent"}
-    />
-  );
+  const renderLikeToggle = (count: number) => {
+    return (
+      <Toggle
+        defaultChildren={getLikeChildren(count)}
+        activeChildren={getLikeChildren(count)}
+        onToggle={onLikeToggleHandler}
+        variant={liked ? "metric" : "accent"}
+        isActive={liked}
+      />
+    );
+  };
 
   const getCommentLabel = (count: number): string => {
     if (count === 0) {
