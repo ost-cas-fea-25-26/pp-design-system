@@ -2,6 +2,7 @@ import { FC } from "react";
 import * as React from "react";
 import { UserInfo } from "@/compositions";
 import { IconButton, ProfileIcon, TimeIcon } from "@/components";
+import { twMerge } from "tailwind-merge";
 
 type MumbleSize = "m" | "l";
 
@@ -13,6 +14,7 @@ export type MumbleProps = {
   timestamp: string;
   content: React.ReactNode;
   actions?: React.ReactNode;
+  hideBorder?: boolean;
 };
 
 const sizeClassMap: Record<MumbleSize, string> = {
@@ -28,6 +30,7 @@ export const Mumble: FC<MumbleProps> = ({
   timestamp,
   content,
   actions,
+  hideBorder = false,
 }) => {
   const avatarImageElement = avatarSrc ? (
     <img
@@ -38,7 +41,14 @@ export const Mumble: FC<MumbleProps> = ({
   ) : null;
 
   return (
-    <div className="relative bg-white rounded-2xl hover:outline-neutral-200 hover:outline-2 shadow-sm pt-1 pr-12 pb-8 pl-12">
+    <div
+      className={twMerge(
+        "relative bg-white rounded-2xl pt-1 pr-12 pb-8 pl-12",
+        !hideBorder
+          ? "shadow-sm hover:outline-neutral-200 hover:outline-2"
+          : "",
+      )}
+    >
       <div className="absolute top-6 -left-6 z-10">
         <UserInfo
           avatarImageElement={avatarImageElement}

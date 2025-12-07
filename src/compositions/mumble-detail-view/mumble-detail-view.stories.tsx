@@ -1,8 +1,25 @@
 import { MumbleDetailView } from "@/compositions/mumble-detail-view/mumble-detail-view";
 import { Meta, StoryObj } from "@storybook/react-vite";
-import { MumbleActions } from "@/compositions";
+import { MumbleActions, MumbleProps } from "@/compositions";
 import { IconButton, ProfileIcon } from "@/components";
 import { fn } from "storybook/test";
+
+const reply: MumbleProps = {
+  size: "l",
+  content: "This is a reply",
+  userName: "Tommy Fleetwood",
+  userHandle: "tommy",
+  avatarSrc: "/avatars/tommy.png",
+  timestamp: "30m ago",
+  actions: (
+    <MumbleActions
+      deepLink="https://mumble.com/mumbles/123456"
+      commentCounter={0}
+      likeCounter={1}
+      liked={true}
+    />
+  ),
+};
 
 const meta: Meta<typeof MumbleDetailView> = {
   title: "Compositions/Mumble Detail View",
@@ -54,12 +71,20 @@ const meta: Meta<typeof MumbleDetailView> = {
       placeholder: "Write your reply...",
       submitButtonText: "Send Reply",
       uploadButtonText: "Upload Image",
+      errorMessage: "Field is required",
       onSubmitHandler: fn(),
     },
+    replies: [reply, reply, reply],
   },
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+export const Default: Story = {
+  render: (args) => (
+    <div className="p-12 bg-slate-100 rounded">
+      <MumbleDetailView {...args} />
+    </div>
+  ),
+};
