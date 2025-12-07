@@ -1,0 +1,65 @@
+import { MumbleDetailView } from "@/compositions/mumble-detail-view/mumble-detail-view";
+import { Meta, StoryObj } from "@storybook/react-vite";
+import { MumbleActions } from "@/compositions";
+import { IconButton, ProfileIcon } from "@/components";
+import { fn } from "storybook/test";
+
+const meta: Meta<typeof MumbleDetailView> = {
+  title: "Compositions/Mumble Detail View",
+  component: MumbleDetailView,
+  parameters: {
+    layout: "centered",
+  },
+  tags: ["autodocs"],
+  argTypes: {},
+  args: {
+    mumble: {
+      size: "l",
+      content: "lorem ipsum",
+      userName: "Rory McIlroy",
+      userHandle: "rory_goat",
+      avatarSrc: "/avatars/rory.jpg",
+      timestamp: "2h ago",
+      actions: (
+        <MumbleActions
+          deepLink="https://mumble.com/mumbles/123456"
+          commentCounter={30}
+          likeCounter={6}
+          liked={false}
+        />
+      ),
+    },
+    user: {
+      size: "s",
+      name: "Tommy Fleetwood",
+      handle: "tommy",
+      showAvatar: true,
+      avatarImageElement: (
+        <img
+          src="/avatars/tommy.png"
+          alt="Tommy Fleetwood"
+          className="object-cover w-full h-full"
+        />
+      ),
+      iconButtons: (
+        <IconButton
+          IconComponent={ProfileIcon}
+          color="primary"
+          label="tommy"
+          layout="horizontal"
+        />
+      ),
+    },
+    replyForm: {
+      placeholder: "Write your reply...",
+      submitButtonText: "Send Reply",
+      uploadButtonText: "Upload Image",
+      onSubmitHandler: fn(),
+    },
+  },
+};
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {};

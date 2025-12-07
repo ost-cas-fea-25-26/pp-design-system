@@ -5,7 +5,7 @@ import { IconButton, ProfileIcon, TimeIcon } from "@/components";
 
 type MumbleSize = "m" | "l";
 
-type MumbleProps = {
+export type MumbleProps = {
   size: MumbleSize;
   userName: string;
   userHandle: string;
