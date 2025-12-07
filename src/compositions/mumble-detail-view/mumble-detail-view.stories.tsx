@@ -88,3 +88,14 @@ export const Default: Story = {
     </div>
   ),
 };
+
+export const WithoutReplies: Story = {
+  args: {
+    replies: [],
+  },
+  render: (args) => (
+    <div className="p-12 bg-slate-100 rounded">
+      <MumbleDetailView {...args} />
+    </div>
+  ),
+};
