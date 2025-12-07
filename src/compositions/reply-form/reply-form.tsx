@@ -54,7 +54,7 @@ export const ReplyForm: FC<ReplyFormProps> = ({
           control={form.control}
           render={({ field }) => (
             <FormItem>
-              <FormLabel aria-hidden={true} hidden={true}>
+              <FormLabel aria-hidden={true} aria-label="Reply" hidden>
                 Reply
               </FormLabel>
               <FormControl>
