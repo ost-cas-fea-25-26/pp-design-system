@@ -44,4 +44,11 @@ describe("Mumble", () => {
     const { container } = render(<Mumble {...defaultProps} size="l" />);
     expect(container.querySelector(".paragraph-lg")).toBeInTheDocument();
   });
+
+  it("does not apply border/outline classes when hideBorder is true", () => {
+    const { container } = render(<Mumble {...defaultProps} hideBorder />);
+    const rootDiv = container.firstChild as HTMLElement;
+    expect(rootDiv.className).not.toContain("hover:outline-neutral-200");
+    expect(rootDiv.className).not.toContain("hover:outline-2");
+  });
 });
