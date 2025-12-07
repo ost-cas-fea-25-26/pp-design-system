@@ -20,12 +20,19 @@ export const MumbleDetailView: FC<MumbleDetailViewProps> = ({
   return (
     <div className="bg-white">
       <Mumble {...mumble} hideBorder />
-      <div className="p-6 flex flex-col gap-4">
-        <UserInfo {...user} />
-        <ReplyForm {...replyForm} />
+      <div className="flex flex-col pl-8 pr-8">
+        <div className="mb-4">
+          <UserInfo {...user} />
+        </div>
+        <div className="mb-12">
+          <ReplyForm {...replyForm} />
+        </div>
         {replies.map((reply: MumbleProps, index: number) => (
-          <div key={index} className="flex border-b border-slate-100 pb-4">
-            <Mumble {...reply} size="m" hideBorder />
+          <div
+            key={index}
+            className="mb-8 last:mb-0 flex border-b border-slate-100 last:border-0"
+          >
+            <Mumble {...reply} size="m" hideBorder showUserInline />
           </div>
         ))}
       </div>

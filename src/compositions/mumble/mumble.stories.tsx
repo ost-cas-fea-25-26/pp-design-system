@@ -19,6 +19,8 @@ const meta: Meta<typeof Mumble> = {
     userHandle: { control: "text" },
     avatarSrc: { control: "text" },
     timestamp: { control: "text" },
+    hideBorder: { control: "boolean" },
+    showUserInline: { control: "boolean" },
   },
   args: {
     size: "m",
@@ -34,6 +36,8 @@ const meta: Meta<typeof Mumble> = {
         liked={false}
       />
     ),
+    hideBorder: false,
+    showUserInline: false,
   },
 };
 
