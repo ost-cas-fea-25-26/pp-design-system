@@ -2,10 +2,11 @@ import { FC } from "react";
 import * as React from "react";
 import { UserInfo } from "@/compositions";
 import { IconButton, ProfileIcon, TimeIcon } from "@/components";
+import { twMerge } from "tailwind-merge";
 
 type MumbleSize = "m" | "l";
 
-type MumbleProps = {
+export type MumbleProps = {
   size: MumbleSize;
   userName: string;
   userHandle: string;
@@ -14,6 +15,8 @@ type MumbleProps = {
   timestamp: string;
   content: React.ReactNode;
   actions?: React.ReactNode;
+  hideBorder?: boolean;
+  showUserInline?: boolean;
 };
 
 const sizeClassMap: Record<MumbleSize, string> = {
@@ -30,10 +33,23 @@ export const Mumble: FC<MumbleProps> = ({
   timestamp,
   content,
   actions,
+  hideBorder = false,
+  showUserInline = false,
 }) => {
   return (
-    <div className="relative bg-white rounded-2xl hover:outline-neutral-200 hover:outline-2 shadow-sm pt-1 pr-12 pb-8 pl-12">
-      <div className="absolute top-6 -left-6 z-10">
+    <div
+      className={twMerge(
+        "relative bg-white rounded-2xl pt-1 pb-8",
+        hideBorder ? "" : "shadow-sm hover:outline-neutral-200 hover:outline-2",
+        showUserInline ? "" : "pl-12 pr-12",
+      )}
+    >
+      <div
+        className={twMerge(
+          "",
+          showUserInline ? "relative" : "absolute top-6 -left-6 z-10",
+        )}
+      >
         <UserInfo
           avatarImageElement={avatar}
           handle={userHandle}
@@ -60,8 +76,7 @@ export const Mumble: FC<MumbleProps> = ({
           size="m"
         />
       </div>
-
-      <div className="mt-25">
+      <div className={showUserInline ? "mt-4" : "mt-25"}>
         <div className={sizeClassMap[size]}>{content}</div>
         <div className="flex items-center justify-start -ml-4 mt-5">
           {actions}

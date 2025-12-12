@@ -20,6 +20,8 @@ const meta: Meta<typeof Mumble> = {
     profileUrl: { control: "text" },
     avatar: { control: false },
     timestamp: { control: "text" },
+    hideBorder: { control: "boolean" },
+    showUserInline: { control: "boolean" },
   },
   args: {
     size: "m",
@@ -44,6 +46,8 @@ const meta: Meta<typeof Mumble> = {
         liked={false}
       />
     ),
+    hideBorder: false,
+    showUserInline: false,
   },
 };
 
