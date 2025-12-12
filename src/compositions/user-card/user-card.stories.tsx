@@ -11,22 +11,27 @@ const meta: Meta<typeof UserCard> = {
   argTypes: {
     name: { control: "text" },
     handle: { control: "text" },
+    profileUrl: { control: "text" },
     avatarImageElement: { control: false },
   },
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
+
 export const Default: Story = {
   args: {
     name: "Rory McIlroy",
     handle: "rory_goat",
+    profileUrl: "/users/rory_goat",
     avatarImageElement: (
-      <img
-        src="/avatars/rory.jpg"
-        alt="Rory McIlroy"
-        className="object-cover w-full h-full"
-      />
+      <a href="/users/rory_goat" title="View profile">
+        <img
+          src="/avatars/rory.jpg"
+          alt="Rory McIlroy"
+          className="object-cover w-full h-full"
+        />
+      </a>
     ),
     button: (
       <Button variant="primary" fullWidth>
