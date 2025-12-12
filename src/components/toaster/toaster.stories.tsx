@@ -1,7 +1,6 @@
 import { Button } from "@/components/button";
 import { Meta, StoryObj } from "@storybook/react-vite";
-import { Toaster } from "./index";
-import toast from "react-hot-toast";
+import { toast, Toaster } from "./index";
 
 const meta: Meta = {
   title: "Components/Toaster",
