@@ -17,7 +17,8 @@ const meta: Meta<typeof Mumble> = {
     },
     userName: { control: "text" },
     userHandle: { control: "text" },
-    avatarSrc: { control: "text" },
+    profileUrl: { control: "text" },
+    avatar: { control: false },
     timestamp: { control: "text" },
     hideBorder: { control: "boolean" },
     showUserInline: { control: "boolean" },
@@ -26,8 +27,17 @@ const meta: Meta<typeof Mumble> = {
     size: "m",
     userName: "Rory McIlroy",
     userHandle: "rory_goat",
-    avatarSrc: "/avatars/rory.jpg",
+    profileUrl: "/users/rory_goat",
     timestamp: "2h ago",
+    avatar: (
+      <a href="/users/rory_goat" title="View profile">
+        <img
+          src="/avatars/rory.jpg"
+          alt="Rory McIlroy"
+          className="object-cover w-full h-full"
+        />
+      </a>
+    ),
     actions: (
       <MumbleActions
         deepLink="https://mumble.com/mumbles/123456"

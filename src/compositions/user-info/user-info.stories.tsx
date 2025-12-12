@@ -37,20 +37,24 @@ export const Default: Story = {
     handle: "rory_goat",
     showAvatar: true,
     avatarImageElement: (
-      <img
-        src="/avatars/rory.jpg"
-        alt="Rory McIlroy"
-        className="object-cover w-full h-full"
-      />
+      <a href="/users/rory_goat" title="View profile">
+        <img
+          src="/avatars/rory.jpg"
+          alt="Rory McIlroy"
+          className="object-cover w-full h-full"
+        />
+      </a>
     ),
     iconButtons: (
       <>
-        <IconButton
-          color="primary"
-          layout="horizontal"
-          label="rory_goat"
-          IconComponent={ProfileIcon}
-        />
+        <a href="/users/rory_goat" title="View profile">
+          <IconButton
+            color="primary"
+            layout="horizontal"
+            label="rory_goat"
+            IconComponent={ProfileIcon}
+          />
+        </a>
         <IconButton
           color="neutral"
           layout="horizontal"
@@ -70,12 +74,14 @@ export const WithProfileSettingsLink: Story = {
     showAvatar: false,
     iconButtons: (
       <>
-        <IconButton
-          color="primary"
-          layout="horizontal"
-          label="rory_goat"
-          IconComponent={ProfileIcon}
-        />
+        <a href="/users/rory_goat" title="View profile">
+          <IconButton
+            color="primary"
+            layout="horizontal"
+            label="rory_goat"
+            IconComponent={ProfileIcon}
+          />
+        </a>
         <IconButton
           color="neutral"
           layout="horizontal"
