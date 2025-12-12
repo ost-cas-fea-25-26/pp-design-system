@@ -6,6 +6,7 @@ import { IconButton } from "../../components/icon-button";
 type UserCardProps = {
   name: string;
   handle: string;
+  profileUrl: string;
   avatarImageElement?: ReactNode;
   button?: ReactNode;
 };
@@ -13,6 +14,7 @@ type UserCardProps = {
 export const UserCard: FC<UserCardProps> = ({
   name,
   handle,
+  profileUrl,
   avatarImageElement,
   button,
 }) => (
@@ -25,12 +27,14 @@ export const UserCard: FC<UserCardProps> = ({
     />
     <div className="flex flex-col gap-1">
       <span className="text-center label-lg text-neutral-900">{name}</span>
-      <IconButton
-        label={handle}
-        IconComponent={ProfileIcon}
-        color="primary"
-        layout="horizontal"
-      />
+      <a href={profileUrl} title={`View ${name}'s profile`}>
+        <IconButton
+          label={handle}
+          IconComponent={ProfileIcon}
+          color="primary"
+          layout="horizontal"
+        />
+      </a>
     </div>
     {button}
   </div>

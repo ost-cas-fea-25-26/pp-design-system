@@ -8,6 +8,7 @@ describe("Mumble", () => {
     size: "m" as const,
     userName: "Rory McIlroy",
     userHandle: "rory_goat",
+    profileUrl: "/users/rory_goat",
     timestamp: "2 hours ago",
     avatar: (
       <img

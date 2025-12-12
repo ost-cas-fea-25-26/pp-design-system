@@ -17,6 +17,7 @@ const meta: Meta<typeof Mumble> = {
     },
     userName: { control: "text" },
     userHandle: { control: "text" },
+    profileUrl: { control: "text" },
     avatar: { control: false },
     timestamp: { control: "text" },
   },
@@ -24,6 +25,7 @@ const meta: Meta<typeof Mumble> = {
     size: "m",
     userName: "Rory McIlroy",
     userHandle: "rory_goat",
+    profileUrl: "/users/rory_goat",
     timestamp: "2h ago",
     avatar: (
       <a href="/users/rory_goat" title="View profile">

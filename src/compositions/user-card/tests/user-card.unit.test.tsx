@@ -10,6 +10,7 @@ describe("UserCard", () => {
       <UserCard
         name="Rory McIlroy"
         handle="rory_goat"
+        profileUrl="/users/rory_goat"
         avatarImageElement={
           <img
             src="/avatars/rory.jpg"
@@ -30,6 +31,7 @@ describe("UserCard", () => {
       <UserCard
         name="Rory McIlroy"
         handle="rory_goat"
+        profileUrl="/users/rory_goat"
         button={<Button>Follow</Button>}
       />,
     );
@@ -38,7 +40,11 @@ describe("UserCard", () => {
 
   it("does not render a button if not provided", () => {
     const { container } = render(
-      <UserCard name="Rory McIlroy" handle="rory_goat" />,
+      <UserCard
+        name="Rory McIlroy"
+        handle="rory_goat"
+        profileUrl="/users/rory_goat"
+      />,
     );
     const button = container.querySelector("button");
     expect(button).not.toBe(null);

@@ -9,6 +9,7 @@ type MumbleProps = {
   size: MumbleSize;
   userName: string;
   userHandle: string;
+  profileUrl: string;
   avatar?: React.ReactNode;
   timestamp: string;
   content: React.ReactNode;
@@ -24,6 +25,7 @@ export const Mumble: FC<MumbleProps> = ({
   size = "m",
   userName,
   userHandle,
+  profileUrl,
   avatar,
   timestamp,
   content,
@@ -37,12 +39,14 @@ export const Mumble: FC<MumbleProps> = ({
           handle={userHandle}
           iconButtons={
             <>
-              <IconButton
-                label={userHandle}
-                IconComponent={ProfileIcon}
-                color="primary"
-                layout="horizontal"
-              />
+              <a href={profileUrl}>
+                <IconButton
+                  label={userHandle}
+                  IconComponent={ProfileIcon}
+                  color="primary"
+                  layout="horizontal"
+                />
+              </a>
               <IconButton
                 color="neutral"
                 IconComponent={TimeIcon}
