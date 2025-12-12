@@ -9,7 +9,7 @@ const reply: MumbleProps = {
   content: "This is a reply",
   userName: "Tommy Fleetwood",
   userHandle: "tommy",
-  avatarSrc: "/avatars/tommy.png",
+  profileUrl: "/avatars/tommy.png",
   timestamp: "30m ago",
   actions: (
     <MumbleActions
@@ -35,7 +35,7 @@ const meta: Meta<typeof MumbleDetailView> = {
       content: "lorem ipsum",
       userName: "Rory McIlroy",
       userHandle: "rory_goat",
-      avatarSrc: "/avatars/rory.jpg",
+      profileUrl: "/avatars/rory.jpg",
       timestamp: "2h ago",
       actions: (
         <MumbleActions
