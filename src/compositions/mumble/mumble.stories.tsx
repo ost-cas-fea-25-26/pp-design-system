@@ -17,15 +17,23 @@ const meta: Meta<typeof Mumble> = {
     },
     userName: { control: "text" },
     userHandle: { control: "text" },
-    avatarSrc: { control: "text" },
+    avatar: { control: false },
     timestamp: { control: "text" },
   },
   args: {
     size: "m",
     userName: "Rory McIlroy",
     userHandle: "rory_goat",
-    avatarSrc: "/avatars/rory.jpg",
     timestamp: "2h ago",
+    avatar: (
+      <a href="/users/rory_goat" title="View profile">
+        <img
+          src="/avatars/rory.jpg"
+          alt="Rory McIlroy"
+          className="object-cover w-full h-full"
+        />
+      </a>
+    ),
     actions: (
       <MumbleActions
         deepLink="https://mumble.com/mumbles/123456"

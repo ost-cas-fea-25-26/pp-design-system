@@ -9,7 +9,7 @@ type MumbleProps = {
   size: MumbleSize;
   userName: string;
   userHandle: string;
-  avatarSrc?: string;
+  avatar?: React.ReactNode;
   timestamp: string;
   content: React.ReactNode;
   actions?: React.ReactNode;
@@ -24,24 +24,16 @@ export const Mumble: FC<MumbleProps> = ({
   size = "m",
   userName,
   userHandle,
-  avatarSrc,
+  avatar,
   timestamp,
   content,
   actions,
 }) => {
-  const avatarImageElement = avatarSrc ? (
-    <img
-      alt={userName}
-      className="object-cover w-full h-full"
-      src={avatarSrc}
-    />
-  ) : null;
-
   return (
     <div className="relative bg-white rounded-2xl hover:outline-neutral-200 hover:outline-2 shadow-sm pt-1 pr-12 pb-8 pl-12">
       <div className="absolute top-6 -left-6 z-10">
         <UserInfo
-          avatarImageElement={avatarImageElement}
+          avatarImageElement={avatar}
           handle={userHandle}
           iconButtons={
             <>
@@ -64,6 +56,7 @@ export const Mumble: FC<MumbleProps> = ({
           size="m"
         />
       </div>
+
       <div className="mt-25">
         <div className={sizeClassMap[size]}>{content}</div>
         <div className="flex items-center justify-start -ml-4 mt-5">

@@ -9,7 +9,13 @@ describe("Mumble", () => {
     userName: "Rory McIlroy",
     userHandle: "rory_goat",
     timestamp: "2 hours ago",
-    avatarSrc: "/avatars/rory.jpg",
+    avatar: (
+      <img
+        src="/avatars/rory.jpg"
+        alt="Rory McIlroy"
+        className="object-cover w-full h-full rounded-full"
+      />
+    ),
     content: <p>Lorem ipsum dolor sit amet</p>,
     actions: <p>Actions</p>,
   };
@@ -21,15 +27,15 @@ describe("Mumble", () => {
     expect(screen.getByText("Lorem ipsum dolor sit amet")).toBeInTheDocument();
   });
 
-  it("renders avatar image when avatarSrc is provided", () => {
-    render(<Mumble {...defaultProps} avatarSrc="rory.jpg" />);
+  it("renders avatar when avatar is provided", () => {
+    render(<Mumble {...defaultProps} />);
     const img = screen.getByAltText("Rory McIlroy");
     expect(img).toBeInTheDocument();
     expect(img).toHaveAttribute("src", expect.stringContaining("rory.jpg"));
   });
 
-  it("does not render avatar image when avatarSrc is not provided", () => {
-    render(<Mumble {...defaultProps} avatarSrc={undefined} />);
+  it("does not render avatar when avatar is not provided", () => {
+    render(<Mumble {...defaultProps} avatar={undefined} />);
     expect(screen.queryByAltText("Rory McIlroy")).not.toBeInTheDocument();
   });
 
