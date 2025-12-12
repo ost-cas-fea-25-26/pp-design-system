@@ -1,3 +1,10 @@
+# [2.20.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.19.3...v2.20.0) (2025-12-12)
+
+
+### Features
+
+* update aria label ([#159](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/159)) ([6740bdd](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/6740bddbba65bdc120678cc9c465bf14069c1366))
+
 ## [2.19.3](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.19.2...v2.19.3) (2025-12-05)
 
 
