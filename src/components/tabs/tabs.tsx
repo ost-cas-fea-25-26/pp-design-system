@@ -16,7 +16,7 @@ export const Tabs: FC<TabsProps> = ({ tabs, defaultTab }) => {
 
   return (
     <TabsPrimitive.Root defaultValue={defaultValue} className="w-full">
-      <TabsPrimitive.List className="inline-flex gap-2 rounded-md bg-neutral-100 p-1">
+      <TabsPrimitive.List className="inline-flex gap-2 rounded-md bg-neutral-200 p-1">
         {tabs.map((tab) => (
           <TabsPrimitive.Trigger
             key={tab.text}
@@ -41,7 +41,7 @@ export const Tabs: FC<TabsProps> = ({ tabs, defaultTab }) => {
           key={tab.text}
           value={tab.text}
           aria-label={tab.text}
-          className="mt-3 rounded-md bg-white p-3 text-neutral-700"
+          className="mt-3"
         >
           {tab.content}
         </TabsPrimitive.Content>
