@@ -13,6 +13,7 @@ export * from "./logo-link";
 export * from "./link";
 export * from "./modal";
 export * from "./tabs";
+export * from "./toaster";
 export * from "./textarea";
 export * from "./timed-button";
 export * from "./toggle";
