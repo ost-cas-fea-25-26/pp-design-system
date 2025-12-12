@@ -35,7 +35,7 @@ export const Avatar: FC<AvatarProps> = ({
         "relative flex shrink-0 overflow-hidden rounded-full",
         sizeClassMap[size],
         "max-w-24 max-h-24 sm:max-w-none sm:max-h-none",
-        border && "border-[6px] border-neutral-100"
+        border && "border-[6px] border-neutral-100",
       )}
     >
       {imageElement && (
