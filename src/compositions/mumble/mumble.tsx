@@ -76,7 +76,7 @@ export const Mumble: FC<MumbleProps> = ({
           size="m"
         />
       </div>
-        <div className={showUserInline ? "mt-4" : "mt-25"}>
+      <div className={showUserInline ? "mt-4" : "mt-25"}>
         <div className={sizeClassMap[size]}>{content}</div>
         <div className="flex items-center justify-start -ml-4 mt-5">
           {actions}
