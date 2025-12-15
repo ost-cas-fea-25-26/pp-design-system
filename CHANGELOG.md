@@ -1,3 +1,10 @@
+# [2.22.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.21.0...v2.22.0) (2025-12-15)
+
+
+### Features
+
+* update avatar aria label ([#161](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/161)) ([f689e2a](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/f689e2ac3d9d526aa3fe1a6140b8f3f03d180df6))
+
 # [2.21.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.20.0...v2.21.0) (2025-12-12)
 
 
