@@ -56,7 +56,7 @@ export const Avatar: FC<AvatarProps> = ({
           size="default"
           isCircular
           onClick={onEditClick}
-          aria-label="Edit Your Avatar"
+          aria-label="Edit Your Avatar Image"
         >
           <EditIcon color="white" />
         </Button>
