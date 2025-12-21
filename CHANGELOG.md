@@ -1,3 +1,24 @@
+# [2.22.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.21.0...v2.22.0) (2025-12-15)
+
+
+### Features
+
+* update avatar aria label ([#161](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/161)) ([f689e2a](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/f689e2ac3d9d526aa3fe1a6140b8f3f03d180df6))
+
+# [2.21.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.20.0...v2.21.0) (2025-12-12)
+
+
+### Features
+
+* change avatar url ([#160](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/160)) ([36e9690](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/36e96906cab839f3fba59b3e7bc89fce131ec280))
+
+# [2.20.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.19.3...v2.20.0) (2025-12-12)
+
+
+### Features
+
+* update aria label ([#159](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/159)) ([6740bdd](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/6740bddbba65bdc120678cc9c465bf14069c1366))
+
 ## [2.19.3](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.19.2...v2.19.3) (2025-12-05)
 
 
