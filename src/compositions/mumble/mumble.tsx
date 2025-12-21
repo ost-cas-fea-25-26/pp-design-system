@@ -18,6 +18,7 @@ export type MumbleProps = {
   actions?: React.ReactNode;
   hideBorder?: boolean;
   showUserInline?: boolean;
+  mediaElement?: React.ReactNode;
 };
 
 const sizeClassMap: Record<MumbleSize, string> = {
@@ -36,6 +37,7 @@ export const Mumble: FC<MumbleProps> = ({
   actions,
   hideBorder = false,
   showUserInline = false,
+  mediaElement,
 }) => {
   return (
     <div
@@ -75,7 +77,10 @@ export const Mumble: FC<MumbleProps> = ({
         />
       </div>
       <div className={showUserInline ? "mt-4" : "mt-25"}>
-        <div className={sizeClassMap[size]}>{content}</div>
+        <div className={sizeClassMap[size]}>
+          {content}
+          {mediaElement && <div className="mt-4">{mediaElement}</div>}
+        </div>
         <div className="flex items-center justify-start -ml-4 mt-5">
           {actions}
         </div>

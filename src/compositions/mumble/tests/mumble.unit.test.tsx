@@ -59,4 +59,24 @@ describe("Mumble", () => {
     expect(rootDiv.className).not.toContain("hover:outline-neutral-200");
     expect(rootDiv.className).not.toContain("hover:outline-2");
   });
+
+  it("renders mediaElement if provided", () => {
+    render(
+      <Mumble
+        {...defaultProps}
+        mediaElement={
+          <img
+            src="/avatars/rory.jpg"
+            alt="Test media"
+            data-testid="media-element"
+          />
+        }
+      />,
+    );
+    expect(screen.getByTestId("media-element")).toBeInTheDocument();
+    expect(screen.getByAltText("Test media")).toHaveAttribute(
+      "src",
+      expect.stringContaining("rory.jpg"),
+    );
+  });
 });
