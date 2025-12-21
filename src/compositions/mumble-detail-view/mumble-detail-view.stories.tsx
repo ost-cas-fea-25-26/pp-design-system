@@ -5,6 +5,7 @@ import { IconButton, ProfileIcon } from "@/components";
 import { fn } from "storybook/test";
 
 const reply: MumbleProps = {
+  id: "reply-1",
   size: "l",
   content: "This is a reply",
   userName: "Tommy Fleetwood",
@@ -31,6 +32,7 @@ const meta: Meta<typeof MumbleDetailView> = {
   argTypes: {},
   args: {
     mumble: {
+      id: "mumble-1",
       size: "l",
       content: "lorem ipsum",
       userName: "Rory McIlroy",
