@@ -4,7 +4,7 @@ import { twMerge } from "tailwind-merge";
 
 type UserInfoSize = "s" | "m" | "l" | "xl";
 
-type UserInfoProps = {
+export type UserInfoProps = {
   size: UserInfoSize;
   name: string;
   handle: string;
