@@ -27,9 +27,9 @@ export const MumbleDetailView: FC<MumbleDetailViewProps> = ({
         <div className="mb-12">
           <ReplyForm {...replyForm} />
         </div>
-        {replies.map((reply: MumbleProps, index: number) => (
+        {replies.map((reply: MumbleProps) => (
           <div
-            key={index}
+            key={reply.id}
             className="mb-8 last:mb-0 flex border-b border-slate-100 last:border-0"
           >
             <Mumble {...reply} size="m" hideBorder showUserInline />

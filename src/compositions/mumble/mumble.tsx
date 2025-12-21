@@ -7,6 +7,7 @@ import { twMerge } from "tailwind-merge";
 type MumbleSize = "m" | "l";
 
 export type MumbleProps = {
+  id: string;
   size: MumbleSize;
   userName: string;
   userHandle: string;
@@ -40,15 +41,12 @@ export const Mumble: FC<MumbleProps> = ({
     <div
       className={twMerge(
         "relative bg-white rounded-2xl pt-1 pb-8",
-        hideBorder ? "" : "shadow-sm hover:outline-neutral-200 hover:outline-2",
-        showUserInline ? "" : "pl-12 pr-12",
+        !hideBorder && "shadow-sm hover:outline-neutral-200 hover:outline-2",
+        !showUserInline && "pl-12 pr-12",
       )}
     >
       <div
-        className={twMerge(
-          "",
-          showUserInline ? "relative" : "absolute top-6 -left-6 z-10",
-        )}
+        className={showUserInline ? "relative" : "absolute top-6 -left-6 z-10"}
       >
         <UserInfo
           avatarImageElement={avatar}

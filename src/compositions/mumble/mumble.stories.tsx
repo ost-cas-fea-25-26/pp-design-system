@@ -24,6 +24,7 @@ const meta: Meta<typeof Mumble> = {
     showUserInline: { control: "boolean" },
   },
   args: {
+    id: "mumb13",
     size: "m",
     userName: "Rory McIlroy",
     userHandle: "rory_goat",

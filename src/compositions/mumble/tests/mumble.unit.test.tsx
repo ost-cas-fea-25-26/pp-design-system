@@ -5,6 +5,7 @@ import { Mumble } from "@/compositions";
 
 describe("Mumble", () => {
   const defaultProps = {
+    id: "mumble-1",
     size: "m" as const,
     userName: "Rory McIlroy",
     userHandle: "rory_goat",
