@@ -136,15 +136,17 @@ export const ReplyForm: FC<ReplyFormProps> = ({
           />
         }
       >
-        <div className="w-[20rem]">
-          <FileUpload
-            file={file}
-            onFileChange={handleFileChange}
-            title="Drag your file here..."
-            description="JPEG or PNG, up to 50 MB"
-            selectLabel="... or choose a file"
-            removeLabel="Remove file"
-          />
+        <div className="flex justify-center items-center w-full h-full min-h-40">
+          <div className="w-[20rem]">
+            <FileUpload
+              file={file}
+              onFileChange={handleFileChange}
+              title="Drag your file here..."
+              description="JPEG or PNG, up to 50 MB"
+              selectLabel="... or choose a file"
+              removeLabel="Remove file"
+            />
+          </div>
         </div>
       </Modal>
     </>
