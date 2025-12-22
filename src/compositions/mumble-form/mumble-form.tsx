@@ -29,6 +29,7 @@ export type MumbleFormProps = {
   uploadButtonText?: string;
   onSubmitHandler: (data: z.infer<typeof mumbleFormSchema>) => Promise<void>;
   errorMessage: string;
+  formTitle?: string;
 };
 
 export const MumbleForm: FC<MumbleFormProps> = ({
@@ -37,6 +38,7 @@ export const MumbleForm: FC<MumbleFormProps> = ({
   uploadButtonText,
   onSubmitHandler,
   errorMessage,
+  formTitle,
 }) => {
   const [open, setOpen] = useState<boolean>(false);
 
@@ -60,6 +62,7 @@ export const MumbleForm: FC<MumbleFormProps> = ({
   return (
     <>
       <FormProvider {...form}>
+        {formTitle && <h4 className="heading-4 mb-4">{formTitle}</h4>}
         <form onSubmit={form.handleSubmit(onSubmitHandler)}>
           <FormField
             name="text"

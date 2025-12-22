@@ -43,4 +43,9 @@ describe("MumbleForm", () => {
       expect(screen.getByText("Error")).toBeInTheDocument();
     });
   });
+
+  it("renders form title when provided", () => {
+    render(<MumbleForm {...defaultProps} formTitle="Share your thoughts" />);
+    expect(screen.getByText("Share your thoughts")).toBeInTheDocument();
+  });
 });

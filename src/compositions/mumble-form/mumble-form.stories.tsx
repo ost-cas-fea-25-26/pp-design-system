@@ -8,6 +8,7 @@ const meta: Meta<typeof MumbleForm> = {
   parameters: { layout: "centered" },
   tags: ["autodocs"],
   argTypes: {
+    formTitle: { control: "text" },
     placeholder: { control: "text" },
     submitButtonText: { control: "text" },
     uploadButtonText: { control: "text" },
@@ -26,3 +27,8 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
+export const WithTitle: Story = {
+  args: {
+    formTitle: "What's on your mind today?",
+  },
+};
