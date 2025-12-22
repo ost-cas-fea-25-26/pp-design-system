@@ -3,12 +3,12 @@ import { fn } from "storybook/test";
 import { MumbleForm } from "@/compositions";
 
 const meta: Meta<typeof MumbleForm> = {
-  title: "Compositions/Reply Form",
+  title: "Compositions/Mumble Form",
   component: MumbleForm,
   parameters: { layout: "centered" },
   tags: ["autodocs"],
   argTypes: {
-    formTitle: { control: "text" },
+    title: { control: "text" },
     placeholder: { control: "text" },
     submitButtonText: { control: "text" },
     uploadButtonText: { control: "text" },
@@ -29,6 +29,6 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {};
 export const WithTitle: Story = {
   args: {
-    formTitle: "What's on your mind today?",
+    title: "What's on your mind today?",
   },
 };
