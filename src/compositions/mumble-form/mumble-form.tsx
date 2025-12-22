@@ -62,7 +62,7 @@ export const MumbleForm: FC<MumbleFormProps> = ({
   return (
     <>
       <FormProvider {...form}>
-        {formTitle && <h4 className="heading-4 mb-4">{formTitle}</h4>}
+        {formTitle && <h4 className="heading-4 mb-2">{formTitle}</h4>}
         <form onSubmit={form.handleSubmit(onSubmitHandler)}>
           <FormField
             name="text"
