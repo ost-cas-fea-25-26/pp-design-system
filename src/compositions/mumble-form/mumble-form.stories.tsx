@@ -1,10 +1,10 @@
 import { Meta, StoryObj } from "@storybook/react-vite";
-import { ReplyForm } from "@/compositions/reply-form/reply-form";
 import { fn } from "storybook/test";
+import { MumbleForm } from "@/compositions";
 
-const meta: Meta<typeof ReplyForm> = {
+const meta: Meta<typeof MumbleForm> = {
   title: "Compositions/Reply Form",
-  component: ReplyForm,
+  component: MumbleForm,
   parameters: { layout: "centered" },
   tags: ["autodocs"],
   argTypes: {

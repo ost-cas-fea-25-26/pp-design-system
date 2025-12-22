@@ -7,3 +7,4 @@ export * from "./user-info";
 export * from "./mumble";
 export * from "./mumble-actions";
 export * from "./mumble-detail-view";
+export * from "./mumble-form";
