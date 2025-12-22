@@ -17,7 +17,7 @@ export const MumbleSubmission: FC<MumbleSubmissionProps> = ({
         "relative bg-white rounded-2xl pt-8 pb-8 pl-12 pr-12 shadow-sm hover:outline-neutral-200 hover:outline-2",
       )}
     >
-      <div className={"absolute top-6 -left-8 z-10"}>{avatar}</div>
+      <div className={"absolute top-4 -left-8 z-10"}>{avatar}</div>
       {form}
     </div>
   );

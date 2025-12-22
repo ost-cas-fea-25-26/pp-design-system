@@ -41,7 +41,7 @@ describe("MumbleSubmission", () => {
     render(<MumbleSubmission avatar={avatar} form={form} />);
     const avatarDiv = screen.getByTestId("avatar").parentElement;
     expect(avatarDiv).toHaveClass("absolute");
-    expect(avatarDiv).toHaveClass("top-6");
+    expect(avatarDiv).toHaveClass("top-4");
     expect(avatarDiv).toHaveClass("-left-8");
     expect(avatarDiv).toHaveClass("z-10");
   });
