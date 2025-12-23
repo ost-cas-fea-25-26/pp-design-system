@@ -20,6 +20,13 @@ const reply: MumbleProps = {
       liked={true}
     />
   ),
+  avatar: (
+    <img
+      src="/avatars/tommy.png"
+      alt="Tommy Fleetwood"
+      className="object-cover w-full h-full"
+    />
+  ),
 };
 
 const meta: Meta<typeof MumbleDetailView> = {
@@ -39,6 +46,13 @@ const meta: Meta<typeof MumbleDetailView> = {
       userHandle: "rory_goat",
       profileUrl: "/avatars/rory.jpg",
       timestamp: "2h ago",
+      avatar: (
+        <img
+          src="/avatars/rory.jpg"
+          alt="Rory McIlroy"
+          className="object-cover w-full h-full"
+        />
+      ),
       actions: (
         <MumbleActions
           deepLink="https://mumble.com/mumbles/123456"
