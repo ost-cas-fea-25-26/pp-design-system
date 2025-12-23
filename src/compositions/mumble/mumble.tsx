@@ -27,7 +27,7 @@ const sizeClassMap: Record<MumbleSize, string> = {
 };
 
 export const Mumble: FC<MumbleProps> = ({
-  size = "m",
+  size = "l",
   userName,
   userHandle,
   profileUrl,
@@ -73,7 +73,7 @@ export const Mumble: FC<MumbleProps> = ({
           }
           name={userName}
           showAvatar
-          size="l"
+          size={size}
         />
       </div>
       <div className={showUserInline ? "mt-4" : "mt-25"}>
