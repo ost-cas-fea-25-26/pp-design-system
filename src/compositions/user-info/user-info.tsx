@@ -23,13 +23,13 @@ const fontSizeMap: Record<UserInfoSize, string> = {
 
 const getWrapperClasses = (showAvatar: boolean, showProfileLink: boolean) => {
   if (showProfileLink) {
-    return "items-center gap-2";
+    return "items-center gap-4";
   }
   if (showAvatar) {
-    return "grid grid-cols-[auto_1fr] items-center gap-2";
+    return "grid grid-cols-[auto_1fr] items-center gap-4";
   }
 
-  return "grid items-center gap-2";
+  return "grid items-center gap-4";
 };
 
 export const UserInfo: FC<UserInfoProps> = ({
@@ -46,7 +46,7 @@ export const UserInfo: FC<UserInfoProps> = ({
       <Avatar
         imageElement={avatarImageElement}
         fallbackText={handle.substring(0, 2).toUpperCase()}
-        size="s"
+        size={size === "l" ? "m" : "s"}
         border={false}
       />
     )}
