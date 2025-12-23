@@ -1,4 +1,5 @@
 export * from "./app-shell";
+export * from "./edit-profile-modal";
 export * from "./header";
 export * from "./upload-image-modal";
 export * from "./profile-header";
