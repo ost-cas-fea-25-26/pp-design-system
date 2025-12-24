@@ -4,7 +4,7 @@ import {
   visualTestsFor,
 } from "../../../../test/helpers/playwright";
 
-test.describe("Reply form", () => {
-  visualTestsFor("/reply-form.stories.tsx");
-  a11yTestsFor("/reply-form.stories.tsx");
+test.describe("Toaster", () => {
+  visualTestsFor("/toaster.stories.tsx");
+  a11yTestsFor("/toaster.stories.tsx");
 });

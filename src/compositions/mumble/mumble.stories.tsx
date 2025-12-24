@@ -25,7 +25,7 @@ const meta: Meta<typeof Mumble> = {
   },
   args: {
     id: "mumb13",
-    size: "m",
+    size: "l",
     userName: "Rory McIlroy",
     userHandle: "rory_goat",
     profileUrl: "/users/rory_goat",
@@ -73,6 +73,43 @@ export const Default: Story = {
                 #PGA
               </Link>
             </p>
+          }
+        />
+      </div>
+    );
+  },
+};
+
+export const Inline: Story = {
+  args: {
+    size: "m",
+    showUserInline: true,
+    hideBorder: true,
+  },
+  render: (args) => {
+    return (
+      <div className="border border-neutral/40 border-dashed rounded-md p-10 bg-neutral/5">
+        <Mumble
+          {...args}
+          content={
+            <p>
+              Just finished an amazing round at{" "}
+              <Link asChild={false} title="Augusta" href="#">
+                Augusta
+              </Link>
+              ! The course was in perfect condition, and I managed to sink a few
+              long putts. Can not wait for the next tournament!{" "}
+              <Link asChild={false} title="PGA" href="#">
+                #PGA
+              </Link>
+            </p>
+          }
+          mediaElement={
+            <img
+              src="/headers/rory-mcilroy.jpg"
+              alt="Rory McIlroy absolutely nuking a fucking perfect driver"
+              className="object-cover w-full h-full"
+            />
           }
         />
       </div>

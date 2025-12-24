@@ -1,13 +1,14 @@
 import { Meta, StoryObj } from "@storybook/react-vite";
-import { ReplyForm } from "@/compositions/reply-form/reply-form";
 import { fn } from "storybook/test";
+import { MumbleForm } from "@/compositions";
 
-const meta: Meta<typeof ReplyForm> = {
-  title: "Compositions/Reply Form",
-  component: ReplyForm,
+const meta: Meta<typeof MumbleForm> = {
+  title: "Compositions/Mumble Form",
+  component: MumbleForm,
   parameters: { layout: "centered" },
   tags: ["autodocs"],
   argTypes: {
+    title: { control: "text" },
     placeholder: { control: "text" },
     submitButtonText: { control: "text" },
     uploadButtonText: { control: "text" },
@@ -26,3 +27,8 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
+export const WithTitle: Story = {
+  args: {
+    title: "What's on your mind today?",
+  },
+};

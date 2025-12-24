@@ -6,74 +6,71 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import {
   Button,
-  ButtonBar,
-  CancelIcon,
-  CheckmarkIcon,
-  FileUpload,
   FormControl,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
   FormProvider,
-  Modal,
   SendIcon,
   Textarea,
   UploadIcon,
 } from "@/components";
+import { UploadImageModal } from "@/compositions";
 
-export const replyFormSchema = z.object({
-  replyContent: z.string().min(1, ""),
+export const mumbleFormSchema = z.object({
+  text: z.string().min(1, ""),
   media: z.instanceof(File).optional().or(z.literal(null)),
 });
 
-export type ReplyFormProps = {
+export type MumbleFormProps = {
   placeholder?: string;
   submitButtonText: string;
   uploadButtonText?: string;
-  onSubmitHandler: (data: z.infer<typeof replyFormSchema>) => Promise<void>;
+  onSubmitHandler: (data: z.infer<typeof mumbleFormSchema>) => Promise<void>;
   errorMessage: string;
+  title?: string;
 };
 
-export const ReplyForm: FC<ReplyFormProps> = ({
+export const MumbleForm: FC<MumbleFormProps> = ({
   placeholder,
   submitButtonText,
   uploadButtonText,
   onSubmitHandler,
   errorMessage,
+  title,
 }) => {
   const [open, setOpen] = useState<boolean>(false);
-  const [file, setFile] = useState<File | null>(null);
 
   // Inject errorMessage dynamically
-  const schema = replyFormSchema.extend({
-    replyContent: z.string().min(1, errorMessage),
+  const schema = mumbleFormSchema.extend({
+    text: z.string().min(1, errorMessage),
   });
 
-  const form = useForm<z.infer<typeof replyFormSchema>>({
+  const form = useForm<z.infer<typeof mumbleFormSchema>>({
     resolver: zodResolver(schema),
     defaultValues: {
-      replyContent: "",
+      text: "",
       media: null,
     },
   });
 
   const handleFileChange = (newFile: File | null) => {
-    setFile(newFile);
     form.setValue("media", newFile);
   };
 
   return (
     <>
       <FormProvider {...form}>
+        {title && <h4 className="heading-4 mb-4">{title}</h4>}
         <form onSubmit={form.handleSubmit(onSubmitHandler)}>
           <FormField
-            name="replyContent"
+            name="text"
             control={form.control}
             render={({ field }) => (
               <FormItem>
-                <FormLabel aria-label="Reply" className="sr-only">
-                  Reply
+                <FormLabel aria-label="Text" className="sr-only">
+                  Text
                 </FormLabel>
                 <FormControl>
                   <Textarea placeholder={placeholder ?? ""} {...field} />
@@ -105,50 +102,11 @@ export const ReplyForm: FC<ReplyFormProps> = ({
         </form>
       </FormProvider>
 
-      <Modal
+      <UploadImageModal
         open={open}
         onOpenChange={setOpen}
-        title="File Upload"
-        footer={
-          <ButtonBar
-            leftButton={
-              <Button
-                fullWidth
-                variant="neutral"
-                onClick={() => setOpen(false)}
-              >
-                Cancel
-                <CancelIcon color="white" />
-              </Button>
-            }
-            rightButton={
-              <Button
-                fullWidth
-                variant="primary"
-                onClick={() => {
-                  setOpen(false);
-                }}
-              >
-                Save
-                <CheckmarkIcon color="white" />
-              </Button>
-            }
-          />
-        }
-      >
-        <div className="flex justify-center items-center w-full h-full min-h-40">
-          <div className="w-[20rem]">
-            <FileUpload
-              file={file}
-              onFileChange={handleFileChange}
-              title="Drag your file here..."
-              description="JPEG or PNG, up to 50 MB"
-              selectLabel="... or choose a file"
-              removeLabel="Remove file"
-            />
-          </div>
-        </div>
-      </Modal>
+        onSave={handleFileChange}
+      />
     </>
   );
 };
