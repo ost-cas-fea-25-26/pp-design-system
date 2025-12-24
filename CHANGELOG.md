@@ -1,3 +1,10 @@
+# [2.24.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.23.0...v2.24.0) (2025-12-24)
+
+
+### Features
+
+* Mumble Form ([#162](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/162)) ([04a9050](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/04a9050ed9982a5245d501d0ef476b7fb31e8b39))
+
 # [2.23.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.22.0...v2.23.0) (2025-12-21)
 
 
