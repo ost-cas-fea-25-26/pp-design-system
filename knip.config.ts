@@ -19,7 +19,6 @@ const config: KnipConfig = {
     "@semantic-release/git",
     "clsx",
     "http-server",
-    "lucide-react",
     "prettier-plugin-tailwindcss",
   ],
 };
