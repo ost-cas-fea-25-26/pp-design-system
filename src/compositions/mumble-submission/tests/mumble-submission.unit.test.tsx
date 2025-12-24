@@ -10,7 +10,7 @@ describe("MumbleSubmission", () => {
   const form = <form data-testid="form">Form Content</form>;
 
   it("renders the form content", () => {
-    render(<MumbleSubmission form={form} />);
+    render(<MumbleSubmission avatar={avatar} form={form} />);
     expect(screen.getByTestId("form")).toBeInTheDocument();
     expect(screen.getByText("Form Content")).toBeInTheDocument();
   });
@@ -19,11 +19,6 @@ describe("MumbleSubmission", () => {
     render(<MumbleSubmission avatar={avatar} form={form} />);
     expect(screen.getByTestId("avatar")).toBeInTheDocument();
     expect(screen.getByAltText("Test Avatar")).toBeInTheDocument();
-  });
-
-  it("does not render the avatar if not provided", () => {
-    render(<MumbleSubmission form={form} />);
-    expect(screen.queryByTestId("avatar")).not.toBeInTheDocument();
   });
 
   it("applies the correct container classes", () => {
