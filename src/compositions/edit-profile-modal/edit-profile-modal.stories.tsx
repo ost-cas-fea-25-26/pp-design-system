@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { useState } from "react";
 import { fn } from "storybook/test";
 
-import { EditProfileModal } from "./edit-profile-modal";
+import { EditProfileModal } from "@/compositions";
 import { Button } from "@/components/button";
 
 const meta: Meta<typeof EditProfileModal> = {
