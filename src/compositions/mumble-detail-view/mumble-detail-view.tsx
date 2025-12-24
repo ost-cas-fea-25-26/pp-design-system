@@ -2,12 +2,12 @@
 
 import { FC } from "react";
 import { Mumble, MumbleProps, UserInfo, UserInfoProps } from "@/compositions";
-import { ReplyForm, ReplyFormProps } from "@/compositions/reply-form";
+import { MumbleForm, MumbleFormProps } from "@/compositions/mumble-form";
 
 type MumbleDetailViewProps = {
   mumble: MumbleProps;
   user: UserInfoProps;
-  replyForm: ReplyFormProps;
+  replyForm: MumbleFormProps;
   replies: MumbleProps[];
 };
 
@@ -25,7 +25,7 @@ export const MumbleDetailView: FC<MumbleDetailViewProps> = ({
           <UserInfo {...user} />
         </div>
         <div className="mb-12">
-          <ReplyForm {...replyForm} />
+          <MumbleForm {...replyForm} />
         </div>
         {replies.map((reply: MumbleProps) => (
           <div
