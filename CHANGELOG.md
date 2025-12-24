@@ -1,3 +1,10 @@
+# [2.26.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.25.0...v2.26.0) (2025-12-24)
+
+
+### Features
+
+* edit profile modal ([#163](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/163)) ([dc4a946](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/dc4a946f40214744582e805ea122d2454dfa2ba3))
+
 # [2.25.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.24.0...v2.25.0) (2025-12-24)
 
 
