@@ -107,6 +107,7 @@
     "@vitejs/plugin-react": "^5.0.2",
     "@vitest/browser": "^4.0.0",
     "@vitest/coverage-v8": "^4.0.0",
+    "baseline-browser-mapping": "^2.9.11",
     "eslint": "^9.35.0",
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-storybook": "10.0.6",
