@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "react-loading-skeleton/dist/skeleton.css";
 
 @theme {
   /* colors: primary */
