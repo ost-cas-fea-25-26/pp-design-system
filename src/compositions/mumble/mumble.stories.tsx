@@ -2,6 +2,7 @@ import { Meta, StoryObj } from "@storybook/react-vite";
 import { Mumble } from "./index";
 import { Link } from "@/components";
 import { MumbleActions } from "@/compositions/mumble-actions";
+import { MumbleSkeleton } from "@/compositions/mumble/mumble-skeleton";
 
 const meta: Meta<typeof Mumble> = {
   title: "Compositions/Mumble",
@@ -144,6 +145,17 @@ export const WithMedia: Story = {
             />
           }
         />
+      </div>
+    );
+  },
+};
+
+type SkeletonStory = StoryObj<typeof MumbleSkeleton>;
+export const Skeleton: SkeletonStory = {
+  render: () => {
+    return (
+      <div className="border border-neutral/40 border-dashed rounded-md p-10 bg-neutral/5">
+        <MumbleSkeleton />
       </div>
     );
   },
