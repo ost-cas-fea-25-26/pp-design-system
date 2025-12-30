@@ -46,7 +46,7 @@ export const TimedButton: FC<TimedButtonProps> = ({
     <button
       onClick={handleClick}
       className={twMerge(
-        "focus-ring-neutral inline-flex items-center px-3 py-2 cursor-pointer rounded-2xl hover:bg-neutral-100 active:bg-neutral-100 transition-colors transition-default",
+        "label-m focus-ring-neutral inline-flex items-center px-3 py-2 cursor-pointer rounded-2xl hover:bg-neutral-100 active:bg-neutral-100 transition-colors transition-default",
         status === "processing" && "cursor-wait bg-neutral-100",
         status === "active" && "cursor-default bg-neutral-100",
       )}

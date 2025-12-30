@@ -62,7 +62,7 @@ export const MumbleActions: FC<MumbleActionsProps> = ({
   };
 
   return (
-    <div className="flex gap-8">
+    <div className="flex flex-col gap-1 sm:flex-row sm:gap-8">
       {commentButton && (
         <span className="inline-flex items-center">{commentButton}</span>
       )}
