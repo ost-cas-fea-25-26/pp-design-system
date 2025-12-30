@@ -17,3 +17,4 @@ export * from "./toaster";
 export * from "./textarea";
 export * from "./timed-button";
 export * from "./toggle";
+export * from "./comment-button";

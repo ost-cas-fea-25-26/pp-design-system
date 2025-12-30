@@ -2,6 +2,7 @@ import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
 import "@testing-library/jest-dom";
 import { MumbleActions } from "@/compositions";
+import { CommentButton, ReplyFilledIcon } from "@/components";
 
 vi.mock("@/components", () => ({
   HeartFilledIcon: () => <span data-testid="heart-filled-icon" />,
@@ -28,7 +29,6 @@ vi.mock("@/components", () => ({
   ),
   Toggle: ({
     defaultChildren,
-    activeChildren,
     onToggle,
     variant,
   }: {
@@ -39,7 +39,18 @@ vi.mock("@/components", () => ({
   }) => (
     <button data-testid={`toggle-${variant}`} onClick={() => onToggle?.(true)}>
       {defaultChildren}
-      {activeChildren}
+    </button>
+  ),
+  CommentButton: ({
+    label,
+    icon,
+  }: {
+    label: string;
+    icon?: React.ReactNode;
+  }) => (
+    <button data-testid="comment-button">
+      {icon}
+      {label}
     </button>
   ),
 }));
@@ -50,10 +61,14 @@ describe("MumbleActions", () => {
       <MumbleActions
         deepLink="https://mumble.app/123"
         likeCounter={2}
-        commentCounter={3}
+        commentButton={
+          <CommentButton
+            label="3 Comments"
+            icon={<ReplyFilledIcon color="primary" />}
+          />
+        }
       />,
     );
-    expect(screen.getByTestId("toggle-primary")).toBeInTheDocument();
     expect(screen.getByTestId("toggle-accent")).toBeInTheDocument();
     expect(screen.getByTestId("timed-button")).toBeInTheDocument();
     expect(screen.getAllByTestId("heart-filled-icon").length).toBeGreaterThan(
@@ -63,6 +78,8 @@ describe("MumbleActions", () => {
       0,
     );
     expect(screen.getAllByTestId("share-icon").length).toBeGreaterThan(0);
+    expect(screen.getByText("3 Comments")).toBeInTheDocument();
+    expect(screen.getByTestId("reply-filled-icon")).toBeInTheDocument();
   });
 
   it("calls onLikeToggleHandler when like toggle is clicked", async () => {
@@ -81,22 +98,6 @@ describe("MumbleActions", () => {
     });
   });
 
-  it("calls onCommentToggleHandler when comment toggle is clicked", async () => {
-    const onCommentToggleHandler = vi.fn();
-    render(
-      <MumbleActions
-        deepLink="https://mumble.app/123"
-        commentCounter={1}
-        onCommentToggleHandler={onCommentToggleHandler}
-      />,
-    );
-    const commentToggle = screen.getByTestId("toggle-primary");
-    fireEvent.click(commentToggle);
-    await waitFor(() => {
-      expect(onCommentToggleHandler).toHaveBeenCalledWith(true);
-    });
-  });
-
   it("calls clipboard writeText when share button is clicked", async () => {
     const writeText = vi.fn();
     Object.defineProperty(global.navigator, "clipboard", {
@@ -109,5 +110,20 @@ describe("MumbleActions", () => {
     await waitFor(() => {
       expect(writeText).toHaveBeenCalledWith("https://mumble.app/123");
     });
+  });
+
+  it("renders correct like label for 0 likes", () => {
+    render(<MumbleActions deepLink="https://mumble.app/123" likeCounter={0} />);
+    expect(screen.getByText("Like")).toBeInTheDocument();
+  });
+
+  it("renders correct like label for 1 like", () => {
+    render(<MumbleActions deepLink="https://mumble.app/123" likeCounter={1} />);
+    expect(screen.getByText("1 Like")).toBeInTheDocument();
+  });
+
+  it("renders correct like label for multiple likes", () => {
+    render(<MumbleActions deepLink="https://mumble.app/123" likeCounter={5} />);
+    expect(screen.getByText("5 Likes")).toBeInTheDocument();
   });
 });
