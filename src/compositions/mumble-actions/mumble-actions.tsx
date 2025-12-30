@@ -63,7 +63,9 @@ export const MumbleActions: FC<MumbleActionsProps> = ({
 
   return (
     <div className="flex gap-8">
-      <span className="inline-flex items-center">{commentButton}</span>
+      {commentButton && (
+        <span className="inline-flex items-center">{commentButton}</span>
+      )}
       {renderLikeToggle(likeCounter, liked)}
       <TimedButton
         activeLabel="Link copied"

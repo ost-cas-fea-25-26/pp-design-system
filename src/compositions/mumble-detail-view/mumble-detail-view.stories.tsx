@@ -6,7 +6,6 @@ import {
   IconButton,
   ProfileIcon,
   ReplyFilledIcon,
-  ReplyIcon,
 } from "@/components";
 import { fn } from "storybook/test";
 
@@ -21,9 +20,6 @@ const reply: MumbleProps = {
   actions: (
     <MumbleActions
       deepLink="https://mumble.com/mumbles/123456"
-      commentButton={
-        <CommentButton label="Comment" icon={<ReplyIcon color="neutral" />} />
-      }
       likeCounter={1}
       liked={true}
     />
