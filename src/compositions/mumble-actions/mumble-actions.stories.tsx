@@ -39,10 +39,12 @@ export const Default: Story = {};
 export const WithCommentsAndLikes: Story = {
   args: {
     commentButton: (
-      <CommentButton
-        label="12 Comments"
-        icon={<ReplyFilledIcon color="primary" />}
-      />
+      <a href="#" title="view comments">
+        <CommentButton
+          label="12 Comments"
+          icon={<ReplyFilledIcon color="primary" />}
+        />
+      </a>
     ),
     likeCounter: 5,
   },
