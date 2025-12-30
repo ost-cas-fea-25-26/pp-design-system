@@ -27,7 +27,7 @@ const meta: Meta<typeof MumbleActions> = {
     },
     liked: false,
     commentButton: (
-      <CommentButton label="0 Comments" icon={<ReplyIcon color="neutral" />} />
+      <CommentButton label="Comment" icon={<ReplyIcon color="neutral" />} />
     ),
   },
 };
