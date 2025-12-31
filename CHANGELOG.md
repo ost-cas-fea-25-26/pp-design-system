@@ -1,3 +1,10 @@
+# [2.27.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.26.0...v2.27.0) (2025-12-31)
+
+
+### Features
+
+* mumble loading skeleton ([#164](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/164)) ([cd08977](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/cd08977f0bfed4eb2de50ed46cbe54d061964e6c))
+
 # [2.26.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.25.0...v2.26.0) (2025-12-24)
 
 
