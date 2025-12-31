@@ -1,7 +1,12 @@
 import { MumbleDetailView } from "@/compositions/mumble-detail-view/mumble-detail-view";
 import { Meta, StoryObj } from "@storybook/react-vite";
 import { MumbleActions, MumbleProps } from "@/compositions";
-import { IconButton, ProfileIcon } from "@/components";
+import {
+  CommentButton,
+  IconButton,
+  ProfileIcon,
+  ReplyFilledIcon,
+} from "@/components";
 import { fn } from "storybook/test";
 
 const reply: MumbleProps = {
@@ -15,7 +20,6 @@ const reply: MumbleProps = {
   actions: (
     <MumbleActions
       deepLink="https://mumble.com/mumbles/123456"
-      commentCounter={0}
       likeCounter={1}
       liked={true}
     />
@@ -56,7 +60,12 @@ const meta: Meta<typeof MumbleDetailView> = {
       actions: (
         <MumbleActions
           deepLink="https://mumble.com/mumbles/123456"
-          commentCounter={30}
+          commentButton={
+            <CommentButton
+              label="30 Comments"
+              icon={<ReplyFilledIcon color="primary" />}
+            />
+          }
           likeCounter={6}
           liked={false}
         />

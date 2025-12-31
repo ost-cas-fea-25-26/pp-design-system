@@ -1,12 +1,10 @@
 "use client";
 
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 
 import {
   HeartFilledIcon,
   HeartIcon,
-  ReplyFilledIcon,
-  ReplyIcon,
   ShareIcon,
   TimedButton,
   Toggle,
@@ -15,19 +13,17 @@ import {
 type MumbleActionsProps = {
   deepLink: string;
   likeCounter?: number;
-  commentCounter?: number;
-  onCommentToggleHandler?: (nextState: boolean) => Promise<void>;
   onLikeToggleHandler?: (nextState: boolean) => Promise<void>;
   liked?: boolean;
+  commentButton?: ReactNode;
 };
 
 export const MumbleActions: FC<MumbleActionsProps> = ({
   deepLink,
   likeCounter = 0,
-  commentCounter = 0,
-  onCommentToggleHandler,
   onLikeToggleHandler,
   liked = false,
+  commentButton,
 }) => {
   const getLikeLabel = (count: number): string => {
     if (count === 0) {
@@ -51,7 +47,7 @@ export const MumbleActions: FC<MumbleActionsProps> = ({
     </span>
   );
 
-  const renderLikeToggle = (count: number) => (
+  const renderLikeToggle = (count: number, liked: boolean) => (
     <Toggle
       defaultChildren={getLikeChildren(count)}
       activeChildren={getLikeChildren(count)}
@@ -61,53 +57,22 @@ export const MumbleActions: FC<MumbleActionsProps> = ({
     />
   );
 
-  const getCommentLabel = (count: number): string => {
-    if (count === 0) {
-      return "Comment";
-    }
-    if (count === 1) {
-      return "1 Comment";
-    }
-
-    return `${count} Comments`;
-  };
-
-  const getCommentChildren = (count: number) => (
-    <span className="inline-flex items-center gap-2">
-      {count === 0 ? (
-        <ReplyIcon color="inherit" />
-      ) : (
-        <ReplyFilledIcon color="primary" />
-      )}
-      {getCommentLabel(count)}
-    </span>
-  );
-
-  const renderCommentToggle = (count: number) => (
-    <Toggle
-      defaultChildren={getCommentChildren(count)}
-      activeChildren={getCommentChildren(count + 1)}
-      onToggle={onCommentToggleHandler}
-      variant="primary"
-    />
-  );
-
   const handleShareLink = async () => {
     await navigator.clipboard.writeText(deepLink);
   };
 
   return (
-    <div>
-      <div className="flex gap-8">
-        {renderCommentToggle(commentCounter)}
-        {renderLikeToggle(likeCounter)}
-        <TimedButton
-          activeLabel="Link copied"
-          icon={<ShareIcon color="neutral" />}
-          label="Copy Link"
-          onClick={handleShareLink}
-        />
-      </div>
+    <div className="flex flex-col gap-1 sm:flex-row sm:gap-8">
+      {commentButton && (
+        <span className="inline-flex items-center">{commentButton}</span>
+      )}
+      {renderLikeToggle(likeCounter, liked)}
+      <TimedButton
+        activeLabel="Link copied"
+        icon={<ShareIcon color="neutral" />}
+        label="Copy Link"
+        onClick={handleShareLink}
+      />
     </div>
   );
 };

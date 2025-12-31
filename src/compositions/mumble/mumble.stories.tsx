@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react-vite";
-import { Mumble } from "./index";
-import { Link } from "@/components";
+import { Mumble, MumbleSkeleton } from "./index";
+import { CommentButton, Link, ReplyFilledIcon } from "@/components";
 import { MumbleActions } from "@/compositions/mumble-actions";
 
 const meta: Meta<typeof Mumble> = {
@@ -42,7 +42,12 @@ const meta: Meta<typeof Mumble> = {
     actions: (
       <MumbleActions
         deepLink="https://mumble.com/mumbles/123456"
-        commentCounter={30}
+        commentButton={
+          <CommentButton
+            label="30 Comments"
+            icon={<ReplyFilledIcon color="primary" />}
+          />
+        }
         likeCounter={6}
         liked={false}
       />
@@ -144,6 +149,17 @@ export const WithMedia: Story = {
             />
           }
         />
+      </div>
+    );
+  },
+};
+
+type SkeletonStory = StoryObj<typeof MumbleSkeleton>;
+export const Skeleton: SkeletonStory = {
+  render: () => {
+    return (
+      <div className="border border-neutral/40 border-dashed rounded-md p-10 bg-neutral/5">
+        <MumbleSkeleton />
       </div>
     );
   },

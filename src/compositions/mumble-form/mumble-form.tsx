@@ -59,11 +59,16 @@ export const MumbleForm: FC<MumbleFormProps> = ({
     form.setValue("media", newFile);
   };
 
+  const handleFormSubmit = async (data: z.infer<typeof mumbleFormSchema>) => {
+    await onSubmitHandler(data);
+    form.reset();
+  };
+
   return (
     <>
       <FormProvider {...form}>
         {title && <h4 className="heading-4 mb-4">{title}</h4>}
-        <form onSubmit={form.handleSubmit(onSubmitHandler)}>
+        <form onSubmit={form.handleSubmit(handleFormSubmit)}>
           <FormField
             name="text"
             control={form.control}
