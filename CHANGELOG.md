@@ -1,3 +1,10 @@
+## [2.27.1](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.27.0...v2.27.1) (2026-01-06)
+
+
+### Bug Fixes
+
+* flaky pipeline ([#168](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/168)) ([03d1e90](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/03d1e904d93d931917ed24d7708e37974684b6d6))
+
 # [2.27.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.26.0...v2.27.0) (2025-12-31)
 
 
