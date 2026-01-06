@@ -1,3 +1,15 @@
+# [2.28.0](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.27.1...v2.28.0) (2026-01-06)
+
+
+### Bug Fixes
+
+* a11y issues in web app ([#165](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/165)) ([97629d1](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/97629d12049015c0707d1326b4044195de4d7363))
+
+
+### Features
+
+* profile header skeleton ([#167](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/167)) ([93fc0d2](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/93fc0d243952ec244946e391ff34d013f6afb29c))
+
 ## [2.27.1](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.27.0...v2.27.1) (2026-01-06)
 
 
