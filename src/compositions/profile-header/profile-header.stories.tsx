@@ -11,6 +11,7 @@ import { Link } from "@/components/link";
 import { ProfileBanner } from "@/components/profile-banner";
 import { Avatar } from "@/components/avatar";
 import { fn } from "storybook/test";
+import { ProfileHeaderSkeleton } from "./profile-header-skeleton";
 
 const meta: Meta<typeof ProfileHeader> = {
   title: "Compositions/Profile Header",
@@ -90,6 +91,16 @@ export const Default: Story = {
   render: (args) => (
     <div className="w-full max-w-[680px] mx-auto px-8 py-6 bg-neutral-50">
       <ProfileHeader {...args} />
+    </div>
+  ),
+};
+
+type SkeletonStory = StoryObj<typeof ProfileHeaderSkeleton>;
+
+export const Skeleton: SkeletonStory = {
+  render: () => (
+    <div className="w-full max-w-[680px] mx-auto px-8 py-6 bg-neutral-50 border border-neutral/40 border-dashed rounded-md">
+      <ProfileHeaderSkeleton />
     </div>
   ),
 };
