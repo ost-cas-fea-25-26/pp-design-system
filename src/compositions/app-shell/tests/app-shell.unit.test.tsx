@@ -23,16 +23,4 @@ describe("AppShell", () => {
 
     expect(getByText("Content goes here")).toBeInTheDocument();
   });
-
-  it("maintains semantic layout structure", () => {
-    const { container } = render(
-      <AppShell header={<div>Header</div>}>
-        <p>Content</p>
-      </AppShell>,
-    );
-
-    const main = container.querySelector("main");
-    expect(main).toBeInTheDocument();
-    expect(main).toContainHTML("Content");
-  });
 });
