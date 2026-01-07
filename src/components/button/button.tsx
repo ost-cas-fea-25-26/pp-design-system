@@ -1,28 +1,27 @@
-import * as React from "react";
-import { Slot } from "@radix-ui/react-slot";
 import { twMerge } from "tailwind-merge";
 import { type VariantProps } from "class-variance-authority";
 import { buttonVariants } from "./variants";
+import { ComponentProps, FC } from "react";
 
-type ButtonProps = React.ComponentProps<"button"> &
+type ButtonProps = ComponentProps<"button"> &
   VariantProps<typeof buttonVariants> & {
-    asChild?: boolean;
+    fullWidth?: boolean;
+    isCircular?: boolean;
   };
 
-export const Button: React.FC<ButtonProps> = ({
-  className,
-  variant,
-  size,
-  asChild = false,
+export const Button: FC<ButtonProps> = ({
+  variant = "primary",
+  size = "default",
+  fullWidth = false,
+  isCircular = false,
   ...props
-}) => {
-  const Comp = asChild ? Slot : "button";
-
-  return (
-    <Comp
-      data-slot="button"
-      className={twMerge(buttonVariants({ variant, size, className }))}
-      {...props}
-    />
-  );
-};
+}) => (
+  <button
+    {...props}
+    className={twMerge(
+      buttonVariants({ variant, size }),
+      fullWidth && "w-full",
+      isCircular && "rounded-full",
+    )}
+  />
+);

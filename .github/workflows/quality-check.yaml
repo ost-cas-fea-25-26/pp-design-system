@@ -1,40 +1,134 @@
 name: "🛡️ Quality Check"
 
 on:
-  push:
-    branches: ["**"]
   pull_request:
+    types: [opened, synchronize, reopened]
+  push:
+    branches:
+      - main
+      - "gh-readonly-queue/**"
+
+permissions:
+  contents: read
+  pull-requests: write
+  checks: write
 
 jobs:
   lint:
     name: "✨ Lint"
     runs-on: ubuntu-latest
     steps:
-      - name: "Checkout"
-        uses: actions/checkout@v4
-      - name: "Setup Node.js"
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: 24
           cache: npm
-      - name: "Install dependencies"
-        run: npm ci --no-audit --no-fund
-      - name: "Run linter"
-        run: npm run lint
+      - run: npm ci --no-audit --no-fund
+      - run: npm run lint
 
   test:
-    name: "🧪 Test"
+    name: "🧪 Unit Test + Coverage"
     runs-on: ubuntu-latest
-    needs: [lint]
+    outputs:
+      coverage: ${{ steps.coverage.outputs.path }}
     steps:
-      - name: "Checkout"
-        uses: actions/checkout@v4
-      - name: "Setup Node.js"
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: 24
           cache: npm
-      - name: "Install dependencies"
+      - run: npm ci --no-audit --no-fund
+      - run: npm run test:unit:coverage
+
+      - name: Upload Coverage Report
+        uses: actions/upload-artifact@v5
+        with:
+          name: coverage-report
+          path: coverage
+          if-no-files-found: error
+
+  sonarcloud:
+    name: "📊 SonarCloud Scan"
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Download Coverage Report
+        uses: actions/download-artifact@v6
+        with:
+          name: coverage-report
+          path: coverage
+
+      - name: Install dependencies
         run: npm ci --no-audit --no-fund
-      - name: "Run tests"
-        run: npm run test
+
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@v5
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_HOST_URL: https://sonarcloud.io
+
+  build_library:
+    name: "🏗️ Build Test — Library"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: npm run build:lib
+
+  build_storybook:
+    name: "📘 Build Test — Storybook"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: npm run build:storybook
+
+  e2e:
+    name: "📸 E2E Test — ${{ matrix.browser }} — shard ${{ matrix.shard }}"
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [chromium, firefox, webkit]
+        shard: [1/3, 2/3, 3/3]
+
+    container:
+      image: mcr.microsoft.com/playwright:v1.56.1-jammy
+
+    env:
+      HOME: /root
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Run Playwright Tests (sharded)
+        run: npx playwright test --project=${{ matrix.browser }} --shard=${{ matrix.shard }}
+
+      - name: Upload Test Report (only if failure)
+        if: failure()
+        uses: actions/upload-artifact@v5
+        with:
+          name: playwright-report-${{ matrix.browser }}-${{ github.sha }}
+          path: playwright-report/

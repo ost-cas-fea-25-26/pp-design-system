@@ -1,0 +1,105 @@
+import { Meta, StoryObj } from "@storybook/react-vite";
+import { IconButton } from "@/components/icon-button";
+import {
+  ProfileIcon,
+  SettingsIcon,
+  TimeIcon,
+  LocationIcon,
+} from "@/components/icons";
+
+import { Link } from "@/components/link";
+import { UserInfo } from "./index";
+
+const meta: Meta<typeof UserInfo> = {
+  title: "Compositions/User Info",
+  component: UserInfo,
+  parameters: { layout: "centered" },
+  tags: ["autodocs"],
+  argTypes: {
+    size: { control: "select", options: ["s", "m", "l", "xl"] },
+    name: { control: "text" },
+    handle: { control: "text" },
+    avatarImageElement: { control: false },
+    showAvatar: {
+      control: "boolean",
+    },
+    profileSettingsLink: { control: false },
+    iconButtons: { control: false },
+  },
+};
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+export const Default: Story = {
+  args: {
+    size: "s",
+    name: "Rory McIlroy",
+    handle: "rory_goat",
+    showAvatar: true,
+    avatarImageElement: (
+      <a href="/users/rory_goat" title="View profile">
+        <img
+          src="/avatars/rory.jpg"
+          alt="Rory McIlroy"
+          className="object-cover w-full h-full"
+        />
+      </a>
+    ),
+    iconButtons: (
+      <>
+        <a href="/users/rory_goat" title="View profile">
+          <IconButton
+            color="primary"
+            layout="horizontal"
+            label="rory_goat"
+            IconComponent={ProfileIcon}
+          />
+        </a>
+        <IconButton
+          color="neutral"
+          layout="horizontal"
+          label="20 minutes ago"
+          IconComponent={TimeIcon}
+        />
+      </>
+    ),
+  },
+};
+
+export const WithProfileSettingsLink: Story = {
+  args: {
+    size: "xl",
+    name: "Rory McIlroy",
+    handle: "rory_goat",
+    showAvatar: false,
+    iconButtons: (
+      <>
+        <a href="/users/rory_goat" title="View profile">
+          <IconButton
+            color="primary"
+            layout="horizontal"
+            label="rory_goat"
+            IconComponent={ProfileIcon}
+          />
+        </a>
+        <IconButton
+          color="neutral"
+          layout="horizontal"
+          label="Ireland"
+          IconComponent={LocationIcon}
+        />
+        <IconButton
+          color="neutral"
+          layout="horizontal"
+          label="20 minutes ago"
+          IconComponent={TimeIcon}
+        />
+      </>
+    ),
+    profileSettingsLink: (
+      <Link title="Settings" href="#">
+        <SettingsIcon color="primary" size="m" />
+      </Link>
+    ),
+  },
+};
