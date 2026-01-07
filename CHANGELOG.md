@@ -1,3 +1,10 @@
+## [2.28.2](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.28.1...v2.28.2) (2026-01-07)
+
+
+### Bug Fixes
+
+* detail view layout ([#166](https://github.com/ost-cas-fea-25-26/pp-design-system/issues/166)) ([b78ef30](https://github.com/ost-cas-fea-25-26/pp-design-system/commit/b78ef30c58cf8e2b643f4e7fab7ac3bd176483b5))
+
 ## [2.28.1](https://github.com/ost-cas-fea-25-26/pp-design-system/compare/v2.28.0...v2.28.1) (2026-01-07)
 
 
