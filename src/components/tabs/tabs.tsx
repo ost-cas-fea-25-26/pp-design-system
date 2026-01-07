@@ -11,8 +11,12 @@ type TabsProps = {
   defaultTab?: string;
 };
 
+const tabValue = (text: string) => text.replace(/\s+/g, "");
+
 export const Tabs: FC<TabsProps> = ({ tabs, defaultTab }) => {
-  const defaultValue = defaultTab ?? tabs[0]?.text ?? "";
+  const defaultValue = defaultTab
+    ? tabValue(defaultTab)
+    : tabValue(tabs[0]?.text ?? "");
 
   return (
     <TabsPrimitive.Root defaultValue={defaultValue} className="w-full">
@@ -20,7 +24,7 @@ export const Tabs: FC<TabsProps> = ({ tabs, defaultTab }) => {
         {tabs.map((tab) => (
           <TabsPrimitive.Trigger
             key={tab.text}
-            value={tab.text}
+            value={tabValue(tab.text)}
             aria-label={tab.text}
             className={`
               label-lg
@@ -39,8 +43,7 @@ export const Tabs: FC<TabsProps> = ({ tabs, defaultTab }) => {
       {tabs.map((tab) => (
         <TabsPrimitive.Content
           key={tab.text}
-          value={tab.text}
-          aria-label={tab.text}
+          value={tabValue(tab.text)}
           className="mt-3"
         >
           {tab.content}
