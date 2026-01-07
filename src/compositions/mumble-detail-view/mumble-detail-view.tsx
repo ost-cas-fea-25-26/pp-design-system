@@ -20,7 +20,7 @@ export const MumbleDetailView: FC<MumbleDetailViewProps> = ({
   return (
     <div className="bg-white">
       <Mumble {...mumble} hideBorder />
-      <div className="flex flex-col pl-8 pr-8">
+      <div className="flex flex-col pl-12 pr-12">
         <div className="mb-4">
           <UserInfo {...user} />
         </div>
